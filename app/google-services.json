@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "845749417498",
+    "project_id": "receiptscanner-75f31",
+    "storage_bucket": "receiptscanner-75f31.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845749417498:android:d4a26dd5a9a95b3f0d43a3",
+        "android_client_info": {
+          "package_name": "com.example.receiptscanner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "845749417498-2at5360l7hi4oairuptbii5tn82dcvti.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.receiptscanner",
+            "certificate_hash": "aab575b935198127e8f5df3d34d1087490e29e51"
+          }
+        },
+        {
+          "client_id": "845749417498-g7d6slu8hl86b0tbk4th4j37u635ajvm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_JAunZiHQYjebeRhVi3RryUoU1TYHops"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "845749417498-g7d6slu8hl86b0tbk4th4j37u635ajvm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
