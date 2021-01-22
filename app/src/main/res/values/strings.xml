@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">FinanceManagementApp</string>
+    <string name="signIn">Sign In</string>
+    <string name="pwd">Password</string>
+    <string name="email">E-mail</string>
+    <string name="noAccnt">Don\'t have an account?</string>
+    <string name="signUp">Sign Up</string>
+    <string name="forgotPwd">Forgot Password?</string>
+    <string name="login">Login</string>
+    <string name="confirmPwd">Confirm Password</string>
+    <string name="agreeToTerms">I agree to the terms and conditions</string>
+    <string name="resetHeading">Reset your Password</string>
+    <string name="resetMsg">Enter your email and we\'ll send a link to reset your password.</string>
+    <string name="resetPwd">Reset Password</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="title_activity_navigation_drawer">NavigationDrawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+
+</resources>
