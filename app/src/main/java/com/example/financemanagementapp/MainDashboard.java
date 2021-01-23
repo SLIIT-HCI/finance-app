@@ -37,11 +37,13 @@ public class MainDashboard extends AppCompatActivity implements NavigationView.O
     private Fragment fragmentCategories;
     private Fragment fragmentSMSIntegration;
     private Fragment fragmentPayablesAndReceivables;
+    private Fragment fragmentMainDashboard;
 
     //FOR DATAS
-    private static final int FRAGMENT_CATEGORIES = 0;
-    private static final int FRAGMENT_SMSINTEGRATION = 1;
-    private static final int FRAGMENT_PAYABLESANDRECEIVABLES = 2;
+    private static final int FRAGMENT_MAINDASHBOARD = 0;
+    private static final int FRAGMENT_CATEGORIES = 1;
+    private static final int FRAGMENT_SMSINTEGRATION = 2;
+    private static final int FRAGMENT_PAYABLESANDRECEIVABLES = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,7 +95,7 @@ public class MainDashboard extends AppCompatActivity implements NavigationView.O
         this.configureNavigationView();
 
         // Show First Fragment
-        //this.showFirstFragment();
+        this.showFirstFragment();
 
     }
 
@@ -116,8 +118,7 @@ public class MainDashboard extends AppCompatActivity implements NavigationView.O
 
         switch (id){
             case R.id.mainDashboard:
-                Intent signUp = new Intent(getApplicationContext(), MainDashboard.class);
-                startActivity(signUp);
+                this.showFragment(FRAGMENT_MAINDASHBOARD);
                 break;
             case R.id.categories:
                 this.showFragment(FRAGMENT_CATEGORIES);
@@ -169,8 +170,8 @@ public class MainDashboard extends AppCompatActivity implements NavigationView.O
     private void showFirstFragment(){
         Fragment visibleFragment = getSupportFragmentManager().findFragmentById(R.id.activity_main_frame_layout);
         if (visibleFragment == null){
-            // Show News Fragment
-            //this.showFragment(FRAGMENT_NEWS);
+            // Show main dashboard Fragment
+            this.showFragment(FRAGMENT_MAINDASHBOARD);
             // Mark as selected the menu item corresponding to NewsFragment
             this.navigationView.getMenu().getItem(0).setChecked(true);
         }
@@ -180,6 +181,9 @@ public class MainDashboard extends AppCompatActivity implements NavigationView.O
 
     private void showFragment(int fragmentIdentifier){
         switch (fragmentIdentifier){
+            case FRAGMENT_MAINDASHBOARD :
+                this.showMainDashboardFragment();
+                break;
             case FRAGMENT_CATEGORIES :
                 this.showCategoriesFragment();
                 break;
@@ -197,6 +201,11 @@ public class MainDashboard extends AppCompatActivity implements NavigationView.O
     // ---
 
     // Create each fragment page and show it
+
+    private void showMainDashboardFragment(){
+        if (this.fragmentMainDashboard == null) this.fragmentMainDashboard = MainDashboardFragment.newInstance();
+        this.startTransactionFragment(this.fragmentMainDashboard);
+    }
 
     private void showCategoriesFragment(){
         if (this.fragmentCategories == null) this.fragmentCategories = CategoriesFragment.newInstance();
