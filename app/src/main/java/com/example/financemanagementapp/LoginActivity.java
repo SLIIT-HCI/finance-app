@@ -109,7 +109,7 @@ public class LoginActivity extends AppCompatActivity {
         //displaying a progress dialog
 
         else {
-            progressDialog.setMessage("Please Wait...");
+            progressDialog.setMessage("Authenticating...");
             progressDialog.show();
 
             //logging in the user

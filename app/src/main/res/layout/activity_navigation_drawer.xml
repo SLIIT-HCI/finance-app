@@ -15,6 +15,7 @@
         android:background="@color/white"
         app:itemTextColor="@color/darkgray"
         app:itemIconTint="@color/darkgray"
+        android:fitsSystemWindows="true"
         app:menu="@menu/drawermenu"
         android:layout_gravity="start">
 
