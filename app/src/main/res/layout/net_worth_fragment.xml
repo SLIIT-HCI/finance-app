@@ -8,10 +8,12 @@ tools:context=".NetWorthFragment">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/holo_green_dark"
-        android:text="Hello, I'm Net Worth Fragment"
+        android:background="@android:color/holo_blue_light"
+        android:paddingTop="300dp"
+        android:text="Net Worth Fragment"
+        android:textAlignment="center"
         android:textColor="@android:color/black"
-        android:textSize="18sp"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
 </FrameLayout>

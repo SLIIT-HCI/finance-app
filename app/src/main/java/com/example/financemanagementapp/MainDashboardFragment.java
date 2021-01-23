@@ -12,18 +12,6 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class MainDashboardFragment extends Fragment {
 
-    //FOR FRAGMENTS
-    private Fragment fragmentCategories;
-    private Fragment fragmentSMSIntegration;
-    private Fragment fragmentPayablesAndReceivables;
-    private Fragment fragmentMainDashboard;
-
-    //FOR DATAS
-    private static final int FRAGMENT_MAINDASHBOARD = 0;
-    private static final int FRAGMENT_CATEGORIES = 1;
-    private static final int FRAGMENT_SMSINTEGRATION = 2;
-    private static final int FRAGMENT_PAYABLESANDRECEIVABLES = 3;
-
     public static MainDashboardFragment newInstance() {
         return (new MainDashboardFragment());
     }
@@ -31,54 +19,60 @@ public class MainDashboardFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.fragment_main_dashboard, container, false);
+        View view = inflater.inflate(R.layout.fragment_main_dashboard, container, false);
+
+        Button dashboard = (Button)view.findViewById(R.id.dashboard);
+        dashboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment, new DashboardFragment());
+                fragmentTransaction.commit();
+            }
+        });
+
+        Button transactions = (Button)view.findViewById(R.id.transactions);
+        transactions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment, new TransactionsFragment());
+                fragmentTransaction.commit();
+            }
+        });
+
+        Button balanceSheet = (Button)view.findViewById(R.id.balanceSheet);
+        balanceSheet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment, new BalanceSheetFragment());
+                fragmentTransaction.commit();
+            }
+        });
+
+        Button netEarningsSummary = (Button)view.findViewById(R.id.netEarningsSummary);
+        netEarningsSummary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment, new NetEarningsFragment());
+                fragmentTransaction.commit();
+            }
+        });
+
+        Button netWorthSummary = (Button)view.findViewById(R.id.netWorthSummary);
+        netWorthSummary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment, new NetWorthFragment());
+                fragmentTransaction.commit();
+            }
+        });
+
+        return view;
+
     }
 
-    /*
-    public void changeFragment(View view){
-        Fragment fragment;
-        if (view == view.findViewById(R.id.dashboard)){
-            fragment = new MainDashboardFragment();
-            FragmentManager fm = getFragmentManager();
-            FragmentTransaction ft = fm.beginTransaction();
-            ft.replace(R.id.fragment,fragment);
-            ft.commit();
-        }
-        if (view == view.findViewById(R.id.transactions)){
-            fragment = new TransactionsFragment();
-            FragmentManager fm = getFragmentManager();
-            FragmentTransaction ft = fm.beginTransaction();
-            ft.replace(R.id.fragment,fragment);
-            ft.commit();
-        }
-    }
-
-
-
-
-    @Override
-    public void onClick(View view) {
-        int id = item.getItemId();
-
-        switch (id){
-            case R.id.mainDashboard:
-                this.showFragment(FRAGMENT_MAINDASHBOARD);
-                break;
-            case R.id.categories:
-                this.showFragment(FRAGMENT_CATEGORIES);
-                break;
-            case R.id.SMSIntegration:
-                this.showFragment(FRAGMENT_SMSINTEGRATION);
-                break;
-            case R.id.payablesAndReceivables:
-                this.showFragment(FRAGMENT_PAYABLESANDRECEIVABLES);
-                break;
-            default:
-                break;
-        }
-
-
-    }
-
-     */
 }

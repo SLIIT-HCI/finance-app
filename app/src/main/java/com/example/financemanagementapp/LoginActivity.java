@@ -56,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
             //close this activity
             //finish();
             //opening profile activity
-            startActivity(new Intent(getApplicationContext(), MainDashboard.class));
+            startActivity(new Intent(getApplicationContext(), NavigationDrawer.class));
         }
 
         buttonSignIn.setOnClickListener(new View.OnClickListener() {
@@ -123,7 +123,7 @@ public class LoginActivity extends AppCompatActivity {
                                 //start the profile activity
                                 finish();
                                 Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getApplicationContext(), MainDashboard.class));
+                                startActivity(new Intent(getApplicationContext(), NavigationDrawer.class));
                             }
                             else {
                                 Toast.makeText(getApplicationContext(), "Invalid Email/Password", Toast.LENGTH_SHORT).show();

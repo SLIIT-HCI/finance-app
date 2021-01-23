@@ -8,10 +8,12 @@ tools:context=".BalanceSheetFragment">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/holo_green_dark"
-        android:text="Hello, I'm Balance Sheet Fragment"
+        android:background="@android:color/holo_purple"
+        android:paddingTop="300dp"
+        android:text="Balance Sheet Fragment"
+        android:textAlignment="center"
         android:textColor="@android:color/black"
-        android:textSize="18sp"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
 </FrameLayout>

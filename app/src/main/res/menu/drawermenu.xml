@@ -12,16 +12,16 @@
                     android:title="Main Dashboard"
                     android:icon="@drawable/icon_dashboard"/>
 
-                <item android:id="@+id/categories" android:title="Categories" android:icon="@drawable/icon_dashboard"/>
-                <item android:id="@+id/budgetSettings" android:title="Budget Settings" android:icon="@drawable/icon_dashboard"/>
-                <item android:id="@+id/SMSIntegration" android:title="SMS Integration" android:icon="@drawable/icon_dashboard"/>
-                <item android:id="@+id/payablesAndReceivables" android:title="Payables and Receivables" android:icon="@drawable/icon_dashboard"/>
+                <item android:id="@+id/categories" android:title="Categories" android:icon="@drawable/icon_category"/>
+                <item android:id="@+id/budgetSettings" android:title="Budget Settings" android:icon="@drawable/icon_budget"/>
+                <item android:id="@+id/SMSIntegration" android:title="SMS Integration" android:icon="@drawable/icon_sms"/>
+                <item android:id="@+id/payablesAndReceivables" android:title="Payables and Receivables" android:icon="@drawable/icon_payreceive"/>
                 <item android:id="@+id/reminders" android:title="Reminders" android:icon="@drawable/icon_alarm"/>
                 <item android:id="@+id/calendar" android:title="Calendar" android:icon="@drawable/icon_calendar"/>
                 <item android:id="@+id/trash" android:title="Trash" android:icon="@drawable/icon_trash"/>
                 <item android:id="@+id/settings" android:title="Settings" android:icon="@drawable/icon_settings"/>
                 <item android:id="@+id/userProfile" android:title="User Profile" android:icon="@drawable/icon_user"/>
-                <item android:id="@+id/passwordManager" android:title="Password Manager" android:icon="@drawable/icon_lock"/>
+                <item android:id="@+id/passwordManager" android:title="Password Manager" android:icon="@drawable/icon_security"/>
 
             </group>
         </menu>
@@ -29,7 +29,7 @@
 
     <group android:checkableBehavior="single">
         <item android:id="@+id/helpAndSupport" android:title="Help and Support" android:icon="@drawable/icon_help"/>
-        <item android:id="@+id/aboutUs" android:title="About Us" android:icon="@drawable/icon_dashboard"/>
+        <item android:id="@+id/aboutUs" android:title="About Us" android:icon="@drawable/icon_question"/>
     </group>
 
 </menu>
