@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/manualEntry"
+        android:title="Manual Entry"
+        android:icon="@drawable/icon_camera1"/>
+
+    <item
+        android:id="@+id/receiptCapture"
+        android:title="Smart Receipt Capture"
+        android:icon="@drawable/icon_camera2"/>
+
+    <item
+        android:id="@+id/importFromGallery"
+        android:title="Import Receipt from Gallery"
+        android:icon="@drawable/icon_imagegallery"/>
+
+</menu>

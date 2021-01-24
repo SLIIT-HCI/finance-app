@@ -22,6 +22,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     private Button buttonForgotPwd;
     private EditText forgotPwdEmail;
     private TextView forgotPwdSignUpBtn;
+    private TextView fgtPwdSignIn;
 
     //firebase auth object
     private FirebaseAuth firebaseAuth;
@@ -41,6 +42,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         forgotPwdSignUpBtn  = (TextView) findViewById(R.id.forgotPwdSignUpBtn);
         forgotPwdEmail  = (EditText) findViewById(R.id.forgotPwdEmail);
         buttonForgotPwd  = (Button) findViewById(R.id.buttonForgotPwd);
+        fgtPwdSignIn  = (TextView) findViewById(R.id.fgtPwdSignIn);
 
         progressDialog = new ProgressDialog(this);
 
@@ -49,6 +51,14 @@ public class ForgotPasswordActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent signUp = new Intent(getApplicationContext(), RegistrationActivity.class);
                 startActivity(signUp);
+            }
+        });
+
+        fgtPwdSignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent signIn = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(signIn);
             }
         });
 

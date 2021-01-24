@@ -8,7 +8,7 @@ tools:context=".DashboardFragment">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/holo_green_light"
+        android:background="#8099CC00"
         android:paddingTop="300dp"
         android:textSize="30sp"
         android:text="Dashboard Fragment"
