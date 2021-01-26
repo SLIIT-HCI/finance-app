@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.Gravity;
@@ -88,6 +89,8 @@ public class TransactionsFragment extends Fragment implements PopupMenu.OnMenuIt
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()) {
             case R.id.manualEntry:
+                Intent addTransactions = new Intent(getContext(), AddTransactionsActivity.class);
+                startActivity(addTransactions);
                 Toast.makeText(getContext(), "Manual Entry", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.receiptCapture:
@@ -106,6 +109,8 @@ public class TransactionsFragment extends Fragment implements PopupMenu.OnMenuIt
     public boolean onMenuItemClick(MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.manualEntry:
+                Intent addTransactions = new Intent(getContext(), AddTransactionsActivity.class);
+                startActivity(addTransactions);
                 Toast.makeText(getContext(), "Manual Entry", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.receiptCapture:
