@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -26,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText editTextEmail;
     private EditText editTextPassword;
     private TextView loginSignUpBtn, loginForgotPwdBtn;
+    String userID;
 
     //firebase auth object
     private FirebaseAuth firebaseAuth;
@@ -120,10 +122,17 @@ public class LoginActivity extends AppCompatActivity {
                             progressDialog.dismiss();
                             //if the task is successfull
                             if (task.isSuccessful()) {
-                                //start the profile activity
-                                finish();
-                                Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getApplicationContext(), NavigationDrawer.class));
+                                //check if the user has verified the email address
+                                if(!firebaseAuth.getCurrentUser().isEmailVerified()) {
+                                    Intent emailVerification = new Intent(getApplicationContext(), EmailVerificationActivity.class);
+                                    startActivity(emailVerification);
+                                }
+                                else {
+                                    //start the dashboard activity
+                                    finish();
+                                    Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(getApplicationContext(), NavigationDrawer.class));
+                                }
                             }
                             else {
                                 Toast.makeText(getApplicationContext(), "Invalid Email/Password", Toast.LENGTH_SHORT).show();

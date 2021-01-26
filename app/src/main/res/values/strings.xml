@@ -28,6 +28,10 @@
     <string name="balanceSheet">Balance Sheet</string>
     <string name="netEarningsSummary">Net Earnings Summary</string>
     <string name="netWorthSummary">Net Worth Summary</string>
+    <string name="verifyMsg">Verify your email address</string>
+    <string name="resendEmail">Resend Email</string>
+    <string name="verificationMsg">We\'ve sent a verification email to your inbox. \n Click on the confirmation link to continue. </string>
+    <string name="emailNotSent">Didn\'t get an email?</string>
 
 
 </resources>
