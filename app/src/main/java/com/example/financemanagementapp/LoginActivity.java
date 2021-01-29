@@ -84,7 +84,6 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(signUp);
             }
         });
-
     }
 
     //method for user login
@@ -120,7 +119,7 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             progressDialog.dismiss();
-                            //if the task is successfull
+                            //if the task is successful
                             if (task.isSuccessful()) {
                                 //check if the user has verified the email address
                                 if(!firebaseAuth.getCurrentUser().isEmailVerified()) {

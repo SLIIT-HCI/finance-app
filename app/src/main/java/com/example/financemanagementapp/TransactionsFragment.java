@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import com.example.*;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,15 +18,34 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TransactionsFragment extends Fragment implements PopupMenu.OnMenuItemClickListener {
 
+    //view objects
+    ListView listViewTransactions;
+
+    //a list to store all the artist from firebase database
+    List<Transactions> transactions;
+
+    //our database reference object
+    DatabaseReference databaseTransactions;
+
+    //view objects
     View view;
 
     @Override
@@ -38,7 +58,6 @@ public class TransactionsFragment extends Fragment implements PopupMenu.OnMenuIt
 
         setHasOptionsMenu(true);
 
-
         addTransactions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,7 +67,7 @@ public class TransactionsFragment extends Fragment implements PopupMenu.OnMenuIt
             }
         });
 
-
+        listViewTransactions = (ListView) view.findViewById(R.id.transactionsListView);
 
         //registerForContextMenu(addTransactions);
 
@@ -124,6 +143,44 @@ public class TransactionsFragment extends Fragment implements PopupMenu.OnMenuIt
         }
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        //getting the reference of artists node
+        databaseTransactions = FirebaseDatabase.getInstance().getReference("Transactions");
+
+        //list to store artists
+        transactions = new ArrayList<>();
+
+        //attaching value event listener
+        databaseTransactions.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                //clearing the previous artist list
+                transactions.clear();
+
+                //iterating through all the nodes
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    //getting artist
+                    Transactions transaction = postSnapshot.getValue(Transactions.class);
+                    //adding artist to the list
+                    transactions.add(transaction);
+                }
+
+                //creating adapter
+                TransactionsList transactionsAdapter = new TransactionsList(getActivity(), transactions);
+                //attaching adapter to the listview
+                listViewTransactions.setAdapter(transactionsAdapter);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
 
     /*
     @Override

@@ -7,16 +7,161 @@
     android:background="@drawable/add_transactions"
     tools:context=".AddTransactionsActivity">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton2"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="@color/red"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+
+    <TextView
+        android:id="@+id/addTransactionsCurrency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        android:text="Rs."
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/addTransactionsType"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/addTransactionsAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="90dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toEndOf="@+id/addTransactionsCurrency"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/addTransactionsCalculator"
+        android:layout_width="43dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="30dp"
+        android:backgroundTint="@color/blue4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/addTransactionsAmount"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon_calc_big2" />
+
+    <Spinner
+        android:id="@+id/addTransactionsType"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/addTransactionsTime"
+        app:layout_constraintTop_toBottomOf="@+id/addTransactionsAmount" />
+
+
+    <EditText
+        android:id="@+id/addTransactionsNotes"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="35dp"
+        android:drawableLeft="@drawable/icon_notes1"
+        android:drawablePadding="20sp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:padding="15dp"
+        android:text="Name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addTransactionsSchedule" />
+
+    <EditText
+        android:id="@+id/addTransactionsSchedule"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:drawableLeft="@drawable/icon_schedule1"
+        android:text="Schedule"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/addTransactionsNotes"
+        app:layout_constraintTop_toBottomOf="@+id/addTransactionsAccount" />
+
+    <EditText
+        android:id="@+id/addTransactionsAccount"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:drawableLeft="@drawable/icon_accounts1"
+        android:text="Account"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/addTransactionsSchedule"
+        app:layout_constraintTop_toBottomOf="@+id/addTransactionsCategory" />
+
+    <EditText
+        android:id="@+id/addTransactionsCategory"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:drawableLeft="@drawable/icon_category1"
+        android:text="Category"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/addTransactionsAccount"
+        app:layout_constraintTop_toBottomOf="@+id/addTransactionsTime" />
+
+    <EditText
+        android:id="@+id/addTransactionsTime"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:drawableLeft="@drawable/icon_time2"
+        android:ems="10"
+        android:inputType="time"
+        app:layout_constraintStart_toStartOf="@+id/addTransactionsCategory"
+        app:layout_constraintTop_toBottomOf="@+id/addTransactionsType" />
+
+    <EditText
+        android:id="@+id/addTransactionsDate"
+        android:layout_width="100dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="35dp"
+        android:drawableLeft="@drawable/icon_calendar3"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintStart_toEndOf="@+id/addTransactionsTime"
+        app:layout_constraintTop_toBottomOf="@+id/addTransactionsType" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addToDB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="303dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="52dp"
+        android:backgroundTint="@color/green"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addTransactionsNotes"
+        app:srcCompat="@drawable/icon_check2" />
 
     <Button
         android:id="@+id/closeBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="330dp"
-        android:layout_marginBottom="353dp"
+        android:layout_marginTop="100dp"
         android:text="Close"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/addTransactionsNotes" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

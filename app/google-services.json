@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "29698427064",
+	"firebase_url": "https://financemanagementapp-default-rtdb.firebaseio.com",
     "project_id": "financemanagementapp",
     "storage_bucket": "financemanagementapp.appspot.com"
   },
