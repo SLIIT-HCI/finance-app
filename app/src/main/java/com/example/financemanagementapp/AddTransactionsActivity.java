@@ -1,6 +1,9 @@
 package com.example.financemanagementapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
@@ -23,8 +26,11 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -35,7 +41,7 @@ import java.util.Locale;
 
 public class AddTransactionsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
-    Button closeBtn;
+    ImageView closeBtn;
     EditText addTransactionsAmount, addTransactionsDate, addTransactionsTime, addTransactionsCategory, addTransactionsAccount, addTransactionsSchedule, addTransactionsNotes;
     DatePickerDialog datepicker;
     TimePicker timepicker;
@@ -43,6 +49,8 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
     String transactionType;
     int hour, minute;
     FloatingActionButton addToDB;
+    Long maxId;
+    private Fragment transactionsFragment;
 
     ListView listViewArtists;
 
@@ -60,9 +68,24 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
         // getting the reference of bookings node
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Transactions");
 
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    maxId =(dataSnapshot.getChildrenCount());
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
         final Calendar myCalendar = Calendar.getInstance();
 
-        closeBtn = (Button) findViewById(R.id.closeBtn);
+        closeBtn = (ImageView) findViewById(R.id.closeBtn);
         addTransactionsAmount = (EditText) findViewById(R.id.addTransactionsAmount);
         addTransactionsDate = (EditText) findViewById(R.id.addTransactionsDate);
         addTransactionsTime = (EditText) findViewById(R.id.addTransactionsTime);
@@ -93,6 +116,10 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
         List<String> transactionsType = new ArrayList<String>();
         transactionsType.add("Income");
         transactionsType.add("Expense");
+        transactionsType.add("Asset");
+        transactionsType.add("Liability");
+        transactionsType.add("Payable");
+        transactionsType.add("Receivable");
         // Creating adapter for spinner
         ArrayAdapter<String> dataAdapterType = new ArrayAdapter<String>(this, R.layout.spinner_item, transactionsType);
         // Drop down layout style - list view with radio button
@@ -232,22 +259,18 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
         if (!TextUtils.isEmpty(type)) {
 
             //getting a unique id using push().getKey() method
-            //it will create a unique id and we will use it as the Primary Key for our Artist
+            //it will create a unique id and we will use it as the Primary Key for our transaction
             String id = databaseReference.push().getKey();
+            //String id = String.valueOf(maxId+1);
 
-            //creating an Artist Object
+            //creating an transaction Object
             Transactions transaction = new Transactions(id, amount, type, date, time, category, account, schedule, notes);
 
-            //Saving the Artist
+            //Saving the transaction
             databaseReference.child(id).setValue(transaction);
 
-            //setting edittext to blank again
-            addTransactionsAmount.setText("");
-
             //displaying a success toast
-            //Intent transactions = new Intent(getApplicationContext(), TransactionsActivity.class);
-            //startActivity(transactions);
-            Toast.makeText(this, "Transaction added", Toast.LENGTH_LONG).show();
+            finish();
         }
 
         else {
@@ -255,5 +278,6 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
             Toast.makeText(this, "Please enter an amount", Toast.LENGTH_LONG).show();
         }
     }
+
 
 }

@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UpdateDeleteTransactionsActivity"></activity>
+        <activity android:name=".UpdateDeleteTransactionsActivity"
+            android:theme="@style/AppTheme.PopUp" />
         <activity
             android:name=".CalculatorActivity"
             android:theme="@style/AppTheme.PopUp" />

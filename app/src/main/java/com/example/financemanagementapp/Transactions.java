@@ -16,6 +16,7 @@ public class Transactions {
     }
 
     public Transactions(String id, float amount, String transactionType, String date, String time, String category, String account, String schedule, String notes) {
+        this.id = id;
         this.amount = amount;
         this.transactionType = transactionType;
         this.date = date;

@@ -6,4 +6,184 @@
     android:layout_height="match_parent"
     tools:context=".UpdateDeleteTransactionsActivity">
 
+    <ImageView
+        android:id="@+id/updatecloseBtn"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:backgroundTint="@color/red"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon_close" />
+
+    <TextView
+        android:id="@+id/updateTransactionsCurrency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="140dp"
+        android:text="Rs."
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/updateTransactionsAmount"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="122dp"
+        android:ems="10"
+        android:hint="0.00"
+        android:inputType="numberDecimal"
+        android:paddingLeft="15dp"
+        app:layout_constraintStart_toEndOf="@+id/updateTransactionsCurrency"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/updateTransactionsCalculator"
+        android:layout_width="43dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="30dp"
+        android:backgroundTint="@color/blue4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/updateTransactionsAmount"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon_calc_big2" />
+
+    <Spinner
+        android:id="@+id/updateTransactionsType"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/updateTransactionsCurrency"
+        app:layout_constraintTop_toBottomOf="@+id/updateTransactionsAmount" />
+
+    <TextView
+        android:id="@+id/updateTransactionsTime"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:background="@null"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:drawableLeft="@drawable/icon_time2"
+        android:drawablePadding="20sp"
+        android:ems="10"
+        android:hint="00:00"
+        android:inputType="time"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/updateTransactionsDate"
+        app:layout_constraintTop_toBottomOf="@+id/updateTransactionsType" />
+
+    <TextView
+        android:id="@+id/updateTransactionsDate"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@null"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:drawableLeft="@drawable/icon_calendar3"
+        android:drawablePadding="20sp"
+        android:ems="10"
+        android:hint="dd/mm/yy"
+        android:inputType="date"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/updateTransactionsType"
+        app:layout_constraintTop_toBottomOf="@+id/updateTransactionsType" />
+
+    <EditText
+        android:id="@+id/updateTransactionsCategory"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@null"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:drawableLeft="@drawable/icon_category1"
+        android:drawablePadding="20sp"
+        android:hint="Category"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/updateTransactionsDate"
+        app:layout_constraintTop_toBottomOf="@+id/updateTransactionsTime" />
+
+    <EditText
+        android:id="@+id/updateTransactionsAccount"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@null"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:drawableLeft="@drawable/icon_accounts1"
+        android:drawablePadding="20sp"
+        android:hint="Account"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/updateTransactionsSchedule"
+        app:layout_constraintTop_toBottomOf="@+id/updateTransactionsCategory" />
+
+    <EditText
+        android:id="@+id/updateTransactionsSchedule"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@null"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:drawableLeft="@drawable/icon_schedule1"
+        android:drawablePadding="20sp"
+        android:hint="Schedule"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/updateTransactionsNotes"
+        app:layout_constraintTop_toBottomOf="@+id/updateTransactionsAccount" />
+
+    <EditText
+        android:id="@+id/updateTransactionsNotes"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="40dp"
+        android:background="@null"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:drawableLeft="@drawable/icon_notes1"
+        android:drawablePadding="20sp"
+        android:ems="10"
+        android:hint="Notes"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/updateTransactionsSchedule" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/updateDB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="183dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="52dp"
+        android:backgroundTint="@color/green"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/deleteDB"
+        app:layout_constraintTop_toBottomOf="@+id/updateTransactionsNotes"
+        app:srcCompat="@drawable/icon_check2" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/deleteDB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="35dp"
+        android:backgroundTint="@color/red"
+        android:clickable="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/updateTransactionsNotes"
+        app:srcCompat="@drawable/icon_delete" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,15 +1,12 @@
 package com.example.financemanagementapp;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-import com.example.*;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.ContextMenu;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -17,10 +14,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.PopupMenu;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -45,8 +41,12 @@ public class TransactionsFragment extends Fragment implements PopupMenu.OnMenuIt
     //our database reference object
     DatabaseReference databaseTransactions;
 
+    //progress dialog
+    private ProgressDialog progressDialog;
+
     //view objects
     View view;
+    String id, type, amount, date, time, cateory, account, schedule, notes;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,6 +55,8 @@ public class TransactionsFragment extends Fragment implements PopupMenu.OnMenuIt
         view = inflater.inflate(R.layout.transactions_fragment, container, false);
 
         final FloatingActionButton addTransactions = (FloatingActionButton) view.findViewById(R.id.addTransactions);
+
+        progressDialog = new ProgressDialog(getActivity());
 
         setHasOptionsMenu(true);
 
@@ -69,19 +71,40 @@ public class TransactionsFragment extends Fragment implements PopupMenu.OnMenuIt
 
         listViewTransactions = (ListView) view.findViewById(R.id.transactionsListView);
 
-        //registerForContextMenu(addTransactions);
-
-/*
-        addTransactions.setOnClickListener(new View.OnClickListener() {
+        listViewTransactions.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
-                FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragment, new DashboardFragment());
-                fragmentTransaction.commit();
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                Transactions transaction = transactions.get(i);
+                id = transaction.getId();
+                amount = String.valueOf(transaction.getAmount());
+                date = transaction.getDate();
+                time = transaction.getTime();
+                date = transaction.getCategory();
+                date = transaction.getAccount();
+                date = transaction.getSchedule();
+                date = transaction.getNotes();
+
+                Toast.makeText(getContext(), amount + date + notes, Toast.LENGTH_SHORT).show();
+
+                //Snackbar.make(view, "Snackbar " + id, Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+
+                Intent updateTransactions = new Intent(getContext(), UpdateDeleteTransactionsActivity.class);
+                updateTransactions.putExtra("id", id);
+                updateTransactions.putExtra("amount", amount);
+                //updateTransactions.putExtra("type", transaction.getTransactionType());
+                updateTransactions.putExtra("date", date);
+                updateTransactions.putExtra("time", time);
+                updateTransactions.putExtra("category", cateory);
+                updateTransactions.putExtra("account", account);
+                updateTransactions.putExtra("schedule", schedule);
+                updateTransactions.putExtra("notes", notes);
+                startActivity(updateTransactions);
+
             }
         });
 
- */
+        //registerForContextMenu(addTransactions);
 
         return view;
 
@@ -110,7 +133,6 @@ public class TransactionsFragment extends Fragment implements PopupMenu.OnMenuIt
             case R.id.manualEntry:
                 Intent addTransactions = new Intent(getContext(), AddTransactionsActivity.class);
                 startActivity(addTransactions);
-                Toast.makeText(getContext(), "Manual Entry", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.receiptCapture:
                 Toast.makeText(getContext(), "Smart Receipt Capture", Toast.LENGTH_SHORT).show();
@@ -130,7 +152,6 @@ public class TransactionsFragment extends Fragment implements PopupMenu.OnMenuIt
             case R.id.manualEntry:
                 Intent addTransactions = new Intent(getContext(), AddTransactionsActivity.class);
                 startActivity(addTransactions);
-                Toast.makeText(getContext(), "Manual Entry", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.receiptCapture:
                 Toast.makeText(getContext(), "Smart Receipt Capture", Toast.LENGTH_SHORT).show();
@@ -146,6 +167,9 @@ public class TransactionsFragment extends Fragment implements PopupMenu.OnMenuIt
     @Override
     public void onStart() {
         super.onStart();
+
+        progressDialog.setMessage("Loading...");
+        progressDialog.show();
 
         //getting the reference of artists node
         databaseTransactions = FirebaseDatabase.getInstance().getReference("Transactions");
@@ -173,6 +197,9 @@ public class TransactionsFragment extends Fragment implements PopupMenu.OnMenuIt
                 TransactionsList transactionsAdapter = new TransactionsList(getActivity(), transactions);
                 //attaching adapter to the listview
                 listViewTransactions.setAdapter(transactionsAdapter);
+
+                progressDialog.dismiss();
+
             }
 
             @Override

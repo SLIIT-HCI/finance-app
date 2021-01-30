@@ -1,6 +1,7 @@
 package com.example.financemanagementapp;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,7 @@ public class TransactionsList extends ArrayAdapter<Transactions> {
 
     private Activity context;
     List<Transactions> transactionsList;
-    TextView amount;
+    TextView category, subCategory, type, amount;
 
     public TransactionsList(Activity context, List<Transactions> transactionsList) {
         super(context, R.layout.transactions_list, transactionsList);
@@ -27,11 +28,19 @@ public class TransactionsList extends ArrayAdapter<Transactions> {
         View listViewItem = inflater.inflate(R.layout.transactions_list, null, true);
 
         amount = (TextView) listViewItem.findViewById(R.id.amount);
+        //type = (TextView) listViewItem.findViewById(R.id.type);
         //TextView textViewGenre = (TextView) listViewItem.findViewById(R.id.textViewGenre);
 
         Transactions transactions = transactionsList.get(position);
-        amount.setText(transactions.getTransactionType());
-        //textViewGenre.setText(transactions.getArtistGenre());
+        amount.setText(String.valueOf(transactions.getAmount()));
+        //type.setText(transactions.getTransactionType());
+
+        if (transactions.getTransactionType().equals("Income")) {
+            amount.setTextColor(Color.parseColor("#0CA800"));
+        }
+        else {
+            amount.setTextColor(Color.parseColor("#EA0000"));
+        }
 
         return listViewItem;
     }
