@@ -33,8 +33,8 @@ import java.util.Locale;
 public class UpdateDeleteTransactionsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     ImageView updatecloseBtn;
-    EditText updateTransactionsAmount, updateTransactionsCategory, updateTransactionsAccount, updateTransactionsSchedule, updateTransactionsNotes;
-    TextView updateTransactionsDate, updateTransactionsTime;
+    EditText updateTransactionsAmount, updateTransactionsAccount, updateTransactionsSchedule, updateTransactionsNotes;
+    TextView updateTransactionsDate, updateTransactionsTime, updateTransactionsCategory;
     ImageView updateTransactionsCalculator;
     DatePickerDialog datepicker;
     Float amount;
@@ -53,7 +53,7 @@ public class UpdateDeleteTransactionsActivity extends AppCompatActivity implemen
         updateTransactionsAmount = (EditText) findViewById(R.id.updateTransactionsAmount);
         updateTransactionsDate = (TextView) findViewById(R.id.updateTransactionsDate);
         updateTransactionsTime = (TextView) findViewById(R.id.updateTransactionsTime);
-        updateTransactionsCategory = (EditText) findViewById(R.id.updateTransactionsCategory);
+        updateTransactionsCategory = (TextView) findViewById(R.id.updateTransactionsCategory);
         updateTransactionsAccount = (EditText) findViewById(R.id.updateTransactionsAccount);
         updateTransactionsSchedule = (EditText) findViewById(R.id.updateTransactionsSchedule);
         updateTransactionsNotes = (EditText) findViewById(R.id.updateTransactionsNotes);
@@ -62,9 +62,9 @@ public class UpdateDeleteTransactionsActivity extends AppCompatActivity implemen
         deleteDB = (FloatingActionButton) findViewById(R.id.deleteDB);
 
 
+        // Getting data to update
         Intent intent = getIntent();
         id = intent.getStringExtra("id");
-        updateTransactionsCategory.setText("cat 1");
         updateTransactionsAmount.setText(intent.getStringExtra("amount"));
         updateTransactionsDate.setText(intent.getStringExtra("date"));
         updateTransactionsTime.setText(intent.getStringExtra("time"));
@@ -145,6 +145,26 @@ public class UpdateDeleteTransactionsActivity extends AppCompatActivity implemen
             }
         });
 
+        /*******************************************************************************************************************/
+
+        updateTransactionsCategory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                displayCategories();
+                //intent.putExtra("getType", trType);
+                Intent intent2 = getIntent();
+                updateTransactionsAmount.setText(intent2.getStringExtra("getAmount"));
+                updateTransactionsDate.setText(intent2.getStringExtra("getDate"));
+                updateTransactionsTime.setText(intent2.getStringExtra("getTime"));
+                updateTransactionsCategory.setText(intent2.getStringExtra("getCategory"));
+                //addTransactionsAccount.setText(intent2.getStringExtra("getAccount"));
+                //addTransactionsSchedule.setText(intent2.getStringExtra("getSchedule"));
+                //addTransactionsNotes.setText(intent2.getStringExtra("getNotes"));
+            }
+        });
+
+        /*******************************************************************************************************************/
+
         updatecloseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -169,23 +189,6 @@ public class UpdateDeleteTransactionsActivity extends AppCompatActivity implemen
 
     }
 
-    public void displayDatePicker() {
-        final Calendar cldr = Calendar.getInstance();
-        int day = cldr.get(Calendar.DAY_OF_MONTH);
-        int month = cldr.get(Calendar.MONTH);
-        int year = cldr.get(Calendar.YEAR);
-
-        // date picker dialog
-        datepicker = new DatePickerDialog(UpdateDeleteTransactionsActivity.this,
-                new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                        updateTransactionsDate.setText(dayOfMonth + " / " + (monthOfYear + 1) + " / " + year);
-                    }
-                }, year, month, day);
-        datepicker.getDatePicker();
-        datepicker.show();
-    }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -249,6 +252,23 @@ public class UpdateDeleteTransactionsActivity extends AppCompatActivity implemen
         });
         AlertDialog alertDialog = dialog.create();
         alertDialog.show();
+    }
+
+    private void displayCategories() {
+
+        final String tType = transactionType;
+        Intent categories2 = new Intent(getApplicationContext(), Categories_Popup.class);
+        categories2.putExtra("getAmount", updateTransactionsAmount.getText().toString());
+        categories2.putExtra("getType", tType);
+        categories2.putExtra("getDate", updateTransactionsDate.getText().toString());
+        categories2.putExtra("getTime", updateTransactionsTime.getText().toString());
+        //categories2.putExtra("getCategory", addTransactionsCategory.getText().toString());
+        //categories2.putExtra("getAccount", addTransactionsAccount.getText().toString());
+        //categories2.putExtra("getSchedule", addTransactionsSchedule.getText().toString());
+        //categories2.putExtra("getNotes", addTransactionsNotes.getText().toString());
+        startActivity(categories2);
+        finish();
+
     }
 
 }

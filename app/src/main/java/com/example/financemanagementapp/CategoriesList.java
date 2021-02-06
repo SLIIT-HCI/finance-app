@@ -1,6 +1,7 @@
 package com.example.financemanagementapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CategoriesList extends ArrayAdapter<String> {
 
@@ -40,15 +42,18 @@ public class CategoriesList extends ArrayAdapter<String> {
         imageView.setImageResource(imgid[position]);
         subtitleText.setText(subtitle[position]);
         types.setText(type[position]);
-        //types.setVisibility(View.INVISIBLE);
+        types.setVisibility(View.INVISIBLE);
 
-        if (types.equals("Income")) {
+        String t = Categories_Popup.getValue();
+
+
+        if (t.equals("Income")) {
             titleText.setTextColor(Color.parseColor("#0CA800"));
         }
-        else if (types.equals("Expense")){
+        else if (t.equals("Expense")){
             titleText.setTextColor(Color.parseColor("#EA0000"));
         }
-        else if (type[0].equals("Asset")) {
+        else if (t.equals("Asset")) {
             titleText.setTextColor(Color.parseColor("#0059b3"));
         }
         else {

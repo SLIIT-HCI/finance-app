@@ -98,7 +98,7 @@
         app:layout_constraintStart_toStartOf="@+id/updateTransactionsType"
         app:layout_constraintTop_toBottomOf="@+id/updateTransactionsType" />
 
-    <EditText
+    <TextView
         android:id="@+id/updateTransactionsCategory"
         android:layout_width="250dp"
         android:layout_height="wrap_content"

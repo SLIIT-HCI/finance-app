@@ -2,30 +2,18 @@ package com.example.financemanagementapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.DisplayMetrics;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.PopupWindow;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -38,7 +26,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -50,10 +37,19 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
     ImageView closeBtn, addTransactionsCalculator;
     EditText addTransactionsAmount, addTransactionsAccount, addTransactionsSchedule, addTransactionsNotes;
     TextView addTransactionsDate, addTransactionsTime, addTransactionsCategory;
-    String type, transactionType;
+    public static String type, transactionType;
     int hour, minute;
     FloatingActionButton addToDB;
     Long maxId;
+    Spinner addTransactionsTypeSpinner;
+
+    //database
+    Float amount;
+    String date, time, category, account, schedule, notes;
+
+    public static String getValue() {
+        return type;
+    }
 
     //a list to store all the transactions from firebase database
     List<Transactions> transactionsList;
@@ -101,22 +97,21 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
 
         /*******************************************************************************************************************/
 
-        Intent intent = getIntent();
-        addTransactionsAmount.setText(intent.getStringExtra("num"));
-
         addTransactionsCalculator.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
                 Intent calculator = new Intent(getApplicationContext(), CalculatorActivity.class);
                 startActivity(calculator);
+                Intent intent = getIntent();
+                addTransactionsAmount.setText(intent.getStringExtra("num"));
             }
         });
 
         /*******************************************************************************************************************/
 
         // Spinner element
-        Spinner addTransactionsTypeSpinner = (Spinner) findViewById(R.id.addTransactionsType);
+        addTransactionsTypeSpinner = (Spinner) findViewById(R.id.addTransactionsType);
         // Spinner click listener
         addTransactionsTypeSpinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
         // Spinner Drop down elements
@@ -183,8 +178,15 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
 
         /*******************************************************************************************************************/
 
+        //intent.putExtra("getType", trType);
         Intent intent2 = getIntent();
-        addTransactionsCategory.setText(intent.getStringExtra("cat"));
+        addTransactionsAmount.setText(intent2.getStringExtra("getAmount"));
+        addTransactionsDate.setText(intent2.getStringExtra("getDate"));
+        addTransactionsTime.setText(intent2.getStringExtra("getTime"));
+        addTransactionsCategory.setText(intent2.getStringExtra("getCategory"));
+        addTransactionsAccount.setText(intent2.getStringExtra("getAccount"));
+        addTransactionsSchedule.setText(intent2.getStringExtra("getSchedule"));
+        addTransactionsNotes.setText(intent2.getStringExtra("getNotes"));
 
         addTransactionsCategory.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -229,9 +231,6 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
                 transactionType = parent.getItemAtPosition(position).toString();
                 break;
         }
-        //Intent type = new Intent(getApplicationContext(), Categories_Popup.class);
-        //type.putExtra("type", transactionType);
-        //startActivity(type);
     }
 
     @Override
@@ -247,14 +246,14 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
      * */
     private void addTransaction() {
         //getting the  values to save
-        Float amount = (Float.parseFloat(addTransactionsAmount.getText().toString().trim()));
+        amount = (Float.parseFloat(addTransactionsAmount.getText().toString().trim()));
         type = transactionType.toString().trim();
-        String date = addTransactionsDate.getText().toString().trim();
-        String time = addTransactionsTime.getText().toString().trim();
-        String category = addTransactionsCategory.getText().toString().trim();
-        String account = addTransactionsAccount.getText().toString().trim();
-        String schedule = addTransactionsSchedule.getText().toString().trim();
-        String notes = addTransactionsNotes.getText().toString().trim();
+        date = addTransactionsDate.getText().toString().trim();
+        time = addTransactionsTime.getText().toString().trim();
+        category = addTransactionsCategory.getText().toString().trim();
+        account = addTransactionsAccount.getText().toString().trim();
+        schedule = addTransactionsSchedule.getText().toString().trim();
+        notes = addTransactionsNotes.getText().toString().trim();
 
         //checking if the value is provided
         if (!TextUtils.isEmpty(type)) {
@@ -282,8 +281,17 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
 
     private void displayCategories() {
 
-        Intent categories = new Intent(getApplicationContext(), Categories_Popup.class);
-        startActivity(categories);
+        final String tType = transactionType;
+        Intent categories2 = new Intent(getApplicationContext(), Categories_Popup.class);
+        categories2.putExtra("getAmount", addTransactionsAmount.getText().toString());
+        categories2.putExtra("getType", tType);
+        categories2.putExtra("getDate", addTransactionsDate.getText().toString());
+        categories2.putExtra("getTime", addTransactionsTime.getText().toString());
+        categories2.putExtra("getCategory", addTransactionsCategory.getText().toString());
+        categories2.putExtra("getAccount", addTransactionsAccount.getText().toString());
+        categories2.putExtra("getSchedule", addTransactionsSchedule.getText().toString());
+        categories2.putExtra("getNotes", addTransactionsNotes.getText().toString());
+        startActivity(categories2);
         finish();
 
     }

@@ -28,12 +28,14 @@ public class TransactionsList extends ArrayAdapter<Transactions> {
         View listViewItem = inflater.inflate(R.layout.transactions_list, null, true);
 
         amount = (TextView) listViewItem.findViewById(R.id.amount);
+        category = (TextView) listViewItem.findViewById(R.id.category);
+        subCategory = (TextView) listViewItem.findViewById(R.id.subCategory);
         //type = (TextView) listViewItem.findViewById(R.id.type);
-        //TextView textViewGenre = (TextView) listViewItem.findViewById(R.id.textViewGenre);
 
         Transactions transactions = transactionsList.get(position);
         amount.setText(String.valueOf(transactions.getAmount()));
-        //type.setText(transactions.getTransactionType());
+        category.setText(transactions.getCategory());
+        subCategory.setText(transactions.getDate());
 
         if (transactions.getTransactionType().equals("Income")) {
             amount.setTextColor(Color.parseColor("#0CA800"));

@@ -234,7 +234,6 @@ public class CalculatorActivity extends AppCompatActivity {
         buttonok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //CalculatorActivity.data = calcAns.getText().toString();
                 Intent intent = new Intent(getApplicationContext(), AddTransactionsActivity.class);
                 intent.putExtra("num", calcAns.getText().toString());
                 startActivity(intent);

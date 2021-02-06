@@ -50,7 +50,6 @@ public class TransactionsFragment extends Fragment implements PopupMenu.OnMenuIt
 
     //view objects
     View view;
-    String id, type, amount, date, time, cateory, account, schedule, notes;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -79,29 +78,17 @@ public class TransactionsFragment extends Fragment implements PopupMenu.OnMenuIt
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 Transactions transaction = transactions.get(i);
-                id = transaction.getId();
-                amount = String.valueOf(transaction.getAmount());
-                date = transaction.getDate();
-                time = transaction.getTime();
-                date = transaction.getCategory();
-                date = transaction.getAccount();
-                date = transaction.getSchedule();
-                date = transaction.getNotes();
-
-                Toast.makeText(getContext(), amount + date + notes, Toast.LENGTH_SHORT).show();
-
                 //Snackbar.make(view, "Snackbar " + id, Snackbar.LENGTH_SHORT).setAction("Action", null).show();
-
                 Intent updateTransactions = new Intent(getContext(), UpdateDeleteTransactionsActivity.class);
-                updateTransactions.putExtra("id", id);
-                updateTransactions.putExtra("amount", amount);
-                //updateTransactions.putExtra("type", transaction.getTransactionType());
-                updateTransactions.putExtra("date", date);
-                updateTransactions.putExtra("time", time);
-                updateTransactions.putExtra("category", cateory);
-                updateTransactions.putExtra("account", account);
-                updateTransactions.putExtra("schedule", schedule);
-                updateTransactions.putExtra("notes", notes);
+                updateTransactions.putExtra("id", transaction.getId());
+                updateTransactions.putExtra("amount", String.valueOf(transaction.getAmount()));
+                updateTransactions.putExtra("type", transaction.getTransactionType());
+                updateTransactions.putExtra("date", transaction.getDate());
+                updateTransactions.putExtra("time", transaction.getTime());
+                updateTransactions.putExtra("category", transaction.getCategory());
+                updateTransactions.putExtra("account", transaction.getAccount());
+                updateTransactions.putExtra("schedule", transaction.getSchedule());
+                updateTransactions.putExtra("notes", transaction.getNotes());
                 startActivity(updateTransactions);
 
             }

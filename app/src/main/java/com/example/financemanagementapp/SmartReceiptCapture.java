@@ -14,6 +14,7 @@ import android.util.SparseArray;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.vision.Frame;
 import com.google.android.gms.vision.text.TextBlock;
@@ -37,6 +38,7 @@ public class SmartReceiptCapture extends AppCompatActivity {
             //grant the permission
             requestPermissions(new String[]{Manifest.permission.CAMERA}, 101);
         }
+
     }
 
     public void doProcess(View view) {
