@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -26,6 +28,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,13 +62,12 @@ public class TransactionsFragment extends Fragment implements PopupMenu.OnMenuIt
 
         progressDialog = new ProgressDialog(getActivity());
 
-        setHasOptionsMenu(true);
+        //setHasOptionsMenu(true);
 
         addTransactions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showPopup(addTransactions);
-                //registerForContextMenu(addTransactions);
                 //Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
             }
         });
@@ -104,8 +107,6 @@ public class TransactionsFragment extends Fragment implements PopupMenu.OnMenuIt
             }
         });
 
-        //registerForContextMenu(addTransactions);
-
         return view;
 
     }
@@ -121,6 +122,7 @@ public class TransactionsFragment extends Fragment implements PopupMenu.OnMenuIt
     }
 
 
+    /*
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         inflater.inflate(R.menu.contextmenu, menu);
@@ -144,6 +146,7 @@ public class TransactionsFragment extends Fragment implements PopupMenu.OnMenuIt
                 return super.onContextItemSelected(item);
         }
     }
+    */
 
 
     @Override
@@ -154,10 +157,12 @@ public class TransactionsFragment extends Fragment implements PopupMenu.OnMenuIt
                 startActivity(addTransactions);
                 return true;
             case R.id.receiptCapture:
-                Toast.makeText(getContext(), "Smart Receipt Capture", Toast.LENGTH_SHORT).show();
+                Intent captureReceipt = new Intent(getContext(), SmartReceiptCapture.class);
+                startActivity(captureReceipt);
                 return true;
             case R.id.importFromGallery:
-                Toast.makeText(getContext(), "Import Receipt from Gallery", Toast.LENGTH_SHORT).show();
+                Intent importReceipt = new Intent(getContext(), TextRecognitionActivity.class);
+                startActivity(importReceipt);
                 return true;
             default:
                 return false;
@@ -208,41 +213,6 @@ public class TransactionsFragment extends Fragment implements PopupMenu.OnMenuIt
             }
         });
     }
-
-    /*
-    @Override
-    public void onCreateContextMenu(@NonNull ContextMenu menu, @NonNull View v, @Nullable ContextMenu.ContextMenuInfo menuInfo) {
-        super.onCreateContextMenu(menu, v, menuInfo);
-        menu.setHeaderTitle("Choose your option");
-        menu.add(0, v.getId(), 0, "Upload");
-        menu.add(0, v.getId(), 0, "Search");
-        menu.add(0, v.getId(), 0, "Share");
-        menu.add(0, v.getId(), 0, "Bookmark");
-
-        //MenuInflater inflater = getMenuInflater();
-        //inflater.inflate(R.menu.contextmenu, menu);
-
-
-    }
-
-    @Override
-    public boolean onContextItemSelected(@NonNull MenuItem item) {
-            switch(item.getItemId()) {
-                case R.id.manualEntry:
-                    Toast.makeText(getContext(), "Manual Entry", Toast.LENGTH_SHORT).show();
-                    return true;
-                case R.id.receiptCapture:
-                    Toast.makeText(getContext(), "Smart Receipt Capture", Toast.LENGTH_SHORT).show();
-                    return true;
-                case R.id.importFromGallery:
-                    Toast.makeText(getContext(), "Import Receipt from Gallery", Toast.LENGTH_SHORT).show();
-                    return true;
-                default:
-                    return super.onContextItemSelected(item);
-            }
-    }
-     */
-
 
 }
 

@@ -21,6 +21,10 @@ public class MainDashboardFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_main_dashboard, container, false);
 
+        //FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
+        //fragmentTransaction.replace(R.id.fragment, new DashboardFragment());
+        //fragmentTransaction.commit();
+
         Button dashboard = (Button)view.findViewById(R.id.dashboard);
         dashboard.setOnClickListener(new View.OnClickListener() {
             @Override
