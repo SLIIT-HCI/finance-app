@@ -13,6 +13,7 @@ import android.widget.EditText;
 
 public class CalculatorActivity extends AppCompatActivity {
 
+
     Button button0, button1, button2, button3, button4, button5, button6,
             button7, button8, button9, buttonAdd, buttonSub, buttonDivision,
             buttonMul, button10, buttonC, buttonEqual, buttonok;
@@ -22,29 +23,40 @@ public class CalculatorActivity extends AppCompatActivity {
 
     boolean addition, subtraction, multiplication, division;
 
-    String finalAns;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator);
 
+        WindowManager.LayoutParams params = getWindow().getAttributes();
+        params.x = -20;
+        params.height = 1400;
+        params.width = 900;
+        params.y = -20;
 
+        this.getWindow().setAttributes(params);
+
+        // add flag
+        params.flags |= WindowManager.LayoutParams.FLAG_DIM_BEHIND;
+        params.dimAmount = 5.9f;
+
+        //layout_MainMenu.getForeground().setAlpha( 220); // dim
+
+/*
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
 
         int width = displayMetrics.widthPixels;
         int height = displayMetrics.heightPixels;
 
-        getWindow().setLayout((int)(width*.9), (int)(height*.6));
+        getWindow().setLayout((int)(width*.8), (int)(height*.6));
 
         WindowManager.LayoutParams params = getWindow().getAttributes();
         params.gravity = Gravity.CENTER;
-        params.x = 0;
-        params.y = -20;
+        params.x = 10;
+        params.y = 20;
         getWindow().setAttributes(params);
-
+*/
 
         button0 = (Button) findViewById(R.id.button0);
         button1 = (Button) findViewById(R.id.button1);
@@ -180,6 +192,7 @@ public class CalculatorActivity extends AppCompatActivity {
         buttonEqual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 mValueTwo = Float.parseFloat(calcAns.getText() + "");
 
                 if (addition == true) {
@@ -221,11 +234,14 @@ public class CalculatorActivity extends AppCompatActivity {
         buttonok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //CalculatorActivity.data = calcAns.getText().toString();
                 Intent intent = new Intent(getApplicationContext(), AddTransactionsActivity.class);
                 intent.putExtra("num", calcAns.getText().toString());
                 startActivity(intent);
+                finish();
             }
         });
 
     }
+
 }

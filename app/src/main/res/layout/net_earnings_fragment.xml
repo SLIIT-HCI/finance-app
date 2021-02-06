@@ -5,15 +5,6 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".NetEarningsFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#FFD47E"
-        android:paddingTop="300dp"
-        android:text="Net Earnings Fragment"
-        android:textAlignment="center"
-        android:textColor="@android:color/black"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+
 
 </FrameLayout>

@@ -12,7 +12,10 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,8 +23,11 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.PopupWindow;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -41,18 +47,13 @@ import java.util.Locale;
 
 public class AddTransactionsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
-    ImageView closeBtn;
-    EditText addTransactionsAmount, addTransactionsDate, addTransactionsTime, addTransactionsCategory, addTransactionsAccount, addTransactionsSchedule, addTransactionsNotes;
-    DatePickerDialog datepicker;
-    TimePicker timepicker;
-    ImageView addTransactionsCalculator;
-    String transactionType;
+    ImageView closeBtn, addTransactionsCalculator;
+    EditText addTransactionsAmount, addTransactionsAccount, addTransactionsSchedule, addTransactionsNotes;
+    TextView addTransactionsDate, addTransactionsTime, addTransactionsCategory;
+    String type, transactionType;
     int hour, minute;
     FloatingActionButton addToDB;
     Long maxId;
-    private Fragment transactionsFragment;
-
-    ListView listViewArtists;
 
     //a list to store all the transactions from firebase database
     List<Transactions> transactionsList;
@@ -64,6 +65,7 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_transactions);
+
 
         // getting the reference of bookings node
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Transactions");
@@ -82,20 +84,22 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
             }
         });
 
+        /*******************************************************************************************************************/
 
         final Calendar myCalendar = Calendar.getInstance();
 
         closeBtn = (ImageView) findViewById(R.id.closeBtn);
         addTransactionsAmount = (EditText) findViewById(R.id.addTransactionsAmount);
-        addTransactionsDate = (EditText) findViewById(R.id.addTransactionsDate);
-        addTransactionsTime = (EditText) findViewById(R.id.addTransactionsTime);
-        addTransactionsCategory = (EditText) findViewById(R.id.addTransactionsCategory);
+        addTransactionsDate = (TextView) findViewById(R.id.addTransactionsDate);
+        addTransactionsTime = (TextView) findViewById(R.id.addTransactionsTime);
+        addTransactionsCategory = (TextView) findViewById(R.id.addTransactionsCategory);
         addTransactionsAccount = (EditText) findViewById(R.id.addTransactionsAccount);
         addTransactionsSchedule = (EditText) findViewById(R.id.addTransactionsSchedule);
         addTransactionsNotes = (EditText) findViewById(R.id.addTransactionsNotes);
         addTransactionsCalculator = (ImageView) findViewById(R.id.addTransactionsCalculator);
         addToDB = (FloatingActionButton) findViewById(R.id.addToDB);
 
+        /*******************************************************************************************************************/
 
         Intent intent = getIntent();
         addTransactionsAmount.setText(intent.getStringExtra("num"));
@@ -103,10 +107,13 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
         addTransactionsCalculator.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                finish();
                 Intent calculator = new Intent(getApplicationContext(), CalculatorActivity.class);
                 startActivity(calculator);
             }
         });
+
+        /*******************************************************************************************************************/
 
         // Spinner element
         Spinner addTransactionsTypeSpinner = (Spinner) findViewById(R.id.addTransactionsType);
@@ -127,18 +134,7 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
         // attaching data adapter to spinner
         addTransactionsTypeSpinner.setAdapter(dataAdapterType);
 
-
-        /*
-        addTransactionsDate.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                displayDatePicker();
-            }
-
-        });
-
-         */
+        /*******************************************************************************************************************/
 
         final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
 
@@ -165,6 +161,8 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
             }
         });
 
+        /*******************************************************************************************************************/
+
         addTransactionsTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -183,6 +181,20 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
             }
         });
 
+        /*******************************************************************************************************************/
+
+        Intent intent2 = getIntent();
+        addTransactionsCategory.setText(intent.getStringExtra("cat"));
+
+        addTransactionsCategory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                displayCategories();
+            }
+        });
+
+        /*******************************************************************************************************************/
+
         closeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -190,6 +202,7 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
             }
         });
 
+        /*******************************************************************************************************************/
 
         //list to store artists
         transactionsList = new ArrayList<>();
@@ -206,24 +219,7 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
 
     }
 
-    public void displayDatePicker() {
-            final Calendar cldr = Calendar.getInstance();
-            int day = cldr.get(Calendar.DAY_OF_MONTH);
-            int month = cldr.get(Calendar.MONTH);
-            int year = cldr.get(Calendar.YEAR);
-
-            // date picker dialog
-            datepicker = new DatePickerDialog(AddTransactionsActivity.this,
-                    new DatePickerDialog.OnDateSetListener() {
-                        @Override
-                        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                            addTransactionsDate.setText(dayOfMonth + " / " + (monthOfYear + 1) + " / " + year);
-                        }
-                    }, year, month, day);
-            datepicker.getDatePicker();
-            datepicker.show();
-    }
-
+    /*******************************************************************************************************************/
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -233,12 +229,17 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
                 transactionType = parent.getItemAtPosition(position).toString();
                 break;
         }
+        //Intent type = new Intent(getApplicationContext(), Categories_Popup.class);
+        //type.putExtra("type", transactionType);
+        //startActivity(type);
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> arg0) {
 
     }
+
+    /*******************************************************************************************************************/
 
     /*
      * This method is saving a new transaction to the
@@ -247,7 +248,7 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
     private void addTransaction() {
         //getting the  values to save
         Float amount = (Float.parseFloat(addTransactionsAmount.getText().toString().trim()));
-        String type = transactionType.toString().trim();
+        type = transactionType.toString().trim();
         String date = addTransactionsDate.getText().toString().trim();
         String time = addTransactionsTime.getText().toString().trim();
         String category = addTransactionsCategory.getText().toString().trim();
@@ -279,5 +280,12 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
         }
     }
 
+    private void displayCategories() {
+
+        Intent categories = new Intent(getApplicationContext(), Categories_Popup.class);
+        startActivity(categories);
+        finish();
+
+    }
 
 }

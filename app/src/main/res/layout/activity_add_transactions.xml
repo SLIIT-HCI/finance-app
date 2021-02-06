@@ -113,7 +113,7 @@
         app:layout_constraintStart_toStartOf="@+id/addTransactionsSchedule"
         app:layout_constraintTop_toBottomOf="@+id/addTransactionsCategory" />
 
-    <EditText
+    <TextView
         android:id="@+id/addTransactionsCategory"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
@@ -128,13 +128,14 @@
         app:layout_constraintStart_toStartOf="@+id/addTransactionsDate"
         app:layout_constraintTop_toBottomOf="@+id/addTransactionsTime" />
 
-    <EditText
+    <TextView
         android:id="@+id/addTransactionsTime"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="40dp"
         android:background="@null"
+        android:textSize="18sp"
         android:backgroundTint="@color/cardview_dark_background"
         android:drawableLeft="@drawable/icon_time2"
         android:drawablePadding="20sp"
@@ -144,7 +145,7 @@
         app:layout_constraintStart_toEndOf="@+id/addTransactionsDate"
         app:layout_constraintTop_toBottomOf="@+id/addTransactionsType" />
 
-    <EditText
+    <TextView
         android:id="@+id/addTransactionsDate"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
@@ -153,6 +154,7 @@
         android:backgroundTint="@color/cardview_dark_background"
         android:drawableLeft="@drawable/icon_calendar3"
         android:drawablePadding="20sp"
+        android:textSize="18sp"
         android:ems="10"
         android:hint="dd/mm/yy"
         android:inputType="date"
