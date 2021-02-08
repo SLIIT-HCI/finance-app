@@ -28,19 +28,19 @@ public class CalculatorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator);
 
+
         WindowManager.LayoutParams params = getWindow().getAttributes();
-        params.x = -20;
-        params.height = 1400;
-        params.width = 900;
-        params.y = -20;
+        params.x = 0;
+        params.height = 1300;
+        params.width = 800;
+        params.y = 0;
 
         this.getWindow().setAttributes(params);
 
         // add flag
         params.flags |= WindowManager.LayoutParams.FLAG_DIM_BEHIND;
-        params.dimAmount = 5.9f;
+        params.dimAmount = 1.9f;
 
-        //layout_MainMenu.getForeground().setAlpha( 220); // dim
 
 /*
         DisplayMetrics displayMetrics = new DisplayMetrics();

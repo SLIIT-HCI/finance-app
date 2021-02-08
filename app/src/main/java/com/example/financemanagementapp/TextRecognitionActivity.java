@@ -13,10 +13,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.vision.Frame;
 import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class TextRecognitionActivity extends AppCompatActivity {
 
@@ -86,6 +90,27 @@ public class TextRecognitionActivity extends AppCompatActivity {
             stringBuilder.append(str);
         }
         diplayDetectedText.setText(stringBuilder);
+
+        StringBuilder extractedText = stringBuilder;
+
+        String date = " ";
+        String regex1 = "(\\d{1,2}/\\d{1,2}/\\d{4}|\\d{1,2}.\\d{1,2}.\\d{4}|\\d{1,2}-\\d{1,2}-\\d{4}|\\d{1,2}/\\d{1,2})";
+        Pattern p = Pattern.compile(regex1, Pattern.CASE_INSENSITIVE);
+        Matcher matcher1 = p.matcher(extractedText);
+        while (matcher1.find()) {
+            date = matcher1.group();
+        }
+        Toast.makeText(getApplicationContext(), date,  Toast.LENGTH_SHORT).show();
+
+        String time = " ";
+        String regex2 = "([\\d]{1,2}:[\\d]{1,2}|[\\d]{1,2}:[\\d]{1,2} [aApP][mM])";
+        Pattern p2 = Pattern.compile(regex2, Pattern.CASE_INSENSITIVE);
+        Matcher matcher2 = p2.matcher(extractedText);
+        while (matcher2.find()) {
+            time = matcher2.group();
+        }
+        Toast.makeText(getApplicationContext(), time,  Toast.LENGTH_SHORT).show();
+
     }
 
 

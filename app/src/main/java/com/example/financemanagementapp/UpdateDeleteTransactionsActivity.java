@@ -36,13 +36,13 @@ public class UpdateDeleteTransactionsActivity extends AppCompatActivity implemen
     EditText updateTransactionsAmount, updateTransactionsAccount, updateTransactionsSchedule, updateTransactionsNotes;
     TextView updateTransactionsDate, updateTransactionsTime, updateTransactionsCategory;
     ImageView updateTransactionsCalculator;
-    DatePickerDialog datepicker;
     Float amount;
     String type, time, category, account, schedule, notes;
     String transactionType;
     FloatingActionButton updateDB, deleteDB;
     int hour, minute;
     String id;
+    Spinner updateTransactionsTypeSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +61,7 @@ public class UpdateDeleteTransactionsActivity extends AppCompatActivity implemen
         updateDB = (FloatingActionButton) findViewById(R.id.updateDB);
         deleteDB = (FloatingActionButton) findViewById(R.id.deleteDB);
 
+        /*******************************************************************************************************************/
 
         // Getting data to update
         Intent intent = getIntent();
@@ -72,10 +73,24 @@ public class UpdateDeleteTransactionsActivity extends AppCompatActivity implemen
         updateTransactionsAccount.setText(intent.getStringExtra("account"));
         updateTransactionsSchedule.setText(intent.getStringExtra("schedule"));
         updateTransactionsNotes.setText(intent.getStringExtra("notes"));
+        /*
+        String spinnerSelect = intent.getStringExtra("type");
+        if ( spinnerSelect.equals("Income"))
+            updateTransactionsTypeSpinner.setSelection(0);
+        else if ( spinnerSelect.equals("Expense"))
+            updateTransactionsTypeSpinner.setSelection(1);
+        else if ( spinnerSelect.equals("Asset"))
+            updateTransactionsTypeSpinner.setSelection(2);
+        else if ( spinnerSelect.equals("Liability"))
+            updateTransactionsTypeSpinner.setSelection(3);
 
+         */
+
+
+        /*******************************************************************************************************************/
 
         // Spinner element
-        final Spinner updateTransactionsTypeSpinner = (Spinner) findViewById(R.id.updateTransactionsType);
+        updateTransactionsTypeSpinner = (Spinner) findViewById(R.id.updateTransactionsType);
         // Spinner click listener
         updateTransactionsTypeSpinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
         // Spinner Drop down elements
@@ -84,8 +99,6 @@ public class UpdateDeleteTransactionsActivity extends AppCompatActivity implemen
         transactionsType.add("Expense");
         transactionsType.add("Asset");
         transactionsType.add("Liability");
-        transactionsType.add("Payable");
-        transactionsType.add("Receivable");
         // Creating adapter for spinner
         ArrayAdapter<String> dataAdapterType = new ArrayAdapter<String>(this, R.layout.spinner_item, transactionsType);
         // Drop down layout style - list view with radio button
@@ -109,6 +122,8 @@ public class UpdateDeleteTransactionsActivity extends AppCompatActivity implemen
 
         };
 
+        /*******************************************************************************************************************/
+
         updateTransactionsDate.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -118,6 +133,8 @@ public class UpdateDeleteTransactionsActivity extends AppCompatActivity implemen
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
+
+        /*******************************************************************************************************************/
 
         updateTransactionsTime.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -137,6 +154,8 @@ public class UpdateDeleteTransactionsActivity extends AppCompatActivity implemen
             }
         });
 
+        /*******************************************************************************************************************/
+
         updateTransactionsCalculator.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -151,15 +170,17 @@ public class UpdateDeleteTransactionsActivity extends AppCompatActivity implemen
             @Override
             public void onClick(View view) {
                 displayCategories();
-                //intent.putExtra("getType", trType);
+
                 Intent intent2 = getIntent();
-                updateTransactionsAmount.setText(intent2.getStringExtra("getAmount"));
-                updateTransactionsDate.setText(intent2.getStringExtra("getDate"));
-                updateTransactionsTime.setText(intent2.getStringExtra("getTime"));
-                updateTransactionsCategory.setText(intent2.getStringExtra("getCategory"));
-                //addTransactionsAccount.setText(intent2.getStringExtra("getAccount"));
-                //addTransactionsSchedule.setText(intent2.getStringExtra("getSchedule"));
-                //addTransactionsNotes.setText(intent2.getStringExtra("getNotes"));
+                id = intent2.getStringExtra("getIDs2");
+                updateTransactionsAmount.setText(intent2.getStringExtra("getAmount2"));
+                updateTransactionsDate.setText(intent2.getStringExtra("getDate2"));
+                updateTransactionsTime.setText(intent2.getStringExtra("getTime2"));
+                updateTransactionsCategory.setText(intent2.getStringExtra("getCategory2"));
+                updateTransactionsAccount.setText(intent2.getStringExtra("getAccount2"));
+                updateTransactionsSchedule.setText(intent2.getStringExtra("getSchedule2"));
+                updateTransactionsNotes.setText(intent2.getStringExtra("getNotes2"));
+
             }
         });
 
@@ -172,12 +193,16 @@ public class UpdateDeleteTransactionsActivity extends AppCompatActivity implemen
             }
         });
 
+        /*******************************************************************************************************************/
+
         updateDB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 updateTransaction(id);
             }
         });
+
+        /*******************************************************************************************************************/
 
         deleteDB.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -189,6 +214,7 @@ public class UpdateDeleteTransactionsActivity extends AppCompatActivity implemen
 
     }
 
+    /*******************************************************************************************************************/
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -200,11 +226,14 @@ public class UpdateDeleteTransactionsActivity extends AppCompatActivity implemen
         }
     }
 
+    /*******************************************************************************************************************/
+
     @Override
     public void onNothingSelected(AdapterView<?> arg0) {
 
     }
 
+    /*******************************************************************************************************************/
 
     private void updateTransaction(String id) {
         //getting the specified artist reference
@@ -229,6 +258,7 @@ public class UpdateDeleteTransactionsActivity extends AppCompatActivity implemen
 
     }
 
+    /*******************************************************************************************************************/
 
     private void alertDialog() {
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
@@ -254,18 +284,21 @@ public class UpdateDeleteTransactionsActivity extends AppCompatActivity implemen
         alertDialog.show();
     }
 
+    /*******************************************************************************************************************/
+
     private void displayCategories() {
 
         final String tType = transactionType;
         Intent categories2 = new Intent(getApplicationContext(), Categories_Popup.class);
+        categories2.putExtra("getFunction", "update");
+        categories2.putExtra("getID", id);
         categories2.putExtra("getAmount", updateTransactionsAmount.getText().toString());
         categories2.putExtra("getType", tType);
         categories2.putExtra("getDate", updateTransactionsDate.getText().toString());
         categories2.putExtra("getTime", updateTransactionsTime.getText().toString());
-        //categories2.putExtra("getCategory", addTransactionsCategory.getText().toString());
-        //categories2.putExtra("getAccount", addTransactionsAccount.getText().toString());
-        //categories2.putExtra("getSchedule", addTransactionsSchedule.getText().toString());
-        //categories2.putExtra("getNotes", addTransactionsNotes.getText().toString());
+        categories2.putExtra("getAccount", updateTransactionsAccount.getText().toString());
+        categories2.putExtra("getSchedule", updateTransactionsSchedule.getText().toString());
+        categories2.putExtra("getNotes", updateTransactionsNotes.getText().toString());
         startActivity(categories2);
         finish();
 

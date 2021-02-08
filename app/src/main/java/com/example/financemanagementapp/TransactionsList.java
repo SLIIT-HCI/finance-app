@@ -40,8 +40,14 @@ public class TransactionsList extends ArrayAdapter<Transactions> {
         if (transactions.getTransactionType().equals("Income")) {
             amount.setTextColor(Color.parseColor("#0CA800"));
         }
-        else {
+        else if (transactions.getTransactionType().equals("Expense")){
             amount.setTextColor(Color.parseColor("#EA0000"));
+        }
+        else if (transactions.getTransactionType().equals("Asset")){
+            amount.setTextColor(Color.parseColor("#0059b3"));
+        }
+        else if (transactions.getTransactionType().equals("Liability")){
+            amount.setTextColor(Color.parseColor("#FF6600"));
         }
 
         return listViewItem;

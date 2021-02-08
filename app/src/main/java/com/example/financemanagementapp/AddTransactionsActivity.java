@@ -120,8 +120,6 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
         transactionsType.add("Expense");
         transactionsType.add("Asset");
         transactionsType.add("Liability");
-        transactionsType.add("Payable");
-        transactionsType.add("Receivable");
         // Creating adapter for spinner
         ArrayAdapter<String> dataAdapterType = new ArrayAdapter<String>(this, R.layout.spinner_item, transactionsType);
         // Drop down layout style - list view with radio button
@@ -183,6 +181,20 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
         addTransactionsAmount.setText(intent2.getStringExtra("getAmount"));
         addTransactionsDate.setText(intent2.getStringExtra("getDate"));
         addTransactionsTime.setText(intent2.getStringExtra("getTime"));
+
+        /*
+        String spinnerSelect = intent2.getStringExtra("getType");
+        if ( spinnerSelect.equals("Income"))
+            addTransactionsTypeSpinner.setSelection(0);
+        else if ( spinnerSelect.equals("Expense"))
+            addTransactionsTypeSpinner.setSelection(1);
+        else if ( spinnerSelect.equals("Asset"))
+            addTransactionsTypeSpinner.setSelection(2);
+        else if ( spinnerSelect.equals("Liability"))
+            addTransactionsTypeSpinner.setSelection(3);
+
+         */
+
         addTransactionsCategory.setText(intent2.getStringExtra("getCategory"));
         addTransactionsAccount.setText(intent2.getStringExtra("getAccount"));
         addTransactionsSchedule.setText(intent2.getStringExtra("getSchedule"));

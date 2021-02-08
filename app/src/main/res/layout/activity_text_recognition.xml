@@ -8,9 +8,9 @@
 
     <ImageView
         android:id="@+id/receipt"
-        android:layout_width="340dp"
-        android:layout_height="335dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="331dp"
+        android:layout_height="485dp"
+        android:layout_marginTop="50dp"
         android:background="@android:color/darker_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -53,9 +53,9 @@
 
     <TextView
         android:id="@+id/diplayDetectedText"
-        android:layout_width="340dp"
-        android:layout_height="260dp"
-        android:layout_marginTop="9dp"
+        android:layout_width="327dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

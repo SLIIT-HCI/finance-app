@@ -27,13 +27,17 @@ public class Categories_Popup extends AppCompatActivity {
 
     //database
     String trType;
-    String amount, date, time, account, schedule, notes;
+    String ids, amount, date, time, account, schedule, notes, function;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categories__popup);
 
+        function = getIntent().getStringExtra("getFunction");
+        ids = getIntent().getStringExtra("getID");
+        //Toast.makeText(getApplicationContext(), function+"toast", Toast.LENGTH_SHORT).show();
         amount = getIntent().getStringExtra("getAmount");
         trType = getIntent().getStringExtra("getType");
         date = getIntent().getStringExtra("getDate");
@@ -45,12 +49,12 @@ public class Categories_Popup extends AppCompatActivity {
 
 
         if (trType.equals("Asset")) {
-            subtitle = new String[]{
+            maintitle = new String[]{
                     "Cash", "Investments", "Savings", "Receivables", "Other",
             };
 
-            maintitle = new String[]{
-                    "Sub Title 1", "Sub Title 2", "Sub Title 3", "Sub Title 4", "Sub Title 5",
+            subtitle = new String[]{
+                    "Asset", "Asset", "Asset", "Asset", "Asset",
             };
 
             type = new String[]{
@@ -58,19 +62,19 @@ public class Categories_Popup extends AppCompatActivity {
             };
 
             imgid= new Integer[]{
-                    R.drawable.icon_account, R.drawable.icon_alarm, R.drawable.icon_alarm, R.drawable.icon_alarm, R.drawable.icon_alarm,
+                    R.drawable.icon_cash, R.drawable.icon_investments, R.drawable.icon_savings, R.drawable.icon_receivables, R.drawable.icon_other,
             };
 
         }
 
         else if (trType.equals("Liability")){
 
-            subtitle = new String[]{
-                    "Credit Card", "Loans", "Mortgages", "Payables", "Other",
+            maintitle = new String[]{
+                    "Credit Card", "Loans", "Lease", "Payables", "Other",
             };
 
-            maintitle = new String[]{
-                    "Sub Title 1", "Sub Title 2", "Sub Title 3", "Sub Title 4", "Sub Title 5",
+            subtitle = new String[]{
+                    "Liability", "Liability", "Liability", "Liability", "Liability",
             };
 
             type = new String[]{
@@ -78,18 +82,18 @@ public class Categories_Popup extends AppCompatActivity {
             };
 
             imgid = new Integer[]{
-                    R.drawable.icon_account, R.drawable.icon_alarm, R.drawable.icon_alarm, R.drawable.icon_alarm, R.drawable.icon_alarm,
+                    R.drawable.icon_credit_card, R.drawable.icon_loan, R.drawable.icon_mortgage, R.drawable.icon_payables, R.drawable.icon_other,
             };
         }
 
         else if (trType.equals("Income")){
 
-            subtitle = new String[]{
+            maintitle= new String[]{
                     "Salary", "Bonus", "Other",
             };
 
-            maintitle = new String[]{
-                    "Sub Title 1", "Sub Title 2", "Sub Title 3",
+            subtitle = new String[]{
+                    "Income", "Income", "Income",
             };
 
             type = new String[]{
@@ -97,24 +101,24 @@ public class Categories_Popup extends AppCompatActivity {
             };
 
             imgid = new Integer[]{
-                    R.drawable.icon_budget, R.drawable.icon_appearance, R.drawable.icon_appearance,
+                    R.drawable.icon_salary, R.drawable.icon_bonus, R.drawable.icon_other,
             };
         }
 
         else if (trType.equals("Expense")){
 
             subtitle = new String[]{
-                    "Car", "Car", "Car",
+                    "Vehicle", "Vehicle", "Vehicle",
                     "Household", "Household", "Household", "Household", "Household",
-                    "Entertainment", "Entertainment", "Entertainment",
+                    "Entertainment", "Entertainment", "Entertainment", "Entertainment",
                     "Utilities", "Utilities", "Utilities", "Utilities", "Utilities",
                     "Other",
             };
 
             maintitle = new String[]{
                     "Fuel", "Maintenance", "Other",
-                    "Grocery", "Medicine", "School", "Clothing", "Other",
-                    "Movies", "Shopping", "Other",
+                    "Grocery", "Medicine", "Education", "Clothing", "Other",
+                    "Movies", "Shopping", "Dining Out", "Other",
                     "Electricity", "Water", "TV", "Internet", "Other",
                     "Other",
 
@@ -123,33 +127,19 @@ public class Categories_Popup extends AppCompatActivity {
             type = new String[]{
                     "Expense", "Expense", "Expense",
                     "Expense", "Expense", "Expense", "Expense", "Expense",
-                    "Expense", "Expense", "Expense",
+                    "Expense", "Expense", "Expense", "Expense",
                     "Expense", "Expense", "Expense", "Expense", "Expense",
                     "Expense",
             };
 
             imgid = new Integer[]{
-                    R.drawable.icon_budget, R.drawable.icon_appearance, R.drawable.icon_appearance,
-                    R.drawable.icon_account, R.drawable.icon_alarm, R.drawable.icon_alarm, R.drawable.icon_alarm, R.drawable.icon_alarm,
-                    R.drawable.icon_budget, R.drawable.icon_appearance, R.drawable.icon_appearance,
-                    R.drawable.icon_account, R.drawable.icon_alarm, R.drawable.icon_alarm, R.drawable.icon_alarm, R.drawable.icon_alarm,
-                    R.drawable.icon_reminders,
+                    R.drawable.icon_fuel, R.drawable.icon_maintenance, R.drawable.icon_other,
+                    R.drawable.icon_shopping_cart, R.drawable.icon_medicine, R.drawable.icon_education, R.drawable.icon_clothing, R.drawable.icon_other,
+                    R.drawable.icon_movies, R.drawable.icon_shopping, R.drawable.icon_dining, R.drawable.icon_other,
+                    R.drawable.icon_electricity, R.drawable.icon_water, R.drawable.icon_tv, R.drawable.icon_wifi, R.drawable.icon_other,
+                    R.drawable.icon_other,
             };
         }
-
-        /*
-        WindowManager.LayoutParams params = getWindow().getAttributes();
-        params.x = -20;
-        params.height = 1500;
-        params.width = 900;
-        params.y = -20;
-
-        this.getWindow().setAttributes(params);
-
-        // add flag
-        params.flags |= WindowManager.LayoutParams.FLAG_DIM_BEHIND;
-        params.dimAmount = 5.9f;
-        */
 
 
         CategoriesList adapter = new CategoriesList(this, maintitle, subtitle, type, imgid);
@@ -162,19 +152,28 @@ public class Categories_Popup extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                     itemValue = (String) list.getItemAtPosition(position);
-                    Intent intent = new Intent(getApplicationContext(), AddTransactionsActivity.class);
-                    intent.putExtra("getAmount", amount);
-                    intent.putExtra("getType", trType);
-                    intent.putExtra("getDate", date);
-                    intent.putExtra("getTime", time);
-                    intent.putExtra("getCategory", itemValue);
-                    intent.putExtra("getAccount", account);
-                    intent.putExtra("getSchedule", schedule);
-                    intent.putExtra("getNotes", notes);
-                    startActivity(intent);
+                    passData();
                     finish();
             }
         });
+    }
+
+    private void passData() {
+
+        function = getIntent().getStringExtra("getFunction");
+        String check = function;
+        //Toast.makeText(getApplicationContext(), check, Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(getApplicationContext(), AddTransactionsActivity.class);
+        intent.putExtra("getAmount", amount);
+        intent.putExtra("getType", trType);
+        intent.putExtra("getDate", date);
+        intent.putExtra("getTime", time);
+        intent.putExtra("getCategory", itemValue);
+        intent.putExtra("getAccount", account);
+        intent.putExtra("getSchedule", schedule);
+        intent.putExtra("getNotes", notes);
+        startActivity(intent);
     }
 
     public static String getValue() {

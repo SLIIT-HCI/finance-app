@@ -2,7 +2,10 @@ package com.example.financemanagementapp;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +13,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
+import androidx.core.view.ViewCompat;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class CategoriesList extends ArrayAdapter<String> {
 
@@ -35,8 +44,10 @@ public class CategoriesList extends ArrayAdapter<String> {
 
         TextView titleText = (TextView) rowView.findViewById(R.id.title);
         ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
+        //FloatingActionButton imageView = (FloatingActionButton) rowView.findViewById(R.id.icon);
         TextView subtitleText = (TextView) rowView.findViewById(R.id.subtitle);
         TextView types = (TextView) rowView.findViewById(R.id.type);
+        CardView cardView = (CardView) rowView.findViewById(R.id.icons);
 
         titleText.setText(maintitle[position]);
         imageView.setImageResource(imgid[position]);
@@ -49,15 +60,23 @@ public class CategoriesList extends ArrayAdapter<String> {
 
         if (t.equals("Income")) {
             titleText.setTextColor(Color.parseColor("#0CA800"));
+            imageView.setBackgroundColor(Color.parseColor("#0CA800"));
+            cardView.setCardBackgroundColor(Color.parseColor("#0CA800"));
         }
         else if (t.equals("Expense")){
             titleText.setTextColor(Color.parseColor("#EA0000"));
+            imageView.setBackgroundColor(Color.parseColor("#EA0000"));
+            cardView.setCardBackgroundColor(Color.parseColor("#EA0000"));
         }
         else if (t.equals("Asset")) {
             titleText.setTextColor(Color.parseColor("#0059b3"));
+            imageView.setBackgroundColor(Color.parseColor("#0059b3"));
+            cardView.setCardBackgroundColor(Color.parseColor("#0059b3"));
         }
-        else {
+        else if (t.equals("Liability")) {
             titleText.setTextColor(Color.parseColor("#FF6600"));
+            imageView.setBackgroundColor(Color.parseColor("#FF6600"));
+            cardView.setCardBackgroundColor(Color.parseColor("#FF6600"));
         }
 
         return rowView;

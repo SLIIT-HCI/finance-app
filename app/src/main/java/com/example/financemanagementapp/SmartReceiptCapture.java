@@ -10,6 +10,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.util.SparseArray;
 import android.view.View;
 import android.widget.ImageView;
@@ -20,8 +21,14 @@ import com.google.android.gms.vision.Frame;
 import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
 
+import java.util.HashSet;
+import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class SmartReceiptCapture extends AppCompatActivity {
 
+    private static final String TAG = " ";
     ImageView imageView;
     TextView textView;
 
@@ -80,7 +87,28 @@ public class SmartReceiptCapture extends AppCompatActivity {
             String str = tx.getValue();
             stringBuilder.append(str);
         }
+
+        StringBuilder extractedText = stringBuilder;
         textView.setText(stringBuilder);
+
+        String date = " ";
+        String regex1 = "(\\d{1,2}/\\d{1,2}/\\d{4}|\\d{1,2}/\\d{1,2})";
+        Pattern p = Pattern.compile(regex1, Pattern.CASE_INSENSITIVE);
+        Matcher matcher1 = p.matcher(extractedText);
+        while (matcher1.find()) {
+             date = matcher1.group();
+        }
+        Toast.makeText(getApplicationContext(), date,  Toast.LENGTH_SHORT).show();
+
+        String time = " ";
+        String regex2 = "([\\d]{1,2}:[\\d]{1,2})";
+        Pattern p2 = Pattern.compile(regex2, Pattern.CASE_INSENSITIVE);
+        Matcher matcher2 = p2.matcher(extractedText);
+        while (matcher2.find()) {
+            time = matcher2.group();
+        }
+        Toast.makeText(getApplicationContext(), time,  Toast.LENGTH_SHORT).show();
+
     }
 
 }
