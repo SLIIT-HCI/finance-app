@@ -162,11 +162,13 @@ public class Categories_Popup extends AppCompatActivity {
 
         function = getIntent().getStringExtra("getFunction");
         String check = function;
-        //Toast.makeText(getApplicationContext(), check, Toast.LENGTH_SHORT).show();
 
         Intent intent = new Intent(getApplicationContext(), AddTransactionsActivity.class);
         intent.putExtra("getAmount", amount);
         intent.putExtra("getType", trType);
+
+       // Toast.makeText(getApplicationContext(), trType+"1", Toast.LENGTH_SHORT).show();
+
         intent.putExtra("getDate", date);
         intent.putExtra("getTime", time);
         intent.putExtra("getCategory", itemValue);

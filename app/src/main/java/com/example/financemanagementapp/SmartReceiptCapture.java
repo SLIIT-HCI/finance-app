@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -29,6 +30,7 @@ import java.util.regex.Pattern;
 public class SmartReceiptCapture extends AppCompatActivity {
 
     private static final String TAG = " ";
+    static final int REQUEST_IMAGE_CAPTURE = 1;
     ImageView imageView;
     TextView textView;
 
@@ -48,7 +50,8 @@ public class SmartReceiptCapture extends AppCompatActivity {
 
     }
 
-    public void doProcess(View view) {
+
+    public void dispatchTakePictureIntent(View view) {
         //open the camera => create an Intent object
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(intent, 101);
@@ -64,6 +67,31 @@ public class SmartReceiptCapture extends AppCompatActivity {
         imageView.setImageBitmap(bitmap);
 
     }
+
+
+    /************************************************************************************/
+
+    /*
+    public void dispatchTakePictureIntent(View view) {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        try {
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        } catch (ActivityNotFoundException e) {
+            // display error state to the user
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            imageView.setImageBitmap(imageBitmap);
+        }
+    }
+
+    /************************************************************************************/
 
     public void extractData(View view) {
         //perform text detection here

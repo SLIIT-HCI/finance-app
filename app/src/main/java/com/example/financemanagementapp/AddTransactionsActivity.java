@@ -35,7 +35,7 @@ import java.util.Locale;
 public class AddTransactionsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
     ImageView closeBtn, addTransactionsCalculator;
-    EditText addTransactionsAmount, addTransactionsAccount, addTransactionsSchedule, addTransactionsNotes;
+    EditText addTransactionsAmount, addTransactionsAccount, addTransactionsSchedule, addTransactionsNotes, payToAndFrom;
     TextView addTransactionsDate, addTransactionsTime, addTransactionsCategory;
     public static String type, transactionType;
     int hour, minute;
@@ -46,6 +46,7 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
     //database
     Float amount;
     String date, time, category, account, schedule, notes;
+    String spinnerSelect = "Income";
 
     public static String getValue() {
         return type;
@@ -92,6 +93,7 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
         addTransactionsAccount = (EditText) findViewById(R.id.addTransactionsAccount);
         addTransactionsSchedule = (EditText) findViewById(R.id.addTransactionsSchedule);
         addTransactionsNotes = (EditText) findViewById(R.id.addTransactionsNotes);
+        payToAndFrom = (EditText) findViewById(R.id.payToAndFrom);
         addTransactionsCalculator = (ImageView) findViewById(R.id.addTransactionsCalculator);
         addToDB = (FloatingActionButton) findViewById(R.id.addToDB);
 
@@ -100,11 +102,20 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
         addTransactionsCalculator.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+
+                final String tTypeCal = transactionType;
                 Intent calculator = new Intent(getApplicationContext(), CalculatorActivity.class);
+                calculator.putExtra("getAmount", addTransactionsAmount.getText().toString());
+                calculator.putExtra("getType", tTypeCal);
+                calculator.putExtra("getDate", addTransactionsDate.getText().toString());
+                calculator.putExtra("getTime", addTransactionsTime.getText().toString());
+                calculator.putExtra("getCategory", addTransactionsCategory.getText().toString());
+                calculator.putExtra("getAccount", addTransactionsAccount.getText().toString());
+                calculator.putExtra("getSchedule", addTransactionsSchedule.getText().toString());
+                calculator.putExtra("getNotes", addTransactionsNotes.getText().toString());
                 startActivity(calculator);
-                Intent intent = getIntent();
-                addTransactionsAmount.setText(intent.getStringExtra("num"));
+                finish();
+                getData();
             }
         });
 
@@ -176,26 +187,39 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
 
         /*******************************************************************************************************************/
 
-        //intent.putExtra("getType", trType);
         Intent intent2 = getIntent();
         addTransactionsAmount.setText(intent2.getStringExtra("getAmount"));
         addTransactionsDate.setText(intent2.getStringExtra("getDate"));
         addTransactionsTime.setText(intent2.getStringExtra("getTime"));
 
-        /*
-        String spinnerSelect = intent2.getStringExtra("getType");
-        if ( spinnerSelect.equals("Income"))
-            addTransactionsTypeSpinner.setSelection(0);
-        else if ( spinnerSelect.equals("Expense"))
-            addTransactionsTypeSpinner.setSelection(1);
-        else if ( spinnerSelect.equals("Asset"))
-            addTransactionsTypeSpinner.setSelection(2);
-        else if ( spinnerSelect.equals("Liability"))
-            addTransactionsTypeSpinner.setSelection(3);
+        spinnerSelect = intent2.getStringExtra("getType");
+        //Toast.makeText(getApplicationContext(), spinnerSelect+"2", Toast.LENGTH_SHORT).show();
 
+
+
+        if ( 11>2 ) {
+            addTransactionsTypeSpinner.setSelection(3);
+        }
+        /*
+        else if ( spinnerSelect.equals("Expense")) {
+            addTransactionsTypeSpinner.setSelection(1);
+        }
+        else if ( spinnerSelect.equals("Asset")) {
+            addTransactionsTypeSpinner.setSelection(2);
+        }
+        else if ( spinnerSelect.equals("Liability")) {
+            addTransactionsTypeSpinner.setSelection(3);
+        }
+        else {
+            addTransactionsTypeSpinner.setSelection(0);
+        }
          */
 
         addTransactionsCategory.setText(intent2.getStringExtra("getCategory"));
+        //if (intent2.getStringExtra("getCategory").equals("Payables")) {
+          //  payToAndFrom.setVisibility(View.VISIBLE);
+        //}
+
         addTransactionsAccount.setText(intent2.getStringExtra("getAccount"));
         addTransactionsSchedule.setText(intent2.getStringExtra("getSchedule"));
         addTransactionsNotes.setText(intent2.getStringExtra("getNotes"));
@@ -291,6 +315,8 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
         }
     }
 
+    /*******************************************************************************************************************/
+
     private void displayCategories() {
 
         final String tType = transactionType;
@@ -307,5 +333,22 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
         finish();
 
     }
+
+    /*******************************************************************************************************************/
+
+    private void getData() {
+
+        Intent intent2 = getIntent();
+        addTransactionsAmount.setText(intent2.getStringExtra("num"));
+        addTransactionsDate.setText(intent2.getStringExtra("getDate"));
+        addTransactionsTime.setText(intent2.getStringExtra("getTime"));
+        spinnerSelect = intent2.getStringExtra("getType");
+        addTransactionsCategory.setText(intent2.getStringExtra("getCategory"));
+        addTransactionsAccount.setText(intent2.getStringExtra("getAccount"));
+        addTransactionsSchedule.setText(intent2.getStringExtra("getSchedule"));
+        addTransactionsNotes.setText(intent2.getStringExtra("getNotes"));
+    }
+
+
 
 }

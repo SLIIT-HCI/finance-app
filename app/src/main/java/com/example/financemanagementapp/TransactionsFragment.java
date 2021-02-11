@@ -163,10 +163,10 @@ public class TransactionsFragment extends Fragment implements PopupMenu.OnMenuIt
         progressDialog.setMessage("Loading...");
         progressDialog.show();
 
-        //getting the reference of artists node
+        //getting the reference of transactions node
         databaseTransactions = FirebaseDatabase.getInstance().getReference("Transactions");
 
-        //list to store artists
+        //list to store transactions
         transactions = new ArrayList<>();
 
         //attaching value event listener
@@ -174,14 +174,14 @@ public class TransactionsFragment extends Fragment implements PopupMenu.OnMenuIt
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                //clearing the previous artist list
+                //clearing the previous transaction list
                 transactions.clear();
 
                 //iterating through all the nodes
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                    //getting artist
+                    //getting transaction
                     Transactions transaction = postSnapshot.getValue(Transactions.class);
-                    //adding artist to the list
+                    //adding transaction to the list
                     transactions.add(transaction);
                 }
 

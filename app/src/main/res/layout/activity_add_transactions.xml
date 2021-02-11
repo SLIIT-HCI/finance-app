@@ -74,7 +74,6 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="40dp"
         android:background="@null"
-        android:backgroundTint="@color/cardview_dark_background"
         android:drawableLeft="@drawable/icon_notes1"
         android:drawablePadding="20sp"
         android:ems="10"
@@ -82,6 +81,23 @@
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addTransactionsSchedule" />
+
+    <EditText
+        android:id="@+id/payToAndFrom"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="40dp"
+        android:background="@null"
+        android:visibility="invisible"
+        android:drawableLeft="@drawable/icon_accounts1"
+        android:drawablePadding="20sp"
+        android:ems="10"
+        android:hint="Pay To"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addTransactionsNotes" />
+
 
     <EditText
         android:id="@+id/addTransactionsSchedule"
@@ -139,6 +155,7 @@
         android:backgroundTint="@color/cardview_dark_background"
         android:drawableLeft="@drawable/icon_time2"
         android:drawablePadding="20sp"
+        android:textColor="@color/black"
         android:ems="10"
         android:hint="00:00"
         android:inputType="time"
@@ -158,6 +175,7 @@
         android:ems="10"
         android:hint="dd/mm/yy"
         android:inputType="date"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/addTransactionsType"
         app:layout_constraintTop_toBottomOf="@+id/addTransactionsType" />
 
@@ -173,7 +191,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addTransactionsNotes"
+        app:layout_constraintTop_toBottomOf="@+id/payToAndFrom"
         app:srcCompat="@drawable/icon_check2" />
 
 

@@ -23,10 +23,24 @@ public class CalculatorActivity extends AppCompatActivity {
 
     boolean addition, subtraction, multiplication, division;
 
+    String ids, amount, date, time, category, trType, account, schedule, notes, function;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator);
+
+        ids = getIntent().getStringExtra("getID");
+        //Toast.makeText(getApplicationContext(), function+"toast", Toast.LENGTH_SHORT).show();
+        amount = getIntent().getStringExtra("getAmount");
+        trType = getIntent().getStringExtra("getType");
+        date = getIntent().getStringExtra("getDate");
+        time = getIntent().getStringExtra("getTime");
+        category = getIntent().getStringExtra("getCategory");
+        account = getIntent().getStringExtra("getAccount");
+        schedule = getIntent().getStringExtra("getSchedule");
+        notes = getIntent().getStringExtra("getNotes");
 
 
         WindowManager.LayoutParams params = getWindow().getAttributes();
@@ -234,8 +248,17 @@ public class CalculatorActivity extends AppCompatActivity {
         buttonok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent intent = new Intent(getApplicationContext(), AddTransactionsActivity.class);
                 intent.putExtra("num", calcAns.getText().toString());
+                intent.putExtra("getAmount", amount);
+                intent.putExtra("getType", trType);
+                intent.putExtra("getDate", date);
+                intent.putExtra("getTime", time);
+                intent.putExtra("getCategory", category);
+                intent.putExtra("getAccount", account);
+                intent.putExtra("getSchedule", schedule);
+                intent.putExtra("getNotes", notes);
                 startActivity(intent);
                 finish();
             }

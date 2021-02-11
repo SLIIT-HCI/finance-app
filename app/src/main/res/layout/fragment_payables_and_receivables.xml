@@ -1,22 +1,53 @@
-<LinearLayout
-    android:id="@+id/fragment_profile_rootview"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_profile_rootview"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PayablesAndReceivablesFragment"
+    android:background="#ffffff"
     android:gravity="center"
-    android:background="#BED4D6">
+    android:orientation="vertical"
+    tools:context=".PayablesAndReceivablesFragment">
+
+    <Spinner
+        android:id="@+id/payOrReceiveSpinner"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/dateRangePickerPR"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/fragment_page_profile_title"
-        android:layout_width="wrap_content"
+        android:id="@+id/catPR"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dip"
-        android:textSize="25sp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Payables"
+        android:textColor="@color/black"
+        android:textSize="21dp"
         android:textStyle="bold"
-        android:textColor="#fff"
-        android:textAlignment="center"
-        android:text="This is the Payables and Receivables fragment"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/payOrReceiveSpinner" />
 
-</LinearLayout>
+    <ListView
+        android:id="@+id/payablesAndReceivablesListView"
+        android:layout_width="match_parent"
+        android:layout_height="611dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/catPR" />
+</androidx.constraintlayout.widget.ConstraintLayout>
