@@ -2,16 +2,20 @@ package com.example.financemanagementapp;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.FileProvider;
 
 import android.Manifest;
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
+import android.media.ExifInterface;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.util.SparseArray;
 import android.view.View;
 import android.widget.ImageView;
@@ -22,15 +26,18 @@ import com.google.android.gms.vision.Frame;
 import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class SmartReceiptCapture extends AppCompatActivity {
 
-    private static final String TAG = " ";
-    static final int REQUEST_IMAGE_CAPTURE = 1;
+    private String currentImagePath = null;
+    private static final int IMAGE_REQUEST = 1;
+
     ImageView imageView;
     TextView textView;
 
@@ -50,45 +57,89 @@ public class SmartReceiptCapture extends AppCompatActivity {
 
     }
 
+    /************************************************************************************/
 
     public void dispatchTakePictureIntent(View view) {
-        //open the camera => create an Intent object
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        startActivityForResult(intent, 101);
+        Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if(cameraIntent.resolveActivity(getPackageManager()) != null ) {
+            File imageFile = null;
+
+            try {
+                imageFile = getImageFile();
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            if(imageFile != null) {
+                Uri imageUri = FileProvider.getUriForFile(this,"com.example.android.fileprovider", imageFile);
+
+                cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
+                startActivityForResult(cameraIntent, IMAGE_REQUEST);
+            }
+        }
     }
+
+    /************************************************************************************/
+
+    private File getImageFile() throws IOException {
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String imageName = "jpg_" + timeStamp + "_";
+        File storageDirectory = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File imageFile = File.createTempFile(imageName, "jpg", storageDirectory);
+        currentImagePath =imageFile.getAbsolutePath();
+        return imageFile;
+    }
+
+    /************************************************************************************/
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Bundle bundle = data.getExtras();
-        //from bundle, extract the image
-        Bitmap bitmap = (Bitmap) bundle.get("data");
-        //set image in imageview
-        imageView.setImageBitmap(bitmap);
-
-    }
 
 
-    /************************************************************************************/
+        if (requestCode == 1 && resultCode == RESULT_OK) {
+            Bitmap bitmap = BitmapFactory.decodeFile(currentImagePath);
+            //imageView.setRotation(180);
+            imageView.setImageBitmap(bitmap);
+        }
 
-    /*
-    public void dispatchTakePictureIntent(View view) {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+         /*
+
+
+        Bitmap bitmap = BitmapFactory.decodeFile(currentImagePath);
+
+        Matrix matrix = new Matrix();
+        //matrix.postRotate(90);
+        /*
         try {
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-        } catch (ActivityNotFoundException e) {
-            // display error state to the user
-        }
-    }
+            ExifInterface exif = new ExifInterface(currentImagePath);
+            int orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_UNDEFINED);
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            Bundle extras = data.getExtras();
-            Bitmap imageBitmap = (Bitmap) extras.get("data");
-            imageView.setImageBitmap(imageBitmap);
+            Matrix matrix = new Matrix();
+            switch (orientation) {
+                case ExifInterface.ORIENTATION_ROTATE_90:
+                    matrix.postRotate(90);
+                    break;
+                case ExifInterface.ORIENTATION_ROTATE_180:
+                    matrix.postRotate(180);
+                    break;
+                case ExifInterface.ORIENTATION_ROTATE_270:
+                    matrix.postRotate(270);
+                    break;
+                default:
+                    break;
+            }
         }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        imageView.setImageBitmap(bitmap);
+        //bitmap.recycle();
+        */
+
     }
 
     /************************************************************************************/

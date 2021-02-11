@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -14,7 +15,8 @@ public class PayablesAndReceivablesList extends ArrayAdapter<Transactions> {
 
     private Activity context;
     List<Transactions> payablesAndReceivablesList;
-    TextView personNameP, scheduledDateP, notesP, catPR, amount;
+    TextView personNameP, scheduledDateP, notesP, catPR, amount, totalPR;
+    Float total = 0.0f;
 
     public PayablesAndReceivablesList(Activity context, List<Transactions> payablesAndReceivablesList) {
         super(context, R.layout.payables_and_receivables_list, payablesAndReceivablesList);
@@ -32,14 +34,18 @@ public class PayablesAndReceivablesList extends ArrayAdapter<Transactions> {
         personNameP = (TextView) listViewItem.findViewById(R.id.personNameP);
         scheduledDateP = (TextView) listViewItem.findViewById(R.id.scheduledDateP);
         notesP = (TextView) listViewItem.findViewById(R.id.notesP);
-        //type = (TextView) listViewItem.findViewById(R.id.type);
+        totalPR = (TextView) listViewItem.findViewById(R.id.totalPR);
 
         Transactions transactions = payablesAndReceivablesList.get(position);
+
+        total = PayablesAndReceivablesFragment.getActivityInstance().getTotal();
+        Toast.makeText(getContext(), total+"1", Toast.LENGTH_SHORT).show();
 
         amount.setText(String.valueOf(transactions.getAmount()));
         personNameP.setText(transactions.getCategory());
         scheduledDateP.setText(transactions.getSchedule());
         notesP.setText(transactions.getNotes());
+        //totalPR.setText(String.valueOf(total));
 
         if (transactions.getCategory().equals("Receivables")) {
             amount.setTextColor(Color.parseColor("#0CA800"));

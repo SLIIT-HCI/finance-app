@@ -43,6 +43,8 @@ public class PayablesAndReceivablesFragment extends Fragment implements AdapterV
     public static String choice;
     public static Float total = 0.0f;
 
+    static PayablesAndReceivablesFragment INSTANCE;
+
     /**********************************************************************************************************/
 
     public static PayablesAndReceivablesFragment newInstance() {
@@ -53,6 +55,8 @@ public class PayablesAndReceivablesFragment extends Fragment implements AdapterV
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        INSTANCE=this;
 
         view = inflater.inflate(R.layout.fragment_payables_and_receivables, container, false);
 
@@ -160,6 +164,7 @@ public class PayablesAndReceivablesFragment extends Fragment implements AdapterV
                         total = total + transaction.getAmount();
                     }
 
+
                     else if ( transaction.getCategory().equals("Receivables") && choice.equals("Receivables") ) {
                         transactions.add(transaction);
                         total = total + transaction.getAmount();
@@ -183,6 +188,15 @@ public class PayablesAndReceivablesFragment extends Fragment implements AdapterV
 
             }
         });
+    }
+
+    public static PayablesAndReceivablesFragment getActivityInstance()
+    {
+        return INSTANCE;
+    }
+
+    public static Float getTotal() {
+        return total;
     }
 
 }
