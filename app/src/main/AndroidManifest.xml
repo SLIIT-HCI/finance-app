@@ -3,15 +3,16 @@
     package="com.example.financemanagementapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-    <uses-feature android:name="android.hardware.Camera2" android:required="true" />
+    <uses-feature
+        android:name="android.hardware.Camera2"
+        android:required="true" />
 
-    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
 
     <application
@@ -21,10 +22,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SmartReceiptCapture"
+        <activity android:name=".UpdateSMSList"></activity>
+        <activity android:name=".ViewSMSList" />
+        <activity
+            android:name=".SmartReceiptCapture"
             android:theme="@style/AppTheme.PopUp" />
-        <activity android:name=".TextRecognitionActivity"
-            android:theme="@style/AppTheme.PopUp"/>
+        <activity
+            android:name=".TextRecognitionActivity"
+            android:theme="@style/AppTheme.PopUp" />
         <activity
             android:name=".Categories_Popup"
             android:theme="@style/AppTheme.PopUp" />
@@ -62,17 +67,14 @@
             android:resource="@array/preloaded_fonts" />
 
         <provider
-            android:authorities="com.example.android.fileprovider"
             android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.android.fileprovider"
             android:exported="false"
-            android:grantUriPermissions="true" >
-
+            android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
-
         </provider>
-
     </application>
 
 </manifest>

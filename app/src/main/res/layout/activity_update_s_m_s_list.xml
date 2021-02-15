@@ -1,22 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/fragment_params_rootview"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
-    android:gravity="center"
-    tools:context=".SMSIntegrationFragment">
-
-    <ListView
-        android:id="@+id/SMSList"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/rect_shape"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addSMS" />
+    tools:context=".UpdateSMSList">
 
     <TextView
         android:id="@+id/headingSMS1"
@@ -32,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/textView77"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="63dp"
@@ -44,68 +32,70 @@
         app:layout_constraintTop_toBottomOf="@+id/headingSMS1" />
 
     <EditText
-        android:id="@+id/addFinName"
+        android:id="@+id/updameFinName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="114dp"
         android:layout_marginTop="10dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:text="finInstName"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/textView77" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/textView88"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="Contact Number / Name"
         android:textColor="@color/black"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/textView7"
-        app:layout_constraintTop_toBottomOf="@+id/addFinName" />
+        app:layout_constraintStart_toStartOf="@+id/textView77"
+        app:layout_constraintTop_toBottomOf="@+id/updameFinName" />
 
     <EditText
-        android:id="@+id/contact"
+        android:id="@+id/updateContact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:text="Name"
         android:textColor="@color/black"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/addFinName"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintStart_toStartOf="@+id/updameFinName"
+        app:layout_constraintTop_toBottomOf="@+id/textView88" />
 
     <Button
-        android:id="@+id/addSMS"
+        android:id="@+id/updateSMS"
         android:layout_width="120dp"
         android:layout_height="45dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="35dp"
         android:background="@drawable/shadow"
-        android:text="Add"
+        android:text="Update"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contact" />
+        app:layout_constraintTop_toBottomOf="@+id/updateContact" />
 
     <Button
-        android:id="@+id/viewAllSMS"
+        android:id="@+id/cancelSMS"
         android:layout_width="120dp"
         android:layout_height="45dp"
         android:layout_marginTop="35dp"
         android:layout_marginEnd="60dp"
         android:background="@drawable/shadow"
-        android:text="View All"
+        android:text="Cancel"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contact" />
+        app:layout_constraintTop_toBottomOf="@+id/updateContact" />
 
     <ImageView
         android:id="@+id/infoBtn"
@@ -116,7 +106,7 @@
         android:layout_marginEnd="60dp"
         android:src="@drawable/icon_info"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView7"
+        app:layout_constraintStart_toEndOf="@+id/textView77"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
