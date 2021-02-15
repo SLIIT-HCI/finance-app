@@ -37,16 +37,18 @@ public class TransactionsList extends ArrayAdapter<Transactions> {
         category.setText(transactions.getCategory());
         subCategory.setText(transactions.getDate());
 
-        if (transactions.getTransactionType().equals("Income")) {
+        String type = transactions.getTransactionType();
+
+        if (type.equals("Income")) {
             amount.setTextColor(Color.parseColor("#0CA800"));
         }
-        else if (transactions.getTransactionType().equals("Expense")){
+        else if (type.equals("Expense")){
             amount.setTextColor(Color.parseColor("#EA0000"));
         }
-        else if (transactions.getTransactionType().equals("Asset")){
+        else if (type.equals("Asset")){
             amount.setTextColor(Color.parseColor("#0059b3"));
         }
-        else if (transactions.getTransactionType().equals("Liability")){
+        else if (type.equals("Liability")){
             amount.setTextColor(Color.parseColor("#FF6600"));
         }
 

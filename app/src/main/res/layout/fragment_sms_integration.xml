@@ -109,13 +109,11 @@
 
     <ImageView
         android:id="@+id/infoBtn"
-        android:layout_width="23dp"
-        android:layout_height="23dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="124dp"
-        android:layout_marginEnd="60dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="120dp"
         android:src="@drawable/icon_info"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView7"
         app:layout_constraintTop_toTopOf="parent" />
 

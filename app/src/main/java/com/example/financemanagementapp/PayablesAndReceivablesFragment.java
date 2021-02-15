@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
@@ -38,6 +39,7 @@ public class PayablesAndReceivablesFragment extends Fragment implements AdapterV
 
     //view objects
     View view;
+    TextView catPR;
 
     Spinner payOrReceiveSpinner, dateRangePickerPR;
     public static String choice;
@@ -61,6 +63,8 @@ public class PayablesAndReceivablesFragment extends Fragment implements AdapterV
         view = inflater.inflate(R.layout.fragment_payables_and_receivables, container, false);
 
         /**********************************************************************************************************/
+
+        catPR = (TextView) view.findViewById(R.id.catPR);
 
         // Spinner element
         payOrReceiveSpinner = (Spinner) view.findViewById(R.id.payOrReceiveSpinner);
@@ -118,6 +122,7 @@ public class PayablesAndReceivablesFragment extends Fragment implements AdapterV
         switch (parent.getId()) {
             case R.id.payOrReceiveSpinner:
                 choice = parent.getItemAtPosition(position).toString();
+                catPR.setText(choice);
                 onStart();
                 break;
         }
@@ -157,15 +162,16 @@ public class PayablesAndReceivablesFragment extends Fragment implements AdapterV
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     //getting transaction
                     Transactions transaction = postSnapshot.getValue(Transactions.class);
+
                     //adding transaction to the list
 
-                    if ( transaction.getCategory().equals("Payables") && choice.equals("Payables") ) {
+                    String category = transaction.getCategory();
+                    if (  category.equals("Payables") && choice.equals("Payables") ) {
                         transactions.add(transaction);
                         total = total + transaction.getAmount();
                     }
 
-
-                    else if ( transaction.getCategory().equals("Receivables") && choice.equals("Receivables") ) {
+                    else if ( category.equals("Receivables") && choice.equals("Receivables") ) {
                         transactions.add(transaction);
                         total = total + transaction.getAmount();
                     }

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UpdateSMSList">
+    tools:context=".UpdateSMSList"
+    android:background="#ffffff">
 
     <TextView
         android:id="@+id/headingSMS1"
