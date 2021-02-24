@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Split_Expenses">
+
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/dashboard1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="@string/dashboard"
+                android:textAlignment="center"
+                android:textColor="@color/darkgray"
+                android:textStyle="bold" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:id="@+id/transactions1"
+                android:textColor="@color/darkgray"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:text="@string/transactions" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:id="@+id/balanceSheet1"
+                android:textColor="@color/darkgray"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:text="@string/balanceSheet" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:id="@+id/netEarningsSummary1"
+                android:textColor="@color/darkgray"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:text="@string/netEarningsSummary" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:id="@+id/netWorthSummary1"
+                android:textColor="@color/darkgray"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:text="@string/netWorthSummary" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/splitExpenseTotAmount"
+        android:layout_width="137dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="195dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Total Amount" />
+
+    <EditText
+        android:id="@+id/splitExpenseAmountView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="182dp"
+        android:layout_marginEnd="9dp"
+        android:layout_toEndOf="@+id/splitExpenseTotAmount"
+        android:ems="10"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/noOFMemberTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="295dp"
+        android:text="No Of Members" />
+
+    <Button
+        android:id="@+id/split_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="282dp"
+        android:layout_marginEnd="35dp"
+        android:backgroundTint="#34A60A"
+        android:text="Split" />
+
+    <TextView
+        android:id="@+id/perMembTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="386dp"
+        android:text="Per member" />
+
+    <TextView
+        android:id="@+id/perMemberTextView"
+        android:layout_width="189dp"
+        android:layout_height="41dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="113dp"
+        android:layout_marginTop="377dp"
+        android:layout_marginEnd="17dp"
+        android:layout_toEndOf="@+id/noOFMemberTV"
+        android:text=".00" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/splitAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="303dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginBottom="127dp"
+        android:backgroundTint="@color/green"
+        app:srcCompat="@drawable/icon_check2" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/splitAmountCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="74dp"
+        android:layout_marginBottom="127dp"
+        android:backgroundTint="@color/red"
+        app:srcCompat="@drawable/icons8_cancel2" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/captureSpitReceipt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="267dp"
+        android:layout_marginTop="77dp"
+        android:backgroundTint="@color/white"
+        app:srcCompat="@drawable/icon_camera2" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/uploadSplitReceipt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="77dp"
+        android:layout_marginEnd="15dp"
+        android:backgroundTint="@color/white"
+        app:srcCompat="@drawable/icons_upload" />
+
+    <EditText
+        android:id="@+id/noOfMembers"
+        android:layout_width="62dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="279dp"
+        android:layout_marginEnd="155dp"
+        android:layout_toEndOf="@+id/noOFMemberTV"
+        android:ems="10"
+        android:inputType="number" />
+</RelativeLayout>
