@@ -23,7 +23,5 @@ public class Split_Expenses extends AppCompatActivity {
         No_Members = (EditText) findViewById(R.id.noOfMembers);
         amountPerMember = (TextView) findViewById(R.id.perMemberTextView);
 
-//        String totAmount, noMemb, amountPMemeb;
-
     }
 }
