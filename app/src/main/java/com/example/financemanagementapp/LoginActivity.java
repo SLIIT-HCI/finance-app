@@ -22,7 +22,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
-    //defining views
+    //defining views - 1.0
     private Button buttonSignIn;
     private EditText editTextEmail;
     private EditText editTextPassword;
