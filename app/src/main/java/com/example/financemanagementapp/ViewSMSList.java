@@ -38,11 +38,17 @@ public class ViewSMSList extends AppCompatActivity {
 
     String id, name, contact;
     Button updateSMS, deleteSMS;
+    public static String flag = "0";
+
+    static ViewSMSList INSTANCE;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_s_m_s_list);
+
+        INSTANCE=this;
 
         smsProvidersListVIew = (ListView) findViewById(R.id.smsProvidersListVIew);
         updateSMS = (Button) findViewById(R.id.updateSMS);
@@ -147,5 +153,15 @@ public class ViewSMSList extends AppCompatActivity {
         AlertDialog alertDialog = dialog.create();
         alertDialog.show();
     }
+
+    public static ViewSMSList getActivityInstance()
+    {
+        return INSTANCE;
+    }
+
+    public static String getFlag() {
+        return flag;
+    }
+
 
 }

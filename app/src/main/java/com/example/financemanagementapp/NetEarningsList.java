@@ -19,7 +19,7 @@ public class NetEarningsList extends ArrayAdapter<Transactions> {
     Float total = 0.0f;
 
     public NetEarningsList(Activity context, List<Transactions> netEarningsListView) {
-        super(context, R.layout.payables_and_receivables_list, netEarningsListView);
+        super(context, R.layout.net_earnings_list, netEarningsListView);
         this.context = context;
         this.netEarningsListView = netEarningsListView;
     }

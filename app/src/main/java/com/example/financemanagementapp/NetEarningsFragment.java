@@ -6,7 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Spinner;
 
 import androidx.fragment.app.Fragment;
 
@@ -19,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NetEarningsFragment extends Fragment {
+public class NetEarningsFragment extends Fragment implements AdapterView.OnItemSelectedListener {
 
     //view objects
     ListView netEarningsListView;
@@ -37,6 +39,8 @@ public class NetEarningsFragment extends Fragment {
     //view objects
     View view;
 
+    Spinner dateRangePickerNE;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -47,12 +51,48 @@ public class NetEarningsFragment extends Fragment {
         progressDialog = new ProgressDialog(getActivity());
         netEarningsListView = (ListView) view.findViewById(R.id.netEarningsListView);
 
+        /**********************************************************************************************************/
+
+        // Spinner element
+        dateRangePickerNE = (Spinner) view.findViewById(R.id.dateRangePickerNE);
+        // Spinner click listener
+        dateRangePickerNE.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
+        // Spinner Drop down elements
+        List<String> dateRange = new ArrayList<String>();
+        dateRange.add("Today");
+        dateRange.add("This Week");
+        dateRange.add("This Month");
+        dateRange.add("This Year");
+        dateRange.add("Last Week");
+        dateRange.add("Last Month");
+        dateRange.add("Last Year");
+        dateRange.add("All");
+
+        // Creating adapter for spinner
+        ArrayAdapter<String> dataAdapterType2 = new ArrayAdapter<String>(getActivity(), R.layout.spinner_item, dateRange);
+        // Drop down layout style - list view with radio button
+        dataAdapterType2.setDropDownViewResource(R.layout.spinner_dropdown_item);
+        // attaching data adapter to spinner
+        dateRangePickerNE.setAdapter(dataAdapterType2);
+
+        /**********************************************************************************************************/
+
+
         return view;
     }
 
     @Override
     public void onStart() {
         super.onStart();
+
+        ArrayList<Object> list = new ArrayList<>();
+        //list.add(new String(""))
+        //list.add(new TransactionCategories(""));
+
+
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////////
 
         progressDialog.setMessage("Loading...");
         progressDialog.show();
@@ -81,12 +121,7 @@ public class NetEarningsFragment extends Fragment {
                     //adding transaction to the list
 
                     String category = transaction.getTransactionType();
-                    if (  category.equals("Income") ) {
-                        transactions.add(transaction);
-                        //total = total + transaction.getAmount();
-                    }
-
-                    else if ( category.equals("Expense") ) {
+                    if (  category.equals("Income") || category.equals("Expense")) {
                         transactions.add(transaction);
                         //total = total + transaction.getAmount();
                     }
@@ -108,6 +143,31 @@ public class NetEarningsFragment extends Fragment {
             }
         });
     }
+
+    /**********************************************************************************************************/
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        // On selecting a spinner item
+        switch (parent.getId()) {
+            /*
+            case R.id.payOrReceiveSpinner:
+                choice = parent.getItemAtPosition(position).toString();
+                catPR.setText(choice);
+                onStart();
+                break;
+
+             */
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> arg0) {
+
+    }
+
+    /**********************************************************************************************************/
+
 
 }
 

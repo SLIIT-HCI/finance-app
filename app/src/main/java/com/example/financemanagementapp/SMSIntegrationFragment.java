@@ -218,6 +218,8 @@ public class SMSIntegrationFragment extends Fragment {
 
             //displaying a success toast
             Toast.makeText(getActivity(), "Added Successfully", Toast.LENGTH_SHORT).show();
+            addFinName.setText("");
+            contact.setText("");
 
         }
     }

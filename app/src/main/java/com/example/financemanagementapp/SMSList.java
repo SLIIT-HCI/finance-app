@@ -15,6 +15,7 @@ public class SMSList extends ArrayAdapter<SMSProvider> {
     private Activity context;
     List<SMSProvider> smsList;
     TextView name, contact;
+    String flag;
 
     public SMSList(Activity context, List<SMSProvider> smsList) {
         super(context, R.layout.activity_s_m_s_list, smsList);
@@ -33,6 +34,13 @@ public class SMSList extends ArrayAdapter<SMSProvider> {
         SMSProvider smsProvider = smsList.get(position);
         name.setText(String.valueOf(smsProvider.getNameSMS()));
         contact.setText(smsProvider.getContactSMS());
+
+        flag = ViewSMSList.getActivityInstance().getFlag();
+
+
+        if ( flag.equals("1") ) {
+            name.setTextColor(Color.parseColor("#EA0000"));
+        }
 
         return listViewItem;
     }

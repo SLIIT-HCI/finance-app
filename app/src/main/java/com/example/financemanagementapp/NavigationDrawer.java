@@ -83,6 +83,10 @@ public class NavigationDrawer extends AppCompatActivity implements NavigationVie
             case R.id.payablesAndReceivables:
                 this.showFragment(FRAGMENT_PAYABLESANDRECEIVABLES);
                 break;
+            case R.id.settings:
+                Intent settings = new Intent(getApplicationContext(), SettingsActivity.class);
+                startActivity(settings);
+                break;
             case R.id.logOut:
                 logout();
                 break;
