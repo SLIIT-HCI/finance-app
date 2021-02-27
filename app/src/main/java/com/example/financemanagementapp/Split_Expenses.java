@@ -18,6 +18,7 @@ public class Split_Expenses extends AppCompatActivity {
     EditText totalAmount, No_Members;
     TextView amountPerMember;
     ImageView splitCapture, splitUpload;
+   // Button splitCapture, splitUpload;
 
     double split;
 
@@ -32,8 +33,8 @@ public class Split_Expenses extends AppCompatActivity {
         amountPerMember = (TextView) findViewById(R.id.perMemberTextView);
 
         //Capturing
-        splitCapture = (ImageView)findViewById(R.id.captureSplitReceipt);
-        splitUpload = (ImageView)findViewById(R.id.uploadSplitReceipt);
+        splitCapture = (ImageView) findViewById(R.id.captureSplitReceipt);
+        splitUpload = (ImageView) findViewById(R.id.uploadSplitReceipt);
 
         //splitting the total amount among the members
         splitButton.setOnClickListener(new View.OnClickListener() {
@@ -44,12 +45,18 @@ public class Split_Expenses extends AppCompatActivity {
                 split =(double) totAmount / nMembers;
                 amountPerMember.setText(split + "");
 
+            }
+        });
+
+        //Once the user clicks on capture icon: direct to capture activity
+        splitCapture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 Intent i = new Intent(Split_Expenses.this, SmartReceiptCapture.class);
                 startActivity(i);
             }
         });
 
     }
-
 
 }
