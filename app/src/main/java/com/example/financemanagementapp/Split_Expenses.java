@@ -31,7 +31,7 @@ public class Split_Expenses extends AppCompatActivity {
             public void onClick(View view) {
                 float totAmount = Float.parseFloat(totalAmount.getText() + "");
                 int nMembers = Integer.parseInt(No_Members.getText() + "");
-                split = totAmount / nMembers;
+                split =(double) totAmount / nMembers;
                 amountPerMember.setText(split + "");
 
             }
