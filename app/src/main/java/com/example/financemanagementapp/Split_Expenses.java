@@ -10,13 +10,11 @@ import android.widget.TextView;
 
 public class Split_Expenses extends AppCompatActivity {
 
-    //Global variables
     Button splitButton;
     EditText totalAmount, No_Members;
     TextView amountPerMember;
 
-    int Nmembers;
-    double total, pPerson;
+    double split;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,31 +29,13 @@ public class Split_Expenses extends AppCompatActivity {
         splitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                float totAmount = Float.parseFloat(totalAmount.getText() + "");
+                int nMembers = Integer.parseInt(No_Members.getText() + "");
+                split = totAmount / nMembers;
+                amountPerMember.setText(split + "");
 
-                float TotAmount = Float.parseFloat(totalAmount.getText() + "");
-                int noOfMembers = Integer.parseInt(No_Members.getText() + "");
-                float result = ((float) TotAmount / noOfMembers);
-                amountPerMember.setText((int) result);
-
-
-//                String TotAmount = totalAmount.getText().toString();
-//                String noOfMembers = No_Members.getText().toString();
-//                double result = ((double) TotAmount/noOfMembers);
-//                amountPerMember.setText(result);
-
-//                buttonDivision.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        mValueOne = Float.parseFloat(calcAns.getText() + "");
-//                        division = true;
-//                        calcAns.setText(null);
-//                    }
-//                });
-//                if (division == true) {
-//                    calcAns.setText(mValueOne / mValueTwo + "");
-//                    division = false;
-//                }
             }
         });
+
     }
 }
