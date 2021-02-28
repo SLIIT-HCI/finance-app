@@ -1,11 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">App Name</string>
 
     <!-- Sign In, Sign Up, Forgot Password -->
-    <string name="signIn">Sign In</string>
-    <string name="pwd">Password</string>
-    <string name="email">E-mail</string>
+
+    <string name="signIn">साइन इन करें</string>
+    <string name="pwd">कुंजिका</string>
+    <string name="email">ईमेल</string>
     <string name="sampleEmail">*****@****.***</string>
+
     <string name="noAccnt">Don\'t have an account?</string>
     <string name="haveAccnt">Already have an account?</string>
     <string name="signUp">Sign Up</string>

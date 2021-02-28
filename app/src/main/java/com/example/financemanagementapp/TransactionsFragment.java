@@ -68,6 +68,9 @@ public class TransactionsFragment extends Fragment implements PopupMenu.OnMenuIt
             public void onClick(View view) {
                 showPopup(addTransactions);
                 //Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+
+                //Move to split the Amount activity (ayeshka editing)
+
             }
         });
 

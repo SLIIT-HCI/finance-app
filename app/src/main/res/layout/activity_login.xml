@@ -51,7 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/andada"
-                android:hint="Email"
+                android:hint="@string/email"
                 android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -70,7 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/andada"
-                android:hint="Password"
+                android:hint="@string/pwd"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">App Name</string>
+
+    <!-- Sinhala language -->
+
+    <!-- Sign In, Sign Up, Forgot Password -->
+    <string name="signIn">පුරන්න</string>
+    <string name="pwd">රහස් පදය</string>
+    <string name="email">විද්යුත් තැපෑල</string>
+    <string name="sampleEmail">*****@****.***</string>
+
+    <string name="noAccnt">ගිණුමක් නැද්ද?</string>
+    <string name="haveAccnt">දැනටමත් ගිණුමක් තිබේද?</string>
+    <string name="signUp">ලියාපදිංචි වන්න</string>
+    <string name="forgotPwd">මුරපදය අමතක වුණා ද?</string>
+    <string name="login">ඇතුල් වන්න</string>
+    <string name="confirmPwd">මුරපදය තහවුරු කරන්න</string>
+    <string name="agreeToTerms">මම නියමයන් හා කොන්දේසි වලට එකඟ වෙමි</string>
+    <string name="resetHeading">ඔබගේ මුරපදය නැවත සකසන්න</string>
+    <string name="resetMsg">ඔබගේ විද්‍යුත් තැපැල් ලිපිනය ඇතුළත් කරන්න, ඔබගේ මුරපදය නැවත සැකසීමට අපි සබැඳියක් එවන්නෙමු</string>
+    <string name="resetPwd">මුරපදය යළි සකසන්න</string>
+    <string name="open">විවෘත</string>
+    <string name="close">වසන්න</string>
+    <string name="title_activity_navigation_drawer">සංචාලන ලාච්චුව</string>
+    <string name="navigation_drawer_open">සංචාලන ලාච්චුව විවෘත කරන්න</string>
+    <string name="navigation_drawer_close">සංචාලන ලාච්චුව වසන්න</string>
+
+    <!-- Horizontal Scroll Menu -->
+    <string name="dashboard">උපකරණ පුවරුව</string>
+    <string name="transactions">ගනුදෙනු</string>
+    <string name="balanceSheet">ශේෂ පත්රය</string>
+    <string name="netEarningsSummary">ශුද්ධ ඉපැයීම් සාරාංශය</string>
+    <string name="netWorthSummary">ශුද්ධ වටිනාකම් සාරාංශය</string>
+    <string name="verifyMsg">ඔබගේ විද්‍යුත් තැපැල් ලිපිනය සත්‍යාපනය කරන්න</string>
+    <string name="resendEmail">විද්‍යුත් තැපෑල යවන්න</string>
+    <string name="verificationMsg">අපි ඔබගේ එන ලිපි වෙත සත්‍යාපන ඊ-තැපෑලක් යවා ඇත. ඉදිරියට යාමට තහවුරු කිරීමේ සබැඳිය ක්ලික් කරන්න.</string>
+    <string name="emailNotSent">ඊ-තැපෑලක් ලැබුණේ නැද්ද?</string>
+
+    <!--Split expenses (Ayeshka)-->
+    <string name="TotalAmount">මුලු වටිනාකම</string>
+    <string name="NoOfMembers">සාමාජිකයන් ගණන</string>
+    <string name="PerMember">එක් සාමාජිකයෙකුට</string>
+    <string name="Split">බෙදුණු</string>
+
+    <!-- Add to transaction (Ayeshka)-->
+    <string name="amount">රුපියල්</string>
+    <string name="category">වර්ගය</string>
+    <string name="account">ගිණුම</string>
+    <string name="Schedule">උපලේඛනය</string>
+    <string name="Notes">සටහන්</string>
+
+    <!-- Categories pop-up (Ayeshka)-->
+    <string name="Categories">ප්රවර්ග</string>
+
+    <!-- login (Ayeshka)-->
+    <string name="loginToAcc">ඔබගේ ගිණුමට පිවිසෙන්න</string>
+
+    <!-- registration (Ayeshka)-->
+    <string name="createAcc">ඔබගේ ගිණුම සාදන්න</string>
+
+    <!-- sms list (Ayeshka)-->
+    <string name="Name">නම</string>
+    <string name="Contact">අමතන්න</string>
+
+    <!-- smart receipt capture (Ayeshka)-->
+    <string name="CaptureImage">රූප ග්‍රහණය</string>
+    <string name="DetectText">පෙළ හඳුනා ගන්න</string>
+
+    <!-- text recognition (Ayeshka)-->
+    <string name="PickImage">රූපය තෝරන්න</string>
+
+    <!-- Add to update sms list (Ayeshka)-->
+    <string name="Heading">ශීර්ෂය</string>
+    <string name="Institute">මූල්‍ය ආයතනයේ නම</string>
+    <string name="finInstName">මූල්‍ය ආයතනයේ නම</string>
+    <string name="ContactNoName">සම්බන්ධතා අංකය / නම</string>
+    <string name="UpdateSMSListName">නම</string>
+    <string name="UpdateBTN">යාවත්කාලීන කරන්න</string>
+    <string name="CancelBTN">අවලංගු කරන්න</string>
+
+    <!-- Add to view sms list (Ayeshka)-->
+    <string name="ViewHeading">ශීර්ෂය</string>
+    <string name="DeleteBTN">මකන්න</string>
+
+    <!-- Frag payables and receivables (Ayeshka)-->
+    <string name="Payables">ගෙවිය යුතු දේ</string>
+    <string name="Total">සමස්ත</string>
+
+    <!-- Frag sms integration (Ayeshka)-->
+    <string name="AddBTN">එකතු කරන්න</string>
+    <string name="ViewAllBTN">සියල්ල බලන්න</string>
+
+
+    <!-- net earning (Ayeshka)-->
+    <string name="NetCategory">වර්ගය</string>
+    <string name="NetAmount">ප්රමාණය</string>
+
+    <!-- Frag net worth (Ayeshka)-->
+    <string name="DateRange">දින පරාසය</string>
+
+    <!-- payables and receivables list(Ayeshka)-->
+    <string name="PersonName">පුද්ගලයාගේ නම</string>
+    <string name="PAmount">ප්රමාණය</string>
+    <string name="ScheduledDate">උපලේඛනගත දිනය</string>
+    <string name="Pnotes">සටහන්</string>
+
+    <!-- transaction list(Ayeshka)-->
+    <string name="TCategory">වර්ගය</string>
+    <string name="TAmount">ප්රමාණය</string>
+    <string name="subcategory">උප කාණ්ඩය</string>
+    <string name="accBalance">ගිණුම | ශේෂය</string>
+
+</resources>

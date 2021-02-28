@@ -12,12 +12,16 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class Split_Expenses extends AppCompatActivity {
 
-    Button splitButton;
+    Button splitButton, splitTick, splitCancel;
     EditText totalAmount, No_Members;
     TextView amountPerMember;
     ImageView splitCapture, splitUpload;
+
+
    // Button splitCapture, splitUpload;
 
     double split;
@@ -36,6 +40,11 @@ public class Split_Expenses extends AppCompatActivity {
         splitCapture = (ImageView) findViewById(R.id.captureSplitReceipt);
         splitUpload = (ImageView) findViewById(R.id.uploadSplitReceipt);
 
+        //Bottom buttons
+//        splitTick = (Button)findViewById(R.id.splitExTick);
+//        splitCancel = (Button)findViewById(R.id.splitAmountCancel);
+
+
         //splitting the total amount among the members
         splitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,7 +58,7 @@ public class Split_Expenses extends AppCompatActivity {
         });
 
 
-        //Once the user clicks on capture icon: direct to capture activity
+//        //Once the user clicks on capture icon: direct to capture activity
         splitCapture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,7 +68,7 @@ public class Split_Expenses extends AppCompatActivity {
         });
 
 
-        //Selecting the image from the gallery: direct to recognize the text from the bill
+//        //Selecting the image from the gallery: direct to recognize the text from the bill
         splitUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,6 +76,25 @@ public class Split_Expenses extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        //if user need to cancel, move back to the previous activity
+//        splitCancel.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(Split_Expenses.this, TransactionsFragment.class);
+//                startActivity(i);
+//            }
+//        });
+
+        //if clicks on tick button move to add transaction activity
+//        splitTick.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(Split_Expenses.this, AddTransactionsActivity.class);
+//                startActivity(i);
+//            }
+//        });
+
 
     }
 

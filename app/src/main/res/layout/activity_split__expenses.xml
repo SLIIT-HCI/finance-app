@@ -7,79 +7,6 @@
     tools:context=".Split_Expenses">
 
 
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/dashboard1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
-                android:text="@string/dashboard"
-                android:textAlignment="center"
-                android:textColor="@color/darkgray"
-                android:textStyle="bold" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
-                android:id="@+id/transactions1"
-                android:textColor="@color/darkgray"
-                android:textAlignment="center"
-                android:textStyle="bold"
-                android:text="@string/transactions" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
-                android:id="@+id/balanceSheet1"
-                android:textColor="@color/darkgray"
-                android:textAlignment="center"
-                android:textStyle="bold"
-                android:text="@string/balanceSheet" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
-                android:id="@+id/netEarningsSummary1"
-                android:textColor="@color/darkgray"
-                android:textAlignment="center"
-                android:textStyle="bold"
-                android:text="@string/netEarningsSummary" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
-                android:id="@+id/netWorthSummary1"
-                android:textColor="@color/darkgray"
-                android:textAlignment="center"
-                android:textStyle="bold"
-                android:text="@string/netWorthSummary" />
-
-        </LinearLayout>
-
-    </HorizontalScrollView>
-
     <TextView
         android:id="@+id/splitExpenseTotAmount"
         android:layout_width="137dp"
@@ -90,7 +17,7 @@
         android:layout_marginTop="195dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Total Amount" />
+        android:text="@string/TotalAmount" />
 
     <EditText
         android:id="@+id/splitExpenseAmountView"
@@ -113,7 +40,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="9dp"
         android:layout_marginTop="295dp"
-        android:text="No Of Members" />
+        android:text="@string/NoOfMembers" />
 
     <Button
         android:id="@+id/split_button"
@@ -124,7 +51,7 @@
         android:layout_marginTop="282dp"
         android:layout_marginEnd="35dp"
         android:backgroundTint="#34A60A"
-        android:text="Split" />
+        android:text="@string/Split" />
 
     <TextView
         android:id="@+id/perMembTV"
@@ -134,7 +61,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="25dp"
         android:layout_marginTop="386dp"
-        android:text="Per member" />
+        android:text="@string/PerMember" />
 
     <TextView
         android:id="@+id/perMemberTextView"
@@ -149,7 +76,7 @@
         android:text=".00" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/splitAmount"
+        android:id="@+id/splitExTick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"

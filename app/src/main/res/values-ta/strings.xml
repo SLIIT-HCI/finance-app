@@ -1,5 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">App Name</string>
+
+    <!-- Tamil language -->
 
     <!-- Sign In, Sign Up, Forgot Password -->
     <string name="signIn">Sign In</string>
@@ -106,5 +109,6 @@
     <string name="TAmount">Amount</string>
     <string name="subcategory">Sub-Category</string>
     <string name="accBalance">Account | Balance</string>
+
 
 </resources>

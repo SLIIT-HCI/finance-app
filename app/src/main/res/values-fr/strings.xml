@@ -1,11 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">App Name</string>
 
     <!-- Sign In, Sign Up, Forgot Password -->
-    <string name="signIn">Sign In</string>
-    <string name="pwd">Password</string>
+    <string name="signIn"> S\'identifier </string>
+    <string name="pwd">Mot de passe</string>
     <string name="email">E-mail</string>
     <string name="sampleEmail">*****@****.***</string>
+
     <string name="noAccnt">Don\'t have an account?</string>
     <string name="haveAccnt">Already have an account?</string>
     <string name="signUp">Sign Up</string>
@@ -106,5 +108,4 @@
     <string name="TAmount">Amount</string>
     <string name="subcategory">Sub-Category</string>
     <string name="accBalance">Account | Balance</string>
-
 </resources>

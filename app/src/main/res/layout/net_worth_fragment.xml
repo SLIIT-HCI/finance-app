@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="75dp"
         android:layout_marginTop="25dp"
-        android:text="Date Range"
+        android:text="@string/DateRange"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
