@@ -22,18 +22,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CurrencySettingsActivity"></activity>
-        <activity android:name=".SettingsActivity" />
-        <activity android:name=".UpdateSMSList" />
         <activity android:name=".ViewSMSList" />
         <activity
-            android:name=".SmartReceiptCapture"
-            android:theme="@style/AppTheme.PopUp" />
-        <activity
             android:name=".TextRecognitionActivity"
-            android:theme="@style/AppTheme.PopUp" />
-        <activity
-            android:name=".Categories_Popup"
             android:theme="@style/AppTheme.PopUp" />
         <activity
             android:name=".UpdateDeleteTransactionsActivity"
@@ -44,18 +35,11 @@
         <activity
             android:name=".AddTransactionsActivity"
             android:theme="@style/AppTheme.PopUp" />
-        <activity android:name=".EmailVerificationActivity" />
+        <activity
+            android:name=".UpdateSMSList"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".NavigationDrawer"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ForgotPasswordActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".RegistrationActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

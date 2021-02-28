@@ -83,13 +83,13 @@ public class NavigationDrawer extends AppCompatActivity implements NavigationVie
             case R.id.payablesAndReceivables:
                 this.showFragment(FRAGMENT_PAYABLESANDRECEIVABLES);
                 break;
-            case R.id.settings:
-                Intent settings = new Intent(getApplicationContext(), SettingsActivity.class);
-                startActivity(settings);
-                break;
-            case R.id.logOut:
-                logout();
-                break;
+//            case R.id.settings:
+//                Intent settings = new Intent(getApplicationContext(), SettingsActivity.class);
+//                startActivity(settings);
+//                break;
+//            case R.id.logOut:
+//                logout();
+//                break;
             default:
                 break;
         }
@@ -99,6 +99,7 @@ public class NavigationDrawer extends AppCompatActivity implements NavigationVie
         return true;
     }
 
+    /**** commenting out since sms integration does not require this part
     private void logout() {
 
         //initializing firebase authentication object
@@ -129,7 +130,7 @@ public class NavigationDrawer extends AppCompatActivity implements NavigationVie
         startActivity(new Intent(getApplicationContext(), LoginActivity.class));
 
     }
-
+    ****/
     // ---------------------
     // CONFIGURATION
     // ---------------------

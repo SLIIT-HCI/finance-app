@@ -143,10 +143,10 @@ public class TransactionsFragment extends Fragment implements PopupMenu.OnMenuIt
                 Intent addTransactions = new Intent(getContext(), AddTransactionsActivity.class);
                 startActivity(addTransactions);
                 return true;
-            case R.id.receiptCapture:
-                Intent captureReceipt = new Intent(getContext(), SmartReceiptCapture.class);
-                startActivity(captureReceipt);
-                return true;
+//            case R.id.receiptCapture:
+//                Intent captureReceipt = new Intent(getContext(), SmartReceiptCapture.class);
+//                startActivity(captureReceipt);
+//                return true;
             case R.id.importFromGallery:
                 Intent importReceipt = new Intent(getContext(), TextRecognitionActivity.class);
                 startActivity(importReceipt);

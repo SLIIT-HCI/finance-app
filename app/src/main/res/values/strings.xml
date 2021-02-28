@@ -33,5 +33,7 @@
     <string name="verificationMsg">We\'ve sent a verification email to your inbox. \n Click on the confirmation link to continue. </string>
     <string name="emailNotSent">Didn\'t get an email?</string>
 
+    <!-- categories popup -->
+    <string name="categories">Categories</string>
 
 </resources>

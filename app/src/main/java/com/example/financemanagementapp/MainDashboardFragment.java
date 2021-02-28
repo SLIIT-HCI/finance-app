@@ -45,35 +45,35 @@ public class MainDashboardFragment extends Fragment {
             }
         });
 
-        Button balanceSheet = (Button)view.findViewById(R.id.balanceSheet);
-        balanceSheet.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragment, new BalanceSheetFragment());
-                fragmentTransaction.commit();
-            }
-        });
+//        Button balanceSheet = (Button)view.findViewById(R.id.balanceSheet);
+//        balanceSheet.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
+//                fragmentTransaction.replace(R.id.fragment, new BalanceSheetFragment());
+//                fragmentTransaction.commit();
+//            }
+//        });
 
-        Button netEarningsSummary = (Button)view.findViewById(R.id.netEarningsSummary);
-        netEarningsSummary.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragment, new NetEarningsFragment());
-                fragmentTransaction.commit();
-            }
-        });
+//        Button netEarningsSummary = (Button)view.findViewById(R.id.netEarningsSummary);
+//        netEarningsSummary.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
+//                fragmentTransaction.replace(R.id.fragment, new NetEarningsFragment());
+//                fragmentTransaction.commit();
+//            }
+//        });
 
-        Button netWorthSummary = (Button)view.findViewById(R.id.netWorthSummary);
-        netWorthSummary.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragment, new NetWorthFragment());
-                fragmentTransaction.commit();
-            }
-        });
+//        Button netWorthSummary = (Button)view.findViewById(R.id.netWorthSummary);
+//        netWorthSummary.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
+//                fragmentTransaction.replace(R.id.fragment, new NetWorthFragment());
+//                fragmentTransaction.commit();
+//            }
+//        });
 
         return view;
 
