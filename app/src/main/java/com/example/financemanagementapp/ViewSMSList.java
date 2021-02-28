@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
@@ -26,8 +27,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ViewSMSList extends AppCompatActivity {
 
@@ -207,27 +212,50 @@ public class ViewSMSList extends AppCompatActivity {
         return flag;
     }
 
-
     public void refreshSmsInbox() {
+
         ContentResolver contentResolver = getContentResolver();
         Cursor smsInboxCursor = contentResolver.query(Uri.parse("content://sms/inbox"), null, null, null, null);
+
         int indexBody = smsInboxCursor.getColumnIndex("body");
         int indexAddress = smsInboxCursor.getColumnIndex("address");
+        int indexDate = smsInboxCursor.getColumnIndex("date");
+
         if (indexBody < 0 || !smsInboxCursor.moveToFirst()) return;
         arrayAdapter.clear();
 
         //String[] mStringArray = new String[phoneNumbersList.size()];
         //mStringArray = phoneNumbersList.toArray(mStringArray);
-        String[] mStringArray = {"BOC", "5555"};
+        String[] mStringArray = {"BOC", "8822"};
 
         do {
+
             for (int i = 0; i < mStringArray.length; i++) {
+
                 if (smsInboxCursor.getString(indexAddress).equals(mStringArray[i])) {
-                    String str = "SMS From: " + smsInboxCursor.getString(indexAddress) + "\n" + smsInboxCursor.getString(indexBody) + "\n";
-                arrayAdapter.add(str);
+
+                    //figuring if its debt or cred
+                    String mssg = smsInboxCursor.getString(indexBody);
+                    String res = checkCredDebt(mssg);
+
+                    //extracting the amount
+                    String amount = grabAmount(mssg);
+
+                    //simplifying date format
+                    long dte = Long.parseLong(smsInboxCursor.getString(indexDate));
+                    Date date = new Date(dte);
+                    @SuppressLint("SimpleDateFormat") String formattedDate = new SimpleDateFormat("MM/dd/yyyy").format(date);
+
+
+                    String str = "\n" +"SMS From: " + smsInboxCursor.getString(indexAddress) + "\n" +amount +
+                            "\n" + res + "\n" + formattedDate + "\n";
+
+                    arrayAdapter.add(str);
 
                 }
+
             }
+
         } while (smsInboxCursor.moveToNext());
     }
 
@@ -251,7 +279,34 @@ public class ViewSMSList extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
+    public String checkCredDebt(String msg){
+        String temp = msg.toLowerCase();
+        if(temp.contains("debit")){
+            return "Debit";
+        }
+        else if(temp.contains("credit")){
+            return "Credit";
+        }
+        return "Null";
+    }
+
+    public String grabAmount(String msg){
+
+        //String tempI = msg.contains(msg.matches("\\d{2}-\\d{2}"));
+        //String testI = msg.replaceAll("[^0-9?!\\.]","");
+        Pattern patternI = Pattern.compile("\\d{3}.\\d{2}");
+        Matcher matcherI = patternI.matcher(msg);
+        Pattern patternII = Pattern.compile("\\d,\\d{3}.\\d{2}|\\d{3},\\d{3}.\\d{2}|\\d{2},\\d{3}.\\d{2}");
+        Matcher matcherII = patternII.matcher(msg);
+        if(matcherII.find()){
+            return matcherII.group();
+        }
+        else if(matcherI.find()){
+            return matcherI.group();
+        }
+        else
+            return "Null";
+    }
 }

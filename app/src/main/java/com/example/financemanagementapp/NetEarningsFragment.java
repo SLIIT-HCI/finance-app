@@ -86,24 +86,30 @@ public class NetEarningsFragment extends Fragment { //implements AdapterView.OnI
         super.onStart();
 
         ArrayList<Object> list = new ArrayList<>();
+        list.add(new TransactionType("Expense"));
         list.add(new String("Vehicle"));
-        list.add(new TransactionCategories("Fuel", "1"));
-        list.add(new TransactionCategories("Maintenance", "1"));
-        list.add(new TransactionCategories("Other", "1"));
+        list.add(new TransactionCategories("Fuel", "Rs. 15000.00"));
+        list.add(new TransactionCategories("Maintenance", "Rs. 5000.00"));
+        list.add(new TransactionCategories("Other", "Rs. 0.00"));
         list.add(new String("Household"));
-        list.add(new TransactionCategories("Grocery", "1"));
-        list.add(new TransactionCategories("Medicine", "1"));
-        list.add(new TransactionCategories("Shopping", "1"));
-        list.add(new TransactionCategories("Dining Out", "1"));
-        list.add(new TransactionCategories("Other", "1"));
+        list.add(new TransactionCategories("Grocery", "Rs. 12540.00"));
+        list.add(new TransactionCategories("Medicine", "Rs. 2450.00"));
+        list.add(new TransactionCategories("Shopping", "Rs. 6540.00"));
+        list.add(new TransactionCategories("Dining Out", "Rs. 3240.00"));
+        list.add(new TransactionCategories("Other", "Rs. 0.00"));
         list.add(new String("Utilities"));
-        list.add(new TransactionCategories("Electricity", "1"));
-        list.add(new TransactionCategories("Water", "1"));
-        list.add(new TransactionCategories("TV", "1"));
-        list.add(new TransactionCategories("Internet", "1"));
-        list.add(new TransactionCategories("Other", "1"));
+        list.add(new TransactionCategories("Electricity", "Rs. 10540.00"));
+        list.add(new TransactionCategories("Water", "Rs. 540.00"));
+        list.add(new TransactionCategories("TV", "Rs. 840.00"));
+        list.add(new TransactionCategories("Internet", "Rs. 2540.00"));
+        list.add(new TransactionCategories("Other", "Rs. 0.00"));
         list.add(new String("Other"));
-        list.add(new TransactionCategories("Other", "1"));
+        list.add(new TransactionCategories("Other", "Rs. 0.00"));
+        list.add(new TransactionType("Income"));
+        list.add(new String("Earnings"));
+        list.add(new TransactionCategories("Salary", "Rs. 122540.00"));
+        list.add(new TransactionCategories("Bonus", "Rs. 17540.00"));
+        list.add(new TransactionCategories("Others", "Rs. 10540.00"));
 
         //netEarningsListView.setAdapter(new NetEarningsAdapter(this, list));
         //creating adapter

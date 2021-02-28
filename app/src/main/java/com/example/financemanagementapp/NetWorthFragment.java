@@ -83,6 +83,38 @@ public class NetWorthFragment extends Fragment implements AdapterView.OnItemSele
     public void onStart() {
         super.onStart();
 
+        ///////////////////////////////////////////////////////////////////////////////////////////
+
+
+        ArrayList<Object> list = new ArrayList<>();
+        list.add(new TransactionType("Liabilities"));
+        list.add(new String(" "));
+        list.add(new TransactionCategories("Credit Card", "Rs. 150000.00"));
+        list.add(new TransactionCategories("Loans", "Rs. 55000.00"));
+        list.add(new TransactionCategories("Lease", "Rs. 82450.00"));
+        list.add(new TransactionCategories("Payables", "Rs. 6540.00"));
+        list.add(new TransactionCategories("Other", "Rs. 0.00"));
+        list.add(new String(" "));
+
+
+        list.add(new TransactionType("Assets"));
+        list.add(new String(" "));
+        list.add(new TransactionCategories("Cash", "Rs. 22540.00"));
+        list.add(new TransactionCategories("Investments", "Rs. 17540.00"));
+        list.add(new TransactionCategories("Savings", "Rs. 27540.00"));
+        list.add(new TransactionCategories("Receivables", "Rs. 1740.00"));
+        list.add(new TransactionCategories("Others", "Rs. 10540.00"));
+
+        //netEarningsListView.setAdapter(new NetEarningsAdapter(this, list));
+        //creating adapter
+        NetWorthAdapter transactionsAdapter = new NetWorthAdapter(this, list);
+        //attaching adapter to the listview
+        netWorthListView.setAdapter(transactionsAdapter);
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////////
+
+
         progressDialog.setMessage("Loading...");
         progressDialog.show();
 

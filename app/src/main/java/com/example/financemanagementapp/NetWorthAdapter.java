@@ -1,6 +1,5 @@
 package com.example.financemanagementapp;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
@@ -9,9 +8,11 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import androidx.fragment.app.FragmentActivity;
+
 import java.util.ArrayList;
 
-public class NetEarningsAdapter extends BaseAdapter {
+public class NetWorthAdapter extends BaseAdapter {
 
     ArrayList<Object> list;
 
@@ -20,26 +21,11 @@ public class NetEarningsAdapter extends BaseAdapter {
     private static final int HEADING  = 2;
 
     private LayoutInflater inflater;
-    private Activity context;
 
-
-    public NetEarningsAdapter(Activity context, ArrayList<Object> list) {
-        //super(context, R.layout.net_earnings_list, list);
-        this.context = context;
+    public NetWorthAdapter(NetWorthFragment activity, ArrayList<Object> list) {
         this.list = list;
+        //inflater = (LayoutInflater) .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
-
-    /*
-    public NetEarningsAdapter(FragmentActivity activity, ArrayList<Object> list) {
-        this.list = list;
-        inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-    }
-
-    /*
-    public NetEarningsAdapter(NetEarningsFragment context, ArrayList<Object> list) {
-        this.list = list;
-        inflater = (LayoutInflater)  context.getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-    }*/
 
     @Override
     public int getItemViewType(int position) {
@@ -101,13 +87,13 @@ public class NetEarningsAdapter extends BaseAdapter {
                 TextView headingListView = (TextView) view.findViewById(R.id.headingListView);
                 headingListView.setText(((TransactionType)list.get(i)).getType());
                 String heading = ((TransactionType)list.get(i)).getType();
-                if (heading.equals("Expense")) {
+                if (heading.equals("Liabilities")) {
                     headingListView.setTextColor(Color.parseColor("#000000"));
                     headingListView.setBackgroundColor(Color.parseColor("#ffe6e6"));
                     //amount.setTextColor(Color.parseColor("#EA0000"));
 
                 }
-                else if (heading.equals("Income")) {
+                else if (heading.equals("Assets")) {
                     headingListView.setTextColor(Color.parseColor("#000000"));
                     headingListView.setBackgroundColor(Color.parseColor("#d9f2d9"));
                     //headerListView.setTextSize(20);
@@ -121,7 +107,7 @@ public class NetEarningsAdapter extends BaseAdapter {
                 amount.setText(((TransactionCategories)list.get(i)).getAmount());
 
                 String cat = ((TransactionCategories)list.get(i)).getCategory();
-                if ( cat.equals("Salary") || cat.equals("Bonus") || cat.equals("Others") ){
+                if ( cat.equals("Cash") || cat.equals("Investments") || cat.equals("Savings") || cat.equals("Receivables") || cat.equals("Others") ){
                     amount.setTextColor(Color.parseColor("#0CA800"));
                     //headerListView.setTextSize(20);
                 }
