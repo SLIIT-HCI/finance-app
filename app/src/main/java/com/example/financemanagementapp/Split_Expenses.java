@@ -48,11 +48,22 @@ public class Split_Expenses extends AppCompatActivity {
             }
         });
 
+
         //Once the user clicks on capture icon: direct to capture activity
         splitCapture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(Split_Expenses.this, SmartReceiptCapture.class);
+                startActivity(i);
+            }
+        });
+
+
+        //Selecting the image from the gallery: direct to recognize the text from the bill
+        splitUpload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Split_Expenses.this, TextRecognitionActivity.class);
                 startActivity(i);
             }
         });
