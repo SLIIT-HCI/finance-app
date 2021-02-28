@@ -38,9 +38,9 @@ public class SMSList extends ArrayAdapter<SMSProvider> {
         flag = ViewSMSList.getActivityInstance().getFlag();
 
 
-        if ( flag.equals("1") ) {
-            name.setTextColor(Color.parseColor("#EA0000"));
-        }
+        //if ( flag.equals("1") ) {
+          //  name.setTextColor(Color.parseColor("#EA0000"));
+        //}
 
         return listViewItem;
     }

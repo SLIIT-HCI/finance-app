@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NetEarningsFragment extends Fragment implements AdapterView.OnItemSelectedListener {
+public class NetEarningsFragment extends Fragment { //implements AdapterView.OnItemSelectedListener
 
     //view objects
     ListView netEarningsListView;
@@ -48,7 +48,7 @@ public class NetEarningsFragment extends Fragment implements AdapterView.OnItemS
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.net_earnings_fragment, container, false);
 
-        progressDialog = new ProgressDialog(getActivity());
+        //progressDialog = new ProgressDialog(getActivity());
         netEarningsListView = (ListView) view.findViewById(R.id.netEarningsListView);
 
         /**********************************************************************************************************/
@@ -86,14 +86,36 @@ public class NetEarningsFragment extends Fragment implements AdapterView.OnItemS
         super.onStart();
 
         ArrayList<Object> list = new ArrayList<>();
-        //list.add(new String(""))
-        //list.add(new TransactionCategories(""));
+        list.add(new String("Vehicle"));
+        list.add(new TransactionCategories("Fuel", "1"));
+        list.add(new TransactionCategories("Maintenance", "1"));
+        list.add(new TransactionCategories("Other", "1"));
+        list.add(new String("Household"));
+        list.add(new TransactionCategories("Grocery", "1"));
+        list.add(new TransactionCategories("Medicine", "1"));
+        list.add(new TransactionCategories("Shopping", "1"));
+        list.add(new TransactionCategories("Dining Out", "1"));
+        list.add(new TransactionCategories("Other", "1"));
+        list.add(new String("Utilities"));
+        list.add(new TransactionCategories("Electricity", "1"));
+        list.add(new TransactionCategories("Water", "1"));
+        list.add(new TransactionCategories("TV", "1"));
+        list.add(new TransactionCategories("Internet", "1"));
+        list.add(new TransactionCategories("Other", "1"));
+        list.add(new String("Other"));
+        list.add(new TransactionCategories("Other", "1"));
 
+        //netEarningsListView.setAdapter(new NetEarningsAdapter(this, list));
+        //creating adapter
+        NetEarningsAdapter transactionsAdapter = new NetEarningsAdapter(getActivity(), list);
+        //attaching adapter to the listview
+        netEarningsListView.setAdapter(transactionsAdapter);
 
-
+    }
 
         ///////////////////////////////////////////////////////////////////////////////////////////
 
+        /*
         progressDialog.setMessage("Loading...");
         progressDialog.show();
 
@@ -129,9 +151,9 @@ public class NetEarningsFragment extends Fragment implements AdapterView.OnItemS
                 }
 
                 //creating adapter
-                NetEarningsList transactionsAdapter = new NetEarningsList(getActivity(), transactions);
+                //NetEarningsList transactionsAdapter = new NetEarningsList(getActivity(), transactions);
                 //attaching adapter to the listview
-                netEarningsListView.setAdapter(transactionsAdapter);
+                //netEarningsListView.setAdapter(transactionsAdapter);
 
                 progressDialog.dismiss();
 
@@ -145,7 +167,7 @@ public class NetEarningsFragment extends Fragment implements AdapterView.OnItemS
     }
 
     /**********************************************************************************************************/
-
+/*
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         // On selecting a spinner item
@@ -157,7 +179,7 @@ public class NetEarningsFragment extends Fragment implements AdapterView.OnItemS
                 onStart();
                 break;
 
-             */
+
         }
     }
 

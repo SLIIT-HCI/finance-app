@@ -8,16 +8,6 @@
     android:gravity="center"
     tools:context=".SMSIntegrationFragment">
 
-    <ListView
-        android:id="@+id/SMSList"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/rect_shape"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addSMS" />
-
     <TextView
         android:id="@+id/headingSMS1"
         android:layout_width="wrap_content"

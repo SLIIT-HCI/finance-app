@@ -55,7 +55,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/addTransactionsAmount"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icon_calc_big2" />
+        app:srcCompat="@drawable/icon_calc" />
 
 
     <Spinner
@@ -74,7 +74,7 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="40dp"
         android:background="@null"
-        android:drawableLeft="@drawable/icon_notes1"
+        android:drawableLeft="@drawable/icon_notes"
         android:drawablePadding="20sp"
         android:ems="10"
         android:hint="Notes"
@@ -90,7 +90,7 @@
         android:layout_marginTop="40dp"
         android:background="@null"
         android:visibility="invisible"
-        android:drawableLeft="@drawable/icon_accounts1"
+        android:drawableLeft="@drawable/icon_accounts"
         android:drawablePadding="20sp"
         android:ems="10"
         android:hint="Pay To"
@@ -121,7 +121,7 @@
         android:layout_marginTop="40dp"
         android:background="@null"
         android:backgroundTint="@color/cardview_dark_background"
-        android:drawableLeft="@drawable/icon_accounts1"
+        android:drawableLeft="@drawable/icon_accounts"
         android:drawablePadding="20sp"
         android:hint="Account"
         android:textColor="@color/black"
@@ -136,7 +136,7 @@
         android:layout_marginTop="40dp"
         android:background="@null"
         android:backgroundTint="@color/cardview_dark_background"
-        android:drawableLeft="@drawable/icon_category1"
+        android:drawableLeft="@drawable/icon_category"
         android:drawablePadding="20sp"
         android:hint="Category"
         android:textColor="@color/black"
@@ -153,7 +153,7 @@
         android:background="@null"
         android:textSize="18sp"
         android:backgroundTint="@color/cardview_dark_background"
-        android:drawableLeft="@drawable/icon_time2"
+        android:drawableLeft="@drawable/icon_time"
         android:drawablePadding="20sp"
         android:textColor="@color/black"
         android:ems="10"
@@ -169,7 +169,7 @@
         android:layout_marginTop="40dp"
         android:background="@null"
         android:backgroundTint="@color/cardview_dark_background"
-        android:drawableLeft="@drawable/icon_calendar3"
+        android:drawableLeft="@drawable/icon_calendar"
         android:drawablePadding="20sp"
         android:textSize="18sp"
         android:ems="10"
@@ -192,7 +192,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/payToAndFrom"
-        app:srcCompat="@drawable/icon_check2" />
+        app:srcCompat="@drawable/icon_check" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -54,7 +54,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/updateTransactionsAmount"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icon_calc_big2" />
+        app:srcCompat="@drawable/icon_calc" />
 
     <Spinner
         android:id="@+id/updateTransactionsType"
@@ -73,7 +73,7 @@
         android:layout_marginTop="40dp"
         android:background="@null"
         android:backgroundTint="@color/cardview_dark_background"
-        android:drawableLeft="@drawable/icon_time2"
+        android:drawableLeft="@drawable/icon_time"
         android:drawablePadding="20sp"
         android:ems="10"
         android:hint="00:00"
@@ -89,7 +89,7 @@
         android:layout_marginTop="40dp"
         android:background="@null"
         android:backgroundTint="@color/cardview_dark_background"
-        android:drawableLeft="@drawable/icon_calendar3"
+        android:drawableLeft="@drawable/icon_calendar"
         android:drawablePadding="20sp"
         android:ems="10"
         android:hint="dd/mm/yy"
@@ -105,7 +105,7 @@
         android:layout_marginTop="40dp"
         android:background="@null"
         android:backgroundTint="@color/cardview_dark_background"
-        android:drawableLeft="@drawable/icon_category1"
+        android:drawableLeft="@drawable/icon_category"
         android:drawablePadding="20sp"
         android:hint="Category"
         android:textColor="@color/black"
@@ -120,7 +120,7 @@
         android:layout_marginTop="40dp"
         android:background="@null"
         android:backgroundTint="@color/cardview_dark_background"
-        android:drawableLeft="@drawable/icon_accounts1"
+        android:drawableLeft="@drawable/icon_accounts"
         android:drawablePadding="20sp"
         android:hint="Account"
         android:textColor="@color/black"
@@ -151,7 +151,7 @@
         android:layout_marginTop="40dp"
         android:background="@null"
         android:backgroundTint="@color/cardview_dark_background"
-        android:drawableLeft="@drawable/icon_notes1"
+        android:drawableLeft="@drawable/icon_notes"
         android:drawablePadding="20sp"
         android:ems="10"
         android:hint="Notes"
@@ -171,7 +171,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/deleteDB"
         app:layout_constraintTop_toBottomOf="@+id/updateTransactionsNotes"
-        app:srcCompat="@drawable/icon_check2" />
+        app:srcCompat="@drawable/icon_check" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/deleteDB"

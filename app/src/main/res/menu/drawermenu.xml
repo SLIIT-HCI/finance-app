@@ -12,12 +12,12 @@
                     android:title="Main Dashboard"
                     android:icon="@drawable/icon_dashboard"/>
 
-                <item android:id="@+id/categories" android:title="Categories" android:icon="@drawable/icon_category"/>
+                <item android:id="@+id/categories" android:title="Categories" android:icon="@drawable/icon_categoryl"/>
                 <item android:id="@+id/budgetSettings" android:title="Budget Settings" android:icon="@drawable/icon_budget"/>
                 <item android:id="@+id/SMSIntegration" android:title="SMS Integration" android:icon="@drawable/icon_sms"/>
                 <item android:id="@+id/payablesAndReceivables" android:title="Payables and Receivables" android:icon="@drawable/icon_payreceive"/>
                 <item android:id="@+id/reminders" android:title="Reminders" android:icon="@drawable/icon_alarm"/>
-                <item android:id="@+id/calendar" android:title="Calendar" android:icon="@drawable/icon_calendar"/>
+                <item android:id="@+id/calendar" android:title="Calendar" android:icon="@drawable/icon_calendarl"/>
             </group>
         </menu>
     </item>
@@ -26,7 +26,7 @@
         <item android:id="@+id/trash" android:title="Trash" android:icon="@drawable/icon_trash"/>
         <item android:id="@+id/settings" android:title="Settings" android:icon="@drawable/icon_settings"/>
         <item android:id="@+id/userProfile" android:title="User Profile" android:icon="@drawable/icon_user"/>
-        <item android:id="@+id/passwordManager" android:title="Password Manager" android:icon="@drawable/icon_security"/>
+        <item android:id="@+id/passwordManager" android:title="Password Manager" android:icon="@drawable/icon_securityl"/>
         <item android:id="@+id/logOut" android:title="Logout" android:icon="@drawable/icon_logout"/>
   </group>
 

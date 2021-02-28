@@ -2,13 +2,20 @@ package com.example.financemanagementapp;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import android.app.ProgressDialog;
+import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -29,6 +36,8 @@ public class ViewSMSList extends AppCompatActivity {
 
     //a list to store all the artist from firebase database
     List<SMSProvider> smsProviderList;
+    List<String> phoneNumbersList;
+
 
     //our database reference object
     DatabaseReference databaseTransactions;
@@ -42,13 +51,23 @@ public class ViewSMSList extends AppCompatActivity {
 
     static ViewSMSList INSTANCE;
 
+    ListView smsListView;
+    ArrayList<String> smsMessagesList = new ArrayList<String>();
+    ArrayAdapter arrayAdapter;
+
+    private static ViewSMSList inst;
+
+    public static ViewSMSList instance() {
+        return inst;
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_s_m_s_list);
 
-        INSTANCE=this;
+        INSTANCE = this;
 
         smsProvidersListVIew = (ListView) findViewById(R.id.smsProvidersListVIew);
         updateSMS = (Button) findViewById(R.id.updateSMS);
@@ -84,11 +103,32 @@ public class ViewSMSList extends AppCompatActivity {
                 alertDialog();
             }
         });
+
+        smsListView = (ListView) findViewById(R.id.SMSList);
+
+        arrayAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, smsMessagesList);
+        smsListView.setAdapter(arrayAdapter);
+
+        // Add SMS Read Permision At Runtime
+        // Todo : If Permission Is Not GRANTED
+        if (ContextCompat.checkSelfPermission(getBaseContext(), "android.permission.READ_SMS") == PackageManager.PERMISSION_GRANTED) {
+
+            // Todo : If Permission Granted Then Show SMS
+            refreshSmsInbox();
+
+        } else {
+            // Todo : Then Set Permission
+            final int REQUEST_CODE_ASK_PERMISSIONS = 123;
+            ActivityCompat.requestPermissions(ViewSMSList.this, new String[]{"android.permission.READ_SMS"}, REQUEST_CODE_ASK_PERMISSIONS);
+        }
+
     }
 
     @Override
     public void onStart() {
         super.onStart();
+
+        inst = this;
 
         //progressDialog.setMessage("Loading...");
         //progressDialog.show();
@@ -111,8 +151,13 @@ public class ViewSMSList extends AppCompatActivity {
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     //getting transaction
                     SMSProvider smsProvider = postSnapshot.getValue(SMSProvider.class);
+
+                   // String phone = smsProvider.getContactSMS();
+                   // phoneNumbersList.add(phone);
+
                     //adding transaction to the list
                     smsProviderList.add(smsProvider);
+
                 }
 
                 //creating adapter
@@ -154,8 +199,7 @@ public class ViewSMSList extends AppCompatActivity {
         alertDialog.show();
     }
 
-    public static ViewSMSList getActivityInstance()
-    {
+    public static ViewSMSList getActivityInstance() {
         return INSTANCE;
     }
 
@@ -163,5 +207,51 @@ public class ViewSMSList extends AppCompatActivity {
         return flag;
     }
 
+
+    public void refreshSmsInbox() {
+        ContentResolver contentResolver = getContentResolver();
+        Cursor smsInboxCursor = contentResolver.query(Uri.parse("content://sms/inbox"), null, null, null, null);
+        int indexBody = smsInboxCursor.getColumnIndex("body");
+        int indexAddress = smsInboxCursor.getColumnIndex("address");
+        if (indexBody < 0 || !smsInboxCursor.moveToFirst()) return;
+        arrayAdapter.clear();
+
+        //String[] mStringArray = new String[phoneNumbersList.size()];
+        //mStringArray = phoneNumbersList.toArray(mStringArray);
+        String[] mStringArray = {"BOC", "5555"};
+
+        do {
+            for (int i = 0; i < mStringArray.length; i++) {
+                if (smsInboxCursor.getString(indexAddress).equals(mStringArray[i])) {
+                    String str = "SMS From: " + smsInboxCursor.getString(indexAddress) + "\n" + smsInboxCursor.getString(indexBody) + "\n";
+                arrayAdapter.add(str);
+
+                }
+            }
+        } while (smsInboxCursor.moveToNext());
+    }
+
+    public void updateList(final String smsMessage) {
+        arrayAdapter.insert(smsMessage, 0);
+        arrayAdapter.notifyDataSetChanged();
+    }
+
+    public void onItemClick(AdapterView<?> parent, View view, int pos, long id) {
+        try {
+            String[] smsMessages = smsMessagesList.get(pos).split("\n");
+            String address = smsMessages[0];
+            String smsMessage = "";
+            for (int i = 1; i < smsMessages.length; ++i) {
+                smsMessage += smsMessages[i];
+            }
+
+            String smsMessageStr = address + "\n";
+            smsMessageStr += smsMessage;
+            Toast.makeText(getApplicationContext(), smsMessageStr, Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 
 }

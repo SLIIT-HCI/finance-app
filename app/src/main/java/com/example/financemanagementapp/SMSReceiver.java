@@ -28,7 +28,7 @@ public class SMSReceiver extends BroadcastReceiver {
             Toast.makeText(context, smsMessageStr, Toast.LENGTH_SHORT).show();
 
             //this will update the UI with message
-            SMSIntegrationFragment inst = SMSIntegrationFragment.instance();
+            ViewSMSList inst = ViewSMSList.instance();
             inst.updateList(smsMessageStr);
         }
     }

@@ -30,8 +30,8 @@ public class SettingsActivity extends AppCompatActivity {
         currency.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent currency = new Intent(getApplicationContext(), );
-                //startActivity(currency);
+                Intent currency = new Intent(getApplicationContext(), CurrencySettingsActivity.class);
+                startActivity(currency);
             }
         });
 

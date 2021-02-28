@@ -54,11 +54,21 @@
     <ListView
         android:id="@+id/smsProvidersListVIew"
         android:layout_width="413dp"
-        android:layout_height="529dp"
+        android:layout_height="329dp"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/heading" />
+
+    <ListView
+        android:id="@+id/SMSList"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/rect_shape"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/updateSMS" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
