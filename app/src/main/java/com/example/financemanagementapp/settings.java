@@ -29,6 +29,7 @@ public class settings extends AppCompatActivity {
         //ActionBar actionBar = getSupportActionBar();
 //        ActionBar actionBar = getSupportActionBar();
 //        actionBar.setTitle(getResources().getString(R.string.app_name));
+      
 
         LanguageS  = (Button) findViewById(R.id.Lpopup);
         LanguageS.setOnClickListener(new View.OnClickListener() {
@@ -41,7 +42,7 @@ public class settings extends AppCompatActivity {
 
     private void showChangeLanguageDialog() {
         //array of languages to display in alert box
-        final String[] listItems = {"English", "French", "Hindi", "සිංහල"};
+        final String[] listItems = {"English", "French", "Hindi", "Sinhala", "Italian", "Japanese", "Korean", "Dutch", "Tamil", "Chinese"};
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(settings.this);
         mBuilder.setTitle("Choose Language....");
         mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
@@ -65,6 +66,37 @@ public class settings extends AppCompatActivity {
                 else if (i == 3){
                     //Sinhala
                     setLocale("si");
+                    recreate();
+                }
+
+                else if (i == 4){
+                    //Italian
+                    setLocale("it");
+                    recreate();
+                }
+                else if (i == 5){
+                    //Japanese
+                    setLocale("ja");
+                    recreate();
+                }
+                else if (i == 6){
+                    //Korean
+                    setLocale("ko");
+                    recreate();
+                }
+                else if (i == 7){
+                    //Dutch
+                    setLocale("nl");
+                    recreate();
+                }
+                else if (i == 8){
+                    //Tamil
+                    setLocale("ta");
+                    recreate();
+                }
+                else if (i == 9){
+                    //Chinese
+                    setLocale("zh");
                     recreate();
                 }
 

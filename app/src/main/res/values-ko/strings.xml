@@ -5,109 +5,111 @@
     <!-- Korean language -->
 
     <!-- Sign In, Sign Up, Forgot Password -->
-    <string name="signIn">Sign In</string>
-    <string name="pwd">Password</string>
-    <string name="email">E-mail</string>
+    <string name="signIn">로그인</string>
+    <string name="pwd">암호</string>
+    <string name="email">이메일</string>
     <string name="sampleEmail">*****@****.***</string>
-    <string name="noAccnt">Don\'t have an account?</string>
-    <string name="haveAccnt">Already have an account?</string>
-    <string name="signUp">Sign Up</string>
-    <string name="forgotPwd">Forgot Password?</string>
-    <string name="login">Login</string>
-    <string name="confirmPwd">Confirm Password</string>
-    <string name="agreeToTerms">I agree to the terms and conditions</string>
-    <string name="resetHeading">Reset your Password</string>
-    <string name="resetMsg">Enter your email and we\'ll send a link to reset your password.</string>
-    <string name="resetPwd">Reset Password</string>
-    <string name="open">Open</string>
-    <string name="close">Close</string>
-    <string name="title_activity_navigation_drawer">NavigationDrawer</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="noAccnt">계정이 없으십니까?</string>
+    <string name="haveAccnt">이미 계정이 있습니까?</string>
+    <string name="signUp">가입하기</string>
+    <string name="forgotPwd">비밀번호를 잊으 셨나요?</string>
+    <string name="login">로그인</string>
+    <string name="confirmPwd">비밀번호 확인</string>
+
+
+    <string name="agreeToTerms">이용 약관에 동의합니다</string>
+    <string name="resetHeading">비밀번호를 재설정</string>
+    <string name="resetMsg">이메일을 입력하시면 비밀번호 재설정 링크를 보내드립니다</string>
+    <string name="resetPwd">암호를 재설정</string>
+    <string name="open">열다</string>
+    <string name="close">닫기</string>
+    <string name="title_activity_navigation_drawer">탐색 창</string>
+    <string name="navigation_drawer_open">탐색 창 열기</string>
+    <string name="navigation_drawer_close">탐색 창 닫기</string>
 
     <!-- Horizontal Scroll Menu -->
-    <string name="dashboard">Dashboard</string>
-    <string name="transactions">Transactions</string>
-    <string name="balanceSheet">Balance Sheet</string>
-    <string name="netEarningsSummary">Net Earnings Summary</string>
-    <string name="netWorthSummary">Net Worth Summary</string>
-    <string name="verifyMsg">Verify your email address</string>
-    <string name="resendEmail">Resend Email</string>
-    <string name="verificationMsg">We\'ve sent a verification email to your inbox. \n Click on the confirmation link to continue. </string>
-    <string name="emailNotSent">Didn\'t get an email?</string>
+    <string name="dashboard">계기반</string>
+    <string name="transactions">업무</string>
+    <string name="balanceSheet">대차 대조표</string>
+    <string name="netEarningsSummary">순이익 요약</string>
+    <string name="netWorthSummary">순자산 요약</string>
+    <string name="verifyMsg">이메일 주소를 확인</string>
+    <string name="resendEmail">이메일 다시 보내기</string>
+    <string name="verificationMsg">받은 편지함으로 확인 이메일을 보냈습니다. 계속하려면 확인 링크를 클릭하십시오.</string>
+    <string name="emailNotSent">이메일을받지 못하셨습니까?</string>
 
     <!--Split expenses (Ayeshka)-->
-    <string name="TotalAmount">Total Amount</string>
-    <string name="NoOfMembers">No Of Members</string>
-    <string name="PerMember">Per member</string>
-    <string name="Split">Split</string>
+    <string name="TotalAmount">총액</string>
+    <string name="NoOfMembers">회원 수</string>
+    <string name="PerMember">멤버 별</string>
+    <string name="Split">스플릿</string>
 
     <!-- Add to transaction (Ayeshka)-->
-    <string name="amount">Rs.</string>
-    <string name="category">Category</string>
-    <string name="account">Account</string>
-    <string name="Schedule">Schedule</string>
-    <string name="Notes">Notes</string>
+    <string name="amount">원즈</string>
+    <string name="category">범주</string>
+    <string name="account">계정</string>
+    <string name="Schedule">시간표</string>
+    <string name="Notes">노트</string>
 
     <!-- Categories pop-up (Ayeshka)-->
-    <string name="Categories">Categories</string>
+    <string name="Categories">카테고리</string>
 
     <!-- login (Ayeshka)-->
-    <string name="loginToAcc">Login to your Account</string>
+    <string name="loginToAcc">계정에 로그인</string>
 
     <!-- registration (Ayeshka)-->
-    <string name="createAcc">Create your Account</string>
+    <string name="createAcc">계정 생성</string>
 
     <!-- sms list (Ayeshka)-->
-    <string name="Name">Name</string>
-    <string name="Contact">Contact</string>
+    <string name="Name">이름</string>
+    <string name="Contact">접촉</string>
 
     <!-- smart receipt capture (Ayeshka)-->
-    <string name="CaptureImage">Capture Image</string>
-    <string name="DetectText">Detect Text</string>
+    <string name="CaptureImage">이미지 캡처</string>
+    <string name="DetectText">텍스트 감지</string>
 
     <!-- text recognition (Ayeshka)-->
-    <string name="PickImage">Pick Image</string>
+    <string name="PickImage">이미지 선택</string>
 
     <!-- Add to update sms list (Ayeshka)-->
-    <string name="Heading">Heading</string>
-    <string name="Institute">Name of the Financial Institution</string>
+    <string name="Heading">표제</string>
+    <string name="Institute">금융 기관명</string>
     <string name="finInstName">finInstName</string>
-    <string name="ContactNoName">Contact Number / Name</string>
-    <string name="UpdateSMSListName">Name</string>
-    <string name="UpdateBTN">Update</string>
-    <string name="CancelBTN">Cancel</string>
+    <string name="ContactNoName">연락처 / 이름</string>
+    <string name="UpdateSMSListName">이름</string>
+    <string name="UpdateBTN">최신 정보</string>
+    <string name="CancelBTN">취소</string>
 
     <!-- Add to view sms list (Ayeshka)-->
-    <string name="ViewHeading">Heading</string>
-    <string name="DeleteBTN">Delete</string>
+    <string name="ViewHeading">표제</string>
+    <string name="DeleteBTN">지우다</string>
 
     <!-- Frag payables and receivables (Ayeshka)-->
-    <string name="Payables">Payables</string>
-    <string name="Total">Total</string>
+    <string name="Payables">미지급금</string>
+    <string name="Total">합계</string>
 
     <!-- Frag sms integration (Ayeshka)-->
-    <string name="AddBTN">Add</string>
-    <string name="ViewAllBTN">View All</string>
+    <string name="AddBTN">더하다</string>
+    <string name="ViewAllBTN">모두보기</string>
 
 
     <!-- net earning (Ayeshka)-->
-    <string name="NetCategory">Category</string>
-    <string name="NetAmount">Amount</string>
+    <string name="NetCategory">범주</string>
+    <string name="NetAmount">양</string>
 
     <!-- Frag net worth (Ayeshka)-->
-    <string name="DateRange">Date Range</string>
+    <string name="DateRange">날짜 범위</string>
 
     <!-- payables and receivables list(Ayeshka)-->
-    <string name="PersonName">Person Name</string>
-    <string name="PAmount">Amount</string>
-    <string name="ScheduledDate">Scheduled Date</string>
-    <string name="Pnotes">Notes</string>
+    <string name="PersonName">개인 이름</string>
+    <string name="PAmount">양</string>
+    <string name="ScheduledDate">예정일</string>
+    <string name="Pnotes">노트</string>
 
     <!-- transaction list(Ayeshka)-->
-    <string name="TCategory">Category</string>
-    <string name="TAmount">Amount</string>
-    <string name="subcategory">Sub-Category</string>
-    <string name="accBalance">Account | Balance</string>
+    <string name="TCategory">범주</string>
+    <string name="TAmount">양</string>
+    <string name="subcategory">하위 카테고리</string>
+    <string name="accBalance">계정 | 밸런스</string>
 
 </resources>

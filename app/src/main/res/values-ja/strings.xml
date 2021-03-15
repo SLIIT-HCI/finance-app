@@ -5,16 +5,18 @@
     <!-- Japanese language -->
 
     <!-- Sign In, Sign Up, Forgot Password -->
-    <string name="signIn">Sign In</string>
-    <string name="pwd">Password</string>
-    <string name="email">E-mail</string>
+    <string name="signIn">ログイン</string>
+    <string name="pwd">パスワード</string>
+    <string name="email">Eメール</string>
     <string name="sampleEmail">*****@****.***</string>
-    <string name="noAccnt">Don\'t have an account?</string>
-    <string name="haveAccnt">Already have an account?</string>
-    <string name="signUp">Sign Up</string>
-    <string name="forgotPwd">Forgot Password?</string>
-    <string name="login">Login</string>
-    <string name="confirmPwd">Confirm Password</string>
+    <string name="noAccnt">アカウントをお持ちではありませんか？</string>
+    <string name="haveAccnt">すでにアカウントをお持ちですか？</string>
+    <string name="signUp">サインアップ</string>
+    <string name="forgotPwd">パスワードをお忘れですか？</string>
+    <string name="login">ログイン</string>
+    <string name="confirmPwd">パスワードを認証する</string>
+
+
     <string name="agreeToTerms">I agree to the terms and conditions</string>
     <string name="resetHeading">Reset your Password</string>
     <string name="resetMsg">Enter your email and we\'ll send a link to reset your password.</string>
@@ -26,88 +28,88 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <!-- Horizontal Scroll Menu -->
-    <string name="dashboard">Dashboard</string>
-    <string name="transactions">Transactions</string>
-    <string name="balanceSheet">Balance Sheet</string>
-    <string name="netEarningsSummary">Net Earnings Summary</string>
-    <string name="netWorthSummary">Net Worth Summary</string>
-    <string name="verifyMsg">Verify your email address</string>
-    <string name="resendEmail">Resend Email</string>
-    <string name="verificationMsg">We\'ve sent a verification email to your inbox. \n Click on the confirmation link to continue. </string>
-    <string name="emailNotSent">Didn\'t get an email?</string>
+    <string name="dashboard">ダッシュボード</string>
+    <string name="transactions">トランザクション</string>
+    <string name="balanceSheet">バランスシート</string>
+    <string name="netEarningsSummary">純利益の概要</string>
+    <string name="netWorthSummary">純資産の概要</string>
+    <string name="verifyMsg">あなたのメールアドレスを確認してください</string>
+    <string name="resendEmail">メールを再送</string>
+    <string name="verificationMsg">受信トレイに確認メールを送信しました。確認リンクをクリックして続行します。</string>
+    <string name="emailNotSent">メールが届きませんでしたか？</string>
 
     <!--Split expenses (Ayeshka)-->
-    <string name="TotalAmount">Total Amount</string>
-    <string name="NoOfMembers">No Of Members</string>
-    <string name="PerMember">Per member</string>
-    <string name="Split">Split</string>
+    <string name="TotalAmount">合計金額</string>
+    <string name="NoOfMembers">メンバー数</string>
+    <string name="PerMember">メンバーごと</string>
+    <string name="Split">スプリット</string>
 
     <!-- Add to transaction (Ayeshka)-->
-    <string name="amount">Rs.</string>
-    <string name="category">Category</string>
-    <string name="account">Account</string>
-    <string name="Schedule">Schedule</string>
-    <string name="Notes">Notes</string>
+    <string name="amount">円</string>
+    <string name="category">カテゴリー</string>
+    <string name="account">アカウント</string>
+    <string name="Schedule">スケジュール</string>
+    <string name="Notes">ノート</string>
 
     <!-- Categories pop-up (Ayeshka)-->
-    <string name="Categories">Categories</string>
+    <string name="Categories">カテゴリ</string>
 
     <!-- login (Ayeshka)-->
-    <string name="loginToAcc">Login to your Account</string>
+    <string name="loginToAcc">あなたのアカウントにログイン</string>
 
     <!-- registration (Ayeshka)-->
-    <string name="createAcc">Create your Account</string>
+    <string name="createAcc">アカウントを作成</string>
 
     <!-- sms list (Ayeshka)-->
-    <string name="Name">Name</string>
-    <string name="Contact">Contact</string>
+    <string name="Name">名前</string>
+    <string name="Contact">連絡先</string>
 
     <!-- smart receipt capture (Ayeshka)-->
-    <string name="CaptureImage">Capture Image</string>
-    <string name="DetectText">Detect Text</string>
+    <string name="CaptureImage">画像をキャプチャする</string>
+    <string name="DetectText">テキストの検出</string>
 
     <!-- text recognition (Ayeshka)-->
-    <string name="PickImage">Pick Image</string>
+    <string name="PickImage">画像を選択</string>
 
     <!-- Add to update sms list (Ayeshka)-->
-    <string name="Heading">Heading</string>
-    <string name="Institute">Name of the Financial Institution</string>
+    <string name="Heading">見出し</string>
+    <string name="Institute">金融機関名</string>
     <string name="finInstName">finInstName</string>
-    <string name="ContactNoName">Contact Number / Name</string>
-    <string name="UpdateSMSListName">Name</string>
-    <string name="UpdateBTN">Update</string>
-    <string name="CancelBTN">Cancel</string>
+    <string name="ContactNoName">連絡先番号 / 名前</string>
+    <string name="UpdateSMSListName">名前</string>
+    <string name="UpdateBTN">キャンセル</string>
+    <string name="CancelBTN">削除</string>
 
     <!-- Add to view sms list (Ayeshka)-->
-    <string name="ViewHeading">Heading</string>
-    <string name="DeleteBTN">Delete</string>
+    <string name="ViewHeading">見出し</string>
+    <string name="DeleteBTN">買掛金</string>
 
     <!-- Frag payables and receivables (Ayeshka)-->
-    <string name="Payables">Payables</string>
-    <string name="Total">Total</string>
+    <string name="Payables">買掛金</string>
+    <string name="Total">合計</string>
 
     <!-- Frag sms integration (Ayeshka)-->
-    <string name="AddBTN">Add</string>
-    <string name="ViewAllBTN">View All</string>
+    <string name="AddBTN">追加</string>
+    <string name="ViewAllBTN">すべて表示</string>
 
 
     <!-- net earning (Ayeshka)-->
-    <string name="NetCategory">Category</string>
-    <string name="NetAmount">Amount</string>
+    <string name="NetCategory">カテゴリー</string>
+    <string name="NetAmount">量</string>
 
     <!-- Frag net worth (Ayeshka)-->
-    <string name="DateRange">Date Range</string>
+    <string name="DateRange">日付範囲</string>
 
     <!-- payables and receivables list(Ayeshka)-->
-    <string name="PersonName">Person Name</string>
-    <string name="PAmount">Amount</string>
-    <string name="ScheduledDate">Scheduled Date</string>
-    <string name="Pnotes">Notes</string>
+    <string name="PersonName">人名</string>
+    <string name="PAmount">量</string>
+    <string name="ScheduledDate">予定日</string>
+    <string name="Pnotes">ノート</string>
 
     <!-- transaction list(Ayeshka)-->
-    <string name="TCategory">Category</string>
-    <string name="TAmount">Amount</string>
-    <string name="subcategory">Sub-Category</string>
-    <string name="accBalance">Account | Balance</string>
+    <string name="TCategory">カテゴリー</string>
+    <string name="TAmount">量</string>
+    <string name="subcategory">サブカテゴリ</string>
+    <string name="accBalance">アカウント|残高</string>
 
 </resources>

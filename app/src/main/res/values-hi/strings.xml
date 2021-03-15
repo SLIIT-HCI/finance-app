@@ -11,103 +11,105 @@
 
     <string name="noAccnt">Don\'t have an account?</string>
     <string name="haveAccnt">Already have an account?</string>
-    <string name="signUp">Sign Up</string>
-    <string name="forgotPwd">Forgot Password?</string>
-    <string name="login">Login</string>
-    <string name="confirmPwd">Confirm Password</string>
-    <string name="agreeToTerms">I agree to the terms and conditions</string>
-    <string name="resetHeading">Reset your Password</string>
-    <string name="resetMsg">Enter your email and we\'ll send a link to reset your password.</string>
-    <string name="resetPwd">Reset Password</string>
-    <string name="open">Open</string>
-    <string name="close">Close</string>
-    <string name="title_activity_navigation_drawer">NavigationDrawer</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
+    <string name="signUp">साइन अप करें</string>
+    <string name="forgotPwd">पासवर्ड भूल गए?</string>
+    <string name="login">लॉग इन करें</string>
+    <string name="confirmPwd">पासवर्ड की पुष्टि कीजिये</string>
+    <string name="agreeToTerms">मैं नियमों और शर्तों से सहमत हूं</string>
+    <string name="resetHeading">अपना पासवर्ड रीसेट करें</string>
+    <string name="resetMsg">अपना ईमेल दर्ज करें और हम आपका पासवर्ड रीसेट करने के लिए एक लिंक भेजेंगे</string>
+    <string name="resetPwd">पासवर्ड रीसेट</string>
+    <string name="open">खुला हुआ</string>
+    <string name="close">बंद करे</string>
+    <string name="title_activity_navigation_drawer">नेविगेशन दराज</string>
+    <string name="navigation_drawer_open">नेविगेशन दराज खोलें</string>
+    <string name="navigation_drawer_close">नेविगेशन ड्रॉअर बंद करें</string>
 
     <!-- Horizontal Scroll Menu -->
-    <string name="dashboard">Dashboard</string>
-    <string name="transactions">Transactions</string>
-    <string name="balanceSheet">Balance Sheet</string>
-    <string name="netEarningsSummary">Net Earnings Summary</string>
-    <string name="netWorthSummary">Net Worth Summary</string>
-    <string name="verifyMsg">Verify your email address</string>
-    <string name="resendEmail">Resend Email</string>
-    <string name="verificationMsg">We\'ve sent a verification email to your inbox. \n Click on the confirmation link to continue. </string>
-    <string name="emailNotSent">Didn\'t get an email?</string>
+    <string name="dashboard">डैशबोर्ड</string>
+    <string name="transactions">लेनदेन</string>
+    <string name="balanceSheet">बैलेंस शीट</string>
+    <string name="netEarningsSummary">शुद्ध कमाई का सारांश</string>
+    <string name="netWorthSummary">नेट वर्थ सारांश</string>
+    <string name="verifyMsg">अपने ईमेल पते की पुष्टि करें</string>
+    <string name="resendEmail">ईमेल दुबारा भेजें</string>
+    <string name="verificationMsg">हमने आपके इनबॉक्स में एक सत्यापन ईमेल भेजा है। जारी रखने के लिए पुष्टिकरण लिंक पर क्लिक करें।</string>
+    <string name="emailNotSent">एक ईमेल नहीं मिला?</string>
 
     <!--Split expenses (Ayeshka)-->
-    <string name="TotalAmount">Total Amount</string>
-    <string name="NoOfMembers">No Of Members</string>
-    <string name="PerMember">Per member</string>
-    <string name="Split">Split</string>
+    <string name="TotalAmount">कुल राशि</string>
+    <string name="NoOfMembers">सदस्यों की नहीं</string>
+    <string name="PerMember">प्रति सदस्य</string>
+    <string name="Split">विभाजित करें</string>
 
     <!-- Add to transaction (Ayeshka)-->
-    <string name="amount">Rs.</string>
-    <string name="category">Category</string>
-    <string name="account">Account</string>
-    <string name="Schedule">Schedule</string>
-    <string name="Notes">Notes</string>
+    <string name="amount">रुपये</string>
+    <string name="category">वर्ग</string>
+    <string name="account">लेखा</string>
+    <string name="Schedule">अनुसूची</string>
+    <string name="Notes">टिप्पणियाँ</string>
 
     <!-- Categories pop-up (Ayeshka)-->
-    <string name="Categories">Categories</string>
+    <string name="Categories">श्रेणियाँ</string>
 
     <!-- login (Ayeshka)-->
-    <string name="loginToAcc">Login to your Account</string>
+    <string name="loginToAcc">अपने अकाउंट में लॉग इन करें</string>
 
     <!-- registration (Ayeshka)-->
-    <string name="createAcc">Create your Account</string>
+    <string name="createAcc">अपना खाता बनाएं</string>
 
     <!-- sms list (Ayeshka)-->
-    <string name="Name">Name</string>
-    <string name="Contact">Contact</string>
+    <string name="Name">नाम</string>
+    <string name="Contact">संपर्क करें</string>
 
     <!-- smart receipt capture (Ayeshka)-->
-    <string name="CaptureImage">Capture Image</string>
-    <string name="DetectText">Detect Text</string>
+    <string name="CaptureImage">छवि पर कब्जा</string>
+    <string name="DetectText">पाठ का पता लगाएं</string>
 
     <!-- text recognition (Ayeshka)-->
-    <string name="PickImage">Pick Image</string>
+    <string name="PickImage">छवि चुनें</string>
 
     <!-- Add to update sms list (Ayeshka)-->
-    <string name="Heading">Heading</string>
-    <string name="Institute">Name of the Financial Institution</string>
+    <string name="Heading">शीर्षक</string>
+    <string name="Institute">वित्तीय संस्थान का नाम</string>
     <string name="finInstName">finInstName</string>
-    <string name="ContactNoName">Contact Number / Name</string>
-    <string name="UpdateSMSListName">Name</string>
-    <string name="UpdateBTN">Update</string>
-    <string name="CancelBTN">Cancel</string>
+    <string name="ContactNoName">संपर्क नंबर / नाम</string>
+    <string name="UpdateSMSListName">नाम</string>
+    <string name="UpdateBTN">अपडेट करें</string>
+    <string name="CancelBTN">रद्द करना</string>
 
     <!-- Add to view sms list (Ayeshka)-->
-    <string name="ViewHeading">Heading</string>
-    <string name="DeleteBTN">Delete</string>
+    <string name="ViewHeading">शीर्षक</string>
+    <string name="DeleteBTN">हटाएं</string>
 
     <!-- Frag payables and receivables (Ayeshka)-->
-    <string name="Payables">Payables</string>
-    <string name="Total">Total</string>
+    <string name="Payables">देय</string>
+    <string name="Total">संपूर्ण</string>
 
     <!-- Frag sms integration (Ayeshka)-->
-    <string name="AddBTN">Add</string>
-    <string name="ViewAllBTN">View All</string>
+    <string name="AddBTN">जोड़ना</string>
+    <string name="ViewAllBTN">सभी को देखें</string>
 
 
     <!-- net earning (Ayeshka)-->
-    <string name="NetCategory">Category</string>
-    <string name="NetAmount">Amount</string>
+    <string name="NetCategory">वर्ग</string>
+    <string name="NetAmount">रकम</string>
 
     <!-- Frag net worth (Ayeshka)-->
-    <string name="DateRange">Date Range</string>
+    <string name="DateRange">तिथि सीमा</string>
 
     <!-- payables and receivables list(Ayeshka)-->
-    <string name="PersonName">Person Name</string>
-    <string name="PAmount">Amount</string>
-    <string name="ScheduledDate">Scheduled Date</string>
-    <string name="Pnotes">Notes</string>
+    <string name="PersonName">व्यक्ति का नाम</string>
+    <string name="PAmount">रकम</string>
+    <string name="ScheduledDate">निर्धारित तिथि</string>
+    <string name="Pnotes">टिप्पणियाँ</string>
 
     <!-- transaction list(Ayeshka)-->
-    <string name="TCategory">Category</string>
-    <string name="TAmount">Amount</string>
-    <string name="subcategory">Sub-Category</string>
-    <string name="accBalance">Account | Balance</string>
+    <string name="TCategory">वर्ग</string>
+    <string name="TAmount">टिप्पणियाँ</string>
+    <string name="subcategory">उप-श्रेणी</string>
+    <string name="accBalance">खाता | संतुलन</string>
 
 </resources>

@@ -7,105 +7,104 @@
     <string name="pwd">Mot de passe</string>
     <string name="email">E-mail</string>
     <string name="sampleEmail">*****@****.***</string>
-
-    <string name="noAccnt">Don\'t have an account?</string>
-    <string name="haveAccnt">Already have an account?</string>
-    <string name="signUp">Sign Up</string>
-    <string name="forgotPwd">Forgot Password?</string>
-    <string name="login">Login</string>
-    <string name="confirmPwd">Confirm Password</string>
-    <string name="agreeToTerms">I agree to the terms and conditions</string>
-    <string name="resetHeading">Reset your Password</string>
-    <string name="resetMsg">Enter your email and we\'ll send a link to reset your password.</string>
-    <string name="resetPwd">Reset Password</string>
-    <string name="open">Open</string>
-    <string name="close">Close</string>
-    <string name="title_activity_navigation_drawer">NavigationDrawer</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="noAccnt">Vous n\'avez pas de compte?</string>
+    <string name="haveAccnt">Vous avez déjà un compte?</string>
+    <string name="signUp">S\'inscrire</string>
+    <string name="forgotPwd">Mot de passe oublié?</string>
+    <string name="login">Connexion</string>
+    <string name="confirmPwd">Confirmez le mot de passe</string>
+    <string name="agreeToTerms">J\'accepte les termes et conditions</string>
+    <string name="resetHeading">Réinitialisez votre mot de passe</string>
+    <string name="resetMsg">Entrez votre email et nous vous enverrons un lien pour réinitialiser votre mot de passe</string>
+    <string name="resetPwd">réinitialiser le mot de passe</string>
+    <string name="open">Ouvert</string>
+    <string name="close">Fermer</string>
+    <string name="title_activity_navigation_drawer">Tiroir de navigation</string>
+    <string name="navigation_drawer_open">Ouvrir le tiroir de navigation</string>
+    <string name="navigation_drawer_close">Fermer le panneau de navigation</string>
 
     <!-- Horizontal Scroll Menu -->
-    <string name="dashboard">Dashboard</string>
+    <string name="dashboard">Tableau de bord</string>
     <string name="transactions">Transactions</string>
-    <string name="balanceSheet">Balance Sheet</string>
-    <string name="netEarningsSummary">Net Earnings Summary</string>
-    <string name="netWorthSummary">Net Worth Summary</string>
-    <string name="verifyMsg">Verify your email address</string>
-    <string name="resendEmail">Resend Email</string>
-    <string name="verificationMsg">We\'ve sent a verification email to your inbox. \n Click on the confirmation link to continue. </string>
-    <string name="emailNotSent">Didn\'t get an email?</string>
+    <string name="balanceSheet">Bilan</string>
+    <string name="netEarningsSummary">Résumé des bénéfices nets</string>
+    <string name="netWorthSummary">Résumé de la valeur nette</string>
+    <string name="verifyMsg">Vérifiez votre adresse e-mail</string>
+    <string name="resendEmail">Ré-envoyer l\'email</string>
+    <string name="verificationMsg">Nous avons envoyé un e-mail de vérification dans votre boîte de réception. Cliquez sur le lien de confirmation pour continuer.</string>
+    <string name="emailNotSent">Vous n\'avez pas reçu d\'e-mail?</string>
 
     <!--Split expenses (Ayeshka)-->
-    <string name="TotalAmount">Total Amount</string>
-    <string name="NoOfMembers">No Of Members</string>
-    <string name="PerMember">Per member</string>
-    <string name="Split">Split</string>
+    <string name="TotalAmount">Montant total</string>
+    <string name="NoOfMembers">Non des membres</string>
+    <string name="PerMember">Par membre</string>
+    <string name="Split">diviser</string>
 
     <!-- Add to transaction (Ayeshka)-->
-    <string name="amount">Rs.</string>
-    <string name="category">Category</string>
-    <string name="account">Account</string>
-    <string name="Schedule">Schedule</string>
-    <string name="Notes">Notes</string>
+    <string name="amount">Euro</string>
+    <string name="category">Catégorie</string>
+    <string name="account">Compte</string>
+    <string name="Schedule">Horaire</string>
+    <string name="Notes">Remarques</string>
 
     <!-- Categories pop-up (Ayeshka)-->
-    <string name="Categories">Categories</string>
+    <string name="Categories">Catégories</string>
 
     <!-- login (Ayeshka)-->
-    <string name="loginToAcc">Login to your Account</string>
+    <string name="loginToAcc">Connectez-vous à votre compte</string>
 
     <!-- registration (Ayeshka)-->
-    <string name="createAcc">Create your Account</string>
+    <string name="createAcc">Créez votre compte</string>
 
     <!-- sms list (Ayeshka)-->
-    <string name="Name">Name</string>
-    <string name="Contact">Contact</string>
+    <string name="Name">Nom</string>
+    <string name="Contact">Contacter</string>
 
     <!-- smart receipt capture (Ayeshka)-->
-    <string name="CaptureImage">Capture Image</string>
-    <string name="DetectText">Detect Text</string>
+    <string name="CaptureImage">Capturer l\'image</string>
+    <string name="DetectText">Détecter le texte</string>
 
     <!-- text recognition (Ayeshka)-->
-    <string name="PickImage">Pick Image</string>
+    <string name="PickImage">Choisir une image</string>
 
     <!-- Add to update sms list (Ayeshka)-->
-    <string name="Heading">Heading</string>
-    <string name="Institute">Name of the Financial Institution</string>
+    <string name="Heading">Titre</string>
+    <string name="Institute">Nom de l\'institution financière</string>
     <string name="finInstName">finInstName</string>
-    <string name="ContactNoName">Contact Number / Name</string>
-    <string name="UpdateSMSListName">Name</string>
-    <string name="UpdateBTN">Update</string>
-    <string name="CancelBTN">Cancel</string>
+    <string name="ContactNoName">Numéro / nom du contact</string>
+    <string name="UpdateSMSListName">Nom</string>
+    <string name="UpdateBTN">Mettre à jour</string>
+    <string name="CancelBTN">Annuler</string>
 
     <!-- Add to view sms list (Ayeshka)-->
-    <string name="ViewHeading">Heading</string>
-    <string name="DeleteBTN">Delete</string>
+    <string name="ViewHeading">Titre</string>
+    <string name="DeleteBTN">Effacer</string>
 
     <!-- Frag payables and receivables (Ayeshka)-->
-    <string name="Payables">Payables</string>
+    <string name="Payables">Dettes</string>
     <string name="Total">Total</string>
 
     <!-- Frag sms integration (Ayeshka)-->
-    <string name="AddBTN">Add</string>
-    <string name="ViewAllBTN">View All</string>
+    <string name="AddBTN">Ajouter</string>
+    <string name="ViewAllBTN">Voir tout</string>
 
 
     <!-- net earning (Ayeshka)-->
-    <string name="NetCategory">Category</string>
-    <string name="NetAmount">Amount</string>
+    <string name="NetCategory">Catégorie</string>
+    <string name="NetAmount">Quantité</string>
 
     <!-- Frag net worth (Ayeshka)-->
-    <string name="DateRange">Date Range</string>
+    <string name="DateRange">Plage de dates</string>
 
     <!-- payables and receivables list(Ayeshka)-->
-    <string name="PersonName">Person Name</string>
-    <string name="PAmount">Amount</string>
-    <string name="ScheduledDate">Scheduled Date</string>
-    <string name="Pnotes">Notes</string>
+    <string name="PersonName">Nom d\'une personne</string>
+    <string name="PAmount">Quantité</string>
+    <string name="ScheduledDate">Date programmée</string>
+    <string name="Pnotes">Remarques</string>
 
     <!-- transaction list(Ayeshka)-->
-    <string name="TCategory">Category</string>
-    <string name="TAmount">Amount</string>
-    <string name="subcategory">Sub-Category</string>
-    <string name="accBalance">Account | Balance</string>
+    <string name="TCategory">Catégorie</string>
+    <string name="TAmount">Quantité</string>
+    <string name="subcategory">Sous-catégorie</string>
+    <string name="accBalance">Compte | Équilibre</string>
 </resources>

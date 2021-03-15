@@ -5,109 +5,111 @@
     <!-- Dutch language -->
 
     <!-- Sign In, Sign Up, Forgot Password -->
-    <string name="signIn">Sign In</string>
-    <string name="pwd">Password</string>
+    <string name="signIn">Inloggen</string>
+    <string name="pwd">Wachtwoord</string>
     <string name="email">E-mail</string>
     <string name="sampleEmail">*****@****.***</string>
-    <string name="noAccnt">Don\'t have an account?</string>
-    <string name="haveAccnt">Already have an account?</string>
-    <string name="signUp">Sign Up</string>
-    <string name="forgotPwd">Forgot Password?</string>
-    <string name="login">Login</string>
-    <string name="confirmPwd">Confirm Password</string>
-    <string name="agreeToTerms">I agree to the terms and conditions</string>
-    <string name="resetHeading">Reset your Password</string>
-    <string name="resetMsg">Enter your email and we\'ll send a link to reset your password.</string>
-    <string name="resetPwd">Reset Password</string>
+    <string name="noAccnt">Nog geen account?</string>
+    <string name="haveAccnt">Heb je al een account?</string>
+    <string name="signUp">Aanmelden</string>
+    <string name="forgotPwd">Wachtwoord vergeten?</string>
+    <string name="login">Log in</string>
+    <string name="confirmPwd">bevestig wachtwoord</string>
+
+
+    <string name="agreeToTerms">Ik ga akkoord met de algemene voorwaarden</string>
+    <string name="resetHeading">Stel je wachtwoord opnieuw in</string>
+    <string name="resetMsg">Voer uw e-mailadres in en we sturen een link om uw wachtwoord opnieuw in te stellen</string>
+    <string name="resetPwd">Wachtwoord opnieuw instellen</string>
     <string name="open">Open</string>
-    <string name="close">Close</string>
-    <string name="title_activity_navigation_drawer">NavigationDrawer</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="close">Dichtbij</string>
+    <string name="title_activity_navigation_drawer">Navigatielade</string>
+    <string name="navigation_drawer_open">Open de navigatielade</string>
+    <string name="navigation_drawer_close">Sluit de navigatielade</string>
 
     <!-- Horizontal Scroll Menu -->
     <string name="dashboard">Dashboard</string>
-    <string name="transactions">Transactions</string>
-    <string name="balanceSheet">Balance Sheet</string>
-    <string name="netEarningsSummary">Net Earnings Summary</string>
-    <string name="netWorthSummary">Net Worth Summary</string>
-    <string name="verifyMsg">Verify your email address</string>
-    <string name="resendEmail">Resend Email</string>
-    <string name="verificationMsg">We\'ve sent a verification email to your inbox. \n Click on the confirmation link to continue. </string>
-    <string name="emailNotSent">Didn\'t get an email?</string>
+    <string name="transactions">Transacties</string>
+    <string name="balanceSheet">Balans</string>
+    <string name="netEarningsSummary">Overzicht nettowinst</string>
+    <string name="netWorthSummary">Samenvatting nettowaarde</string>
+    <string name="verifyMsg">Verifieer je e-mailadres</string>
+    <string name="resendEmail">Email opnieuw verzenden</string>
+    <string name="verificationMsg">We hebben een verificatie-e-mail naar uw inbox gestuurd. Klik op de bevestigingslink om door te gaan.</string>
+    <string name="emailNotSent">Geen e-mail ontvangen?</string>
 
     <!--Split expenses (Ayeshka)-->
-    <string name="TotalAmount">Total Amount</string>
-    <string name="NoOfMembers">No Of Members</string>
-    <string name="PerMember">Per member</string>
-    <string name="Split">Split</string>
+    <string name="TotalAmount">Totaalbedrag</string>
+    <string name="NoOfMembers">Geen van de leden</string>
+    <string name="PerMember">Per lid</string>
+    <string name="Split">splitsen</string>
 
     <!-- Add to transaction (Ayeshka)-->
-    <string name="amount">Rs.</string>
-    <string name="category">Category</string>
+    <string name="amount">euro</string>
+    <string name="category">Categorie</string>
     <string name="account">Account</string>
-    <string name="Schedule">Schedule</string>
-    <string name="Notes">Notes</string>
+    <string name="Schedule">Schema</string>
+    <string name="Notes">Opmerkingen</string>
 
     <!-- Categories pop-up (Ayeshka)-->
-    <string name="Categories">Categories</string>
+    <string name="Categories">Categorieën</string>
 
     <!-- login (Ayeshka)-->
-    <string name="loginToAcc">Login to your Account</string>
+    <string name="loginToAcc">Log in op jouw account</string>
 
     <!-- registration (Ayeshka)-->
-    <string name="createAcc">Create your Account</string>
+    <string name="createAcc">Maak een account aan</string>
 
     <!-- sms list (Ayeshka)-->
-    <string name="Name">Name</string>
+    <string name="Name">Naam</string>
     <string name="Contact">Contact</string>
 
     <!-- smart receipt capture (Ayeshka)-->
-    <string name="CaptureImage">Capture Image</string>
-    <string name="DetectText">Detect Text</string>
+    <string name="CaptureImage">Afbeelding vastleggen</string>
+    <string name="DetectText">Detecteer tekst</string>
 
     <!-- text recognition (Ayeshka)-->
-    <string name="PickImage">Pick Image</string>
+    <string name="PickImage">Kies afbeelding</string>
 
     <!-- Add to update sms list (Ayeshka)-->
-    <string name="Heading">Heading</string>
-    <string name="Institute">Name of the Financial Institution</string>
+    <string name="Heading">Rubriek</string>
+    <string name="Institute">Naam van de financiële instelling</string>
     <string name="finInstName">finInstName</string>
-    <string name="ContactNoName">Contact Number / Name</string>
-    <string name="UpdateSMSListName">Name</string>
-    <string name="UpdateBTN">Update</string>
-    <string name="CancelBTN">Cancel</string>
+    <string name="ContactNoName">Contactnummer / naam</string>
+    <string name="UpdateSMSListName">Naam</string>
+    <string name="UpdateBTN">Bijwerken</string>
+    <string name="CancelBTN">annuleren</string>
 
     <!-- Add to view sms list (Ayeshka)-->
-    <string name="ViewHeading">Heading</string>
-    <string name="DeleteBTN">Delete</string>
+    <string name="ViewHeading">Rubriek</string>
+    <string name="DeleteBTN">Verwijderen</string>
 
     <!-- Frag payables and receivables (Ayeshka)-->
-    <string name="Payables">Payables</string>
-    <string name="Total">Total</string>
+    <string name="Payables">Schulden</string>
+    <string name="Total">Totaal</string>
 
     <!-- Frag sms integration (Ayeshka)-->
-    <string name="AddBTN">Add</string>
-    <string name="ViewAllBTN">View All</string>
+    <string name="AddBTN">Toevoegen</string>
+    <string name="ViewAllBTN">Bekijk alles</string>
 
 
     <!-- net earning (Ayeshka)-->
-    <string name="NetCategory">Category</string>
-    <string name="NetAmount">Amount</string>
+    <string name="NetCategory">Categorie</string>
+    <string name="NetAmount">Bedrag</string>
 
     <!-- Frag net worth (Ayeshka)-->
-    <string name="DateRange">Date Range</string>
+    <string name="DateRange">Datumbereik</string>
 
     <!-- payables and receivables list(Ayeshka)-->
-    <string name="PersonName">Person Name</string>
-    <string name="PAmount">Amount</string>
-    <string name="ScheduledDate">Scheduled Date</string>
-    <string name="Pnotes">Notes</string>
+    <string name="PersonName">Persoonsnaam</string>
+    <string name="PAmount">Bedrag</string>
+    <string name="ScheduledDate">Geplande datum</string>
+    <string name="Pnotes">Opmerkingen</string>
 
     <!-- transaction list(Ayeshka)-->
-    <string name="TCategory">Category</string>
-    <string name="TAmount">Amount</string>
-    <string name="subcategory">Sub-Category</string>
-    <string name="accBalance">Account | Balance</string>
+    <string name="TCategory">Categorie</string>
+    <string name="TAmount">bedrag</string>
+    <string name="subcategory">Subcategorie</string>
+    <string name="accBalance">Account | Balans</string>
 
 </resources>
