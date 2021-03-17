@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.io.Closeable;
+
 public class Split_Expenses extends AppCompatActivity {
 
     Button splitButton;
@@ -81,8 +83,10 @@ public class Split_Expenses extends AppCompatActivity {
         splitCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Split_Expenses.this, TransactionsFragment.class);
-                startActivity(i);
+//                Intent i = new Intent(Split_Expenses.this, TransactionsFragment.class);
+//                startActivity(i);
+                    onBackPressed();
+
             }
         });
 
