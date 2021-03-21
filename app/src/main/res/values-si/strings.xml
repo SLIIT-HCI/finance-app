@@ -111,4 +111,18 @@
     <string name="subcategory">උප කාණ්ඩය</string>
     <string name="accBalance">ගිණුම | ශේෂය</string>
 
+    <!-- settings activity -->
+    <string name="Localization">ප්‍රාදේශීයකරණය</string>
+    <string name="language">භාෂාව</string>
+    <string name="currency">මුදල්</string>
+    <string name="DateFormat">දිනය ආකෘතිය</string>
+    <string name="TimeFormat">කාල ආකෘතිය</string>
+    <string name="General">පොදු</string>
+    <string name="Appearance">පෙනුම</string>
+    <string name="localBackups">දේශීය උපස්ථ</string>
+    <string name="onlineSync">මාර්ගගත සමමුහුර්තකරණය</string>
+    <string name="security">ආරක්ෂක</string>
+    <string name="helpnsSupport">උදව් සහ සහාය</string>
+    <string name="aboutUs">අපි ගැන</string>
+
 </resources>

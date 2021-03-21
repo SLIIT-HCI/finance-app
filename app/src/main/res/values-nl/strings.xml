@@ -112,4 +112,18 @@
     <string name="subcategory">Subcategorie</string>
     <string name="accBalance">Account | Balans</string>
 
+    <!-- settings activity -->
+    <string name="Localization">Lokalisatie</string>
+    <string name="language">taal</string>
+    <string name="currency">Valuta</string>
+    <string name="DateFormat">Datumnotatie</string>
+    <string name="TimeFormat">Tijd formaat</string>
+    <string name="General">Algemeen</string>
+    <string name="Appearance">Uiterlijk</string>
+    <string name="localBackups">Lokale back-ups</string>
+    <string name="onlineSync">Online synchronisatie</string>
+    <string name="security">Veiligheid</string>
+    <string name="helpnsSupport">Hulp en ondersteuning</string>
+    <string name="aboutUs">Over ons</string>
+
 </resources>

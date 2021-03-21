@@ -112,4 +112,18 @@
     <string name="subcategory">子类别</string>
     <string name="accBalance">帐号|平衡</string>
 
+    <!-- settings activity -->
+    <string name="Localization">本土化</string>
+    <string name="language">语</string>
+    <string name="currency">货币</string>
+    <string name="DateFormat">日期格式</string>
+    <string name="TimeFormat">时间格式</string>
+    <string name="General">一般的</string>
+    <string name="Appearance">外貌</string>
+    <string name="localBackups">本地备份</string>
+    <string name="onlineSync">在线同步</string>
+    <string name="security">安全</string>
+    <string name="helpnsSupport">帮助和支持</string>
+    <string name="aboutUs">关于我们</string>
+
 </resources>

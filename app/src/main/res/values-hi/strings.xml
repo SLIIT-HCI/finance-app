@@ -112,4 +112,19 @@
     <string name="subcategory">उप-श्रेणी</string>
     <string name="accBalance">खाता | संतुलन</string>
 
+    <!-- settings activity -->
+    <string name="Localization">स्थानीयकरण</string>
+    <string name="language">भाषा: हिन्दी</string>
+    <string name="currency">मुद्रा</string>
+    <string name="DateFormat">तारिख का प्रारूप</string>
+    <string name="TimeFormat"> समय प्रारूप</string>
+    <string name="General">आम</string>
+    <string name="Appearance">दिखावट</string>
+    <string name="localBackups">्थानीय बैकअप</string>
+    <string name="onlineSync">ऑनलाइन सिंक</string>
+    <string name="security">सुरक्षा</string>
+    <string name="helpnsSupport">सहायता और समर्थन</string>
+    <string name="aboutUs">हमारे बारे में</string>
+
+
 </resources>

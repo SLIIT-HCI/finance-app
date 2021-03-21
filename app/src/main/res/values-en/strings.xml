@@ -107,4 +107,18 @@
     <string name="subcategory">Sub-Category</string>
     <string name="accBalance">Account | Balance</string>
 
+    <!-- settings activity -->
+    <string name="Localization">Localization</string>
+    <string name="language">Language</string>
+    <string name="currency">Currency</string>
+    <string name="DateFormat">Date Format</string>
+    <string name="TimeFormat">Time Format</string>
+    <string name="General">General</string>
+    <string name="Appearance">Appearance</string>
+    <string name="localBackups">Local Backups</string>
+    <string name="onlineSync">Online Sync</string>
+    <string name="security">Security</string>
+    <string name="helpnsSupport">Help and Support</string>
+    <string name="aboutUs">About Us</string>
+
 </resources>

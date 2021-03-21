@@ -1,22 +1,23 @@
 package com.example.financemanagementapp;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.util.Locale;
 
-public class settings extends AppCompatActivity {
+public class SettingsActivity extends AppCompatActivity {
 
-    Button LanguageS;
+    TextView LanguageS, currency;
     //private String listItems;
 
     @Override
@@ -29,9 +30,10 @@ public class settings extends AppCompatActivity {
         //ActionBar actionBar = getSupportActionBar();
 //        ActionBar actionBar = getSupportActionBar();
 //        actionBar.setTitle(getResources().getString(R.string.app_name));
-      
 
-        LanguageS  = (Button) findViewById(R.id.Lpopup);
+        currency = (TextView) findViewById(R.id.currency);
+
+        LanguageS  = (TextView) findViewById(R.id.language);
         LanguageS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,7 +45,7 @@ public class settings extends AppCompatActivity {
     private void showChangeLanguageDialog() {
         //array of languages to display in alert box
         final String[] listItems = {"English", "French", "Hindi", "Sinhala", "Italian", "Japanese", "Korean", "Dutch", "Tamil", "Chinese"};
-        AlertDialog.Builder mBuilder = new AlertDialog.Builder(settings.this);
+        AlertDialog.Builder mBuilder = new AlertDialog.Builder(SettingsActivity.this);
         mBuilder.setTitle("Choose Language....");
         mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
             @Override
@@ -129,4 +131,13 @@ public class settings extends AppCompatActivity {
         String language = pref.getString("My_Lang", "");
         setLocale(language);
     }
+
+//        currency.setOnClickListener(new View.OnClickListener() {
+//        @Override
+//        public void onClick(View view) {
+//            Intent currency = new Intent(getApplicationContext(), CurrencySettingsActivity.class);
+//            startActivity(currency);
+//        }
+//    });
+
 }

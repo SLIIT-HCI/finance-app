@@ -110,4 +110,18 @@
     <string name="subcategory">Sottocategoria</string>
     <string name="accBalance">Account | Equilibrio</string>
 
+    <!-- settings activity -->
+    <string name="Localization">Localizzazione</string>
+    <string name="language">linguaggio</string>
+    <string name="currency">Moneta</string>
+    <string name="DateFormat">Formato data</string>
+    <string name="TimeFormat">Formato orario</string>
+    <string name="General">Generale</string>
+    <string name="Appearance">Aspetto</string>
+    <string name="localBackups">Backup locali</string>
+    <string name="onlineSync">Sincronizzazione online</string>
+    <string name="security">Sicurezza</string>
+    <string name="helpnsSupport">Aiuto e supporto</string>
+    <string name="aboutUs">Chi siamo</string>
+
 </resources>

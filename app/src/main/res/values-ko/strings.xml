@@ -112,4 +112,19 @@
     <string name="subcategory">하위 카테고리</string>
     <string name="accBalance">계정 | 밸런스</string>
 
+    <!-- settings activity -->
+    <string name="Localization">현지화</string>
+    <string name="language">언어</string>
+    <string name="currency">통화</string>
+    <string name="DateFormat">날짜 형식</string>
+    <string name="TimeFormat">시간 형식</string>
+    <string name="General">일반</string>
+    <string name="Appearance">외관</string>
+    <string name="localBackups">로컬 백업</string>
+    <string name="onlineSync">온라인 동기화</string>
+    <string name="security">보안</string>
+    <string name="helpnsSupport">도움말 및 지원</string>
+    <string name="aboutUs">회사 소개</string>
+
+
 </resources>

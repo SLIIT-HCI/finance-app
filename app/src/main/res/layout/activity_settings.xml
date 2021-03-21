@@ -1,70 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    tools:context=".settings">
-
+    tools:context=".SettingsActivity">
 
     <TextView
-        android:id="@+id/nameTV"
-        android:layout_width="163dp"
-        android:layout_height="47dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="176dp"
-        android:layout_marginEnd="22dp"
-        android:layout_toStartOf="@+id/unameET"
-        android:text="@string/Name"
-        android:textSize="20dp" />
-
-    <EditText
-        android:id="@+id/nameET"
-        android:layout_width="177dp"
+        android:id="@+id/localization"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/unameET"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="41dp"
-        android:layout_marginEnd="18dp" />
-
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="35dp"
+        android:text="@string/Localization"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/unameTV"
-        android:layout_width="163dp"
-        android:layout_height="47dp"
-        android:layout_below="@+id/nameTV"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="43dp"
-        android:layout_marginEnd="25dp"
-        android:layout_toStartOf="@+id/unameET"
-        android:text="@string/email"
-        android:textSize="20dp" />
-
-    <EditText
-        android:id="@+id/unameET"
-        android:layout_width="177dp"
+        android:id="@+id/language"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="170dp"
-        android:layout_marginEnd="23dp" />
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/language"
+        android:drawableLeft="@drawable/icon_language"
+        android:drawablePadding="15dp"
+        android:textColor="@color/cardview_dark_background"
+        android:drawableTint="@color/cardview_dark_background"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:clickable="true"
+        app:layout_constraintTop_toBottomOf="@+id/localization" />
 
-    <Button
-        android:id="@+id/Lpopup"
-        android:layout_width="203dp"
+    <TextView
+        android:id="@+id/currency"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginEnd="104dp"
-        android:layout_marginBottom="244dp"
-        android:paddingLeft="20dp"
-        android:text="Change Language " />
+        android:layout_marginTop="25dp"
+        android:drawableLeft="@drawable/icon_dollar"
+        android:drawablePadding="32dp"
+        android:drawableTint="@color/cardview_dark_background"
+        android:text="@string/currency"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="@+id/language"
+        app:layout_constraintTop_toBottomOf="@+id/language" />
+
+    <TextView
+        android:id="@+id/dateFormat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/DateFormat"
+        android:drawableLeft="@drawable/icon_calendar"
+        android:drawablePadding="15dp"
+        android:textColor="@color/cardview_dark_background"
+        android:drawableTint="@color/cardview_dark_background"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="@+id/currency"
+        app:layout_constraintTop_toBottomOf="@+id/currency" />
+
+    <TextView
+        android:id="@+id/timeFormat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/TimeFormat"
+        android:drawableLeft="@drawable/icon_time"
+        android:drawablePadding="15dp"
+        android:textColor="@color/cardview_dark_background"
+        android:drawableTint="@color/cardview_dark_background"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="@+id/dateFormat"
+        app:layout_constraintTop_toBottomOf="@+id/dateFormat" />
+
+    <TextView
+        android:id="@+id/general"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="45dp"
+        android:text="@string/General"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeFormat" />
+
+    <TextView
+        android:id="@+id/appearance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/Appearance"
+        android:drawableLeft="@drawable/icon_appearance"
+        android:drawablePadding="15dp"
+        android:textColor="@color/cardview_dark_background"
+        android:drawableTint="@color/cardview_dark_background"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/general" />
+
+    <TextView
+        android:id="@+id/localBackups"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/localBackups"
+        android:drawableLeft="@drawable/icon_storage"
+        android:drawablePadding="15dp"
+        android:textColor="@color/cardview_dark_background"
+        android:drawableTint="@color/cardview_dark_background"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="@+id/appearance"
+        app:layout_constraintTop_toBottomOf="@+id/appearance" />
+
+    <TextView
+        android:id="@+id/onlineSync"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/onlineSync"
+        android:drawableLeft="@drawable/icon_sync"
+        android:drawablePadding="15dp"
+        android:textColor="@color/cardview_dark_background"
+        android:drawableTint="@color/cardview_dark_background"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="@+id/localBackups"
+        app:layout_constraintTop_toBottomOf="@+id/localBackups" />
+
+    <TextView
+        android:id="@+id/security"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/security"
+        android:drawableLeft="@drawable/icon_security"
+        android:drawablePadding="15dp"
+        android:textColor="@color/cardview_dark_background"
+        android:drawableTint="@color/cardview_dark_background"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="@+id/onlineSync"
+        app:layout_constraintTop_toBottomOf="@+id/onlineSync" />
+
+    <TextView
+        android:id="@+id/helpAndSuppport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/helpnsSupport"
+        android:drawableLeft="@drawable/icon_help"
+        android:drawablePadding="15dp"
+        android:textColor="@color/cardview_dark_background"
+        android:drawableTint="@color/cardview_dark_background"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="@+id/security"
+        app:layout_constraintTop_toBottomOf="@+id/security" />
+
+    <TextView
+        android:id="@+id/aboutUs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/aboutUs"
+        android:drawableLeft="@drawable/icon_info_small"
+        android:drawableTint="@color/cardview_dark_background"
+        android:drawablePadding="15dp"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="@+id/helpAndSuppport"
+        app:layout_constraintTop_toBottomOf="@+id/helpAndSuppport" />
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

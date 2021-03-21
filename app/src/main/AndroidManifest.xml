@@ -22,9 +22,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".settings"></activity>
+        <activity android:name=".AddTransactionsActivity"></activity>
         <activity android:name=".LoginActivity" />
-        <activity android:name=".UpdateSMSList" />
         <activity android:name=".ViewSMSList" />
         <activity
             android:name=".SmartReceiptCapture"
@@ -42,7 +41,7 @@
             android:name=".CalculatorActivity"
             android:theme="@style/AppTheme.PopUp" />
         <activity
-            android:name=".AddTransactionsActivity"
+            android:name=".UpdateSMSList"
             android:theme="@style/AppTheme.PopUp" />
         <activity android:name=".EmailVerificationActivity" />
         <activity
@@ -55,7 +54,7 @@
             android:name=".RegistrationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Split_Expenses"
+            android:name=".SettingsActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

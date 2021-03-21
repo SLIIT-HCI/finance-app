@@ -112,4 +112,18 @@
     <string name="subcategory">サブカテゴリ</string>
     <string name="accBalance">アカウント|残高</string>
 
+    <!-- settings activity -->
+    <string name="Localization">ローカリゼーション</string>
+    <string name="language">言語</string>
+    <string name="currency">通貨</string>
+    <string name="DateFormat">日付形式</string>
+    <string name="TimeFormat">時間形式</string>
+    <string name="General">一般</string>
+    <string name="Appearance">外観</string>
+    <string name="localBackups">ローカルバックアップ</string>
+    <string name="onlineSync">オンライン同期</string>
+    <string name="security">セキュリティ</string>
+    <string name="helpnsSupport">ヘルプとサポート</string>
+    <string name="aboutUs">私たちに関しては</string>
+
 </resources>

@@ -107,4 +107,19 @@
     <string name="TAmount">Quantité</string>
     <string name="subcategory">Sous-catégorie</string>
     <string name="accBalance">Compte | Équilibre</string>
+
+    <!-- settings activity -->
+    <string name="Localization">Localisation</string>
+    <string name="language">Langue</string>
+    <string name="currency">Devise</string>
+    <string name="DateFormat">Format de date</string>
+    <string name="TimeFormat">Format de l\'heure</string>
+    <string name="General">Général</string>
+    <string name="Appearance">Apparence</string>
+    <string name="localBackups">Sauvegardes locales</string>
+    <string name="onlineSync">Synchronisation en ligne</string>
+    <string name="security">Sécurité</string>
+    <string name="helpnsSupport">Aide et soutien</string>
+    <string name="aboutUs"> À propos de nous</string>
+
 </resources>
