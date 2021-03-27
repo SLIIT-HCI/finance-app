@@ -121,4 +121,15 @@
     <string name="helpnsSupport">Help and Support</string>
     <string name="aboutUs">About Us</string>
 
+
+    <!-- User Profile activity -->
+    <string name="Change_email">Email</string>
+    <string name="Change_Password">Change Password</string>
+    <string name="mobile">Mobile</string>
+    <string name="bank_detail">Bank Details</string>
+    <string name="card_details">Card Details</string>
+    <string name="transaction_reports">Transaction Reports</string>
+    <string name="google">Google Account</string>
+    <string name="facebook">FaceBook Account</string>
+
 </resources>

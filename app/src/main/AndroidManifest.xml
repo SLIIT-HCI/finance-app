@@ -22,7 +22,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddTransactionsActivity"></activity>
+        <activity android:name=".NavigationDrawer"></activity>
+        <activity android:name=".AddTransactionsActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".ViewSMSList" />
         <activity
@@ -45,7 +46,7 @@
             android:theme="@style/AppTheme.PopUp" />
         <activity android:name=".EmailVerificationActivity" />
         <activity
-            android:name=".NavigationDrawer"
+            android:name=".SettingsActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ForgotPasswordActivity"
@@ -54,7 +55,7 @@
             android:name=".RegistrationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".SettingsActivity"
+            android:name=".UserProfile"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
