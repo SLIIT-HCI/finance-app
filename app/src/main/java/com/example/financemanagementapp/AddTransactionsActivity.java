@@ -251,7 +251,9 @@ public class AddTransactionsActivity extends AppCompatActivity implements Adapte
                 //calling the method addTransaction()
                 //the method is defined below
                 //this method is actually performing the write operation
-                addTransaction();
+
+                onBackPressed();
+                //addTransaction();
             }
         });
 
