@@ -22,7 +22,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".NavigationDrawer"></activity>
+        <activity android:name=".ExpandableListView_bankDetails"></activity>
+        <activity android:name=".NavigationDrawer" />
         <activity android:name=".AddTransactionsActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".ViewSMSList" />
