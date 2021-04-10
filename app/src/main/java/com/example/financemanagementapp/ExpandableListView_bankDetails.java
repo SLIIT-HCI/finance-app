@@ -56,11 +56,11 @@ public class ExpandableListView_bankDetails extends AppCompatActivity {
     }
 
     private void createCollection() {
-        String [] Account1Model = {"test1", "test2", "test3"};
-        String [] Account2Model = {"test1", "test2", "test3"};
-        String [] Account3Model = {"test1", "test2", "test3"};
-        String [] Account4Model = {"test1", "test2", "test3"};
-        String [] Account5Model = {"test1", "test2", "test3"};
+        String [] Account1Model = {"Account Holder", "Bank", "Branch", "Account Number"};
+        String [] Account2Model = {"Account Holder", "Bank", "Branch", "Account Number"};
+        String [] Account3Model = {"Account Holder", "Bank", "Branch", "Account Number"};
+        String [] Account4Model = {"Account Holder", "Bank", "Branch", "Account Number"};
+        String [] Account5Model = {"Account Holder", "Bank", "Branch", "Account Number"};
 
         AccountCollection = new HashMap<String, List<String>>();
 
@@ -73,7 +73,7 @@ public class ExpandableListView_bankDetails extends AppCompatActivity {
                 loadChild(Account3Model);
             }else if(group.equals("Account4")) {
                 loadChild(Account4Model);
-            }else if(group.equals("Account4")){
+            }else if(group.equals("Account5")){
                 loadChild(Account5Model);
             }
             AccountCollection.put(group, childList);

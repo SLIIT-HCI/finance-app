@@ -71,6 +71,7 @@ public class BankExpandibleListAdapter extends BaseExpandableListAdapter {
         TextView item = view.findViewById(R.id.test);
         item.setTypeface(null, Typeface.BOLD);
         item.setText(AccountName);
+
         return view;
     }
 
